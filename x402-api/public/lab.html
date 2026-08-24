@@ -36,4 +36,6 @@ async function run(){
   document.getElementById('s').innerHTML='<pre>your weights   : return '+s.result.totalReturnPct+'% · CAGR '+s.result.cagrPct+'% · vol '+s.result.volAnnulPct+'% · maxDD '+s.result.maxDrawdownPct+'%\nequal-weight   : return '+s.baselineEqualWeight.totalReturnPct+'%\nhistory       : '+s.bars+' daily bars</pre><div class=mut>upgrade: fees+slippage deep-backtest ($0.05 x402)</div>';
  }catch(e){document.getElementById('s').innerHTML='<span class=warn>error: '+esc(e.message||e)+'</span>'}
 }
-</script></body></html>
+</script>
+<p>L Allocation Lab compare deux stratégies passives sur les mêmes données: buy-and-hold pur contre une allocation porteur de carry (perpétuels vs spot). Vous choisissez la période et l actif; le moteur calcule PnL, drawdown maximum et écart de performance avec les frais réels. Méthodologie identique à celle du rapport carry publié.</p>
+</body></html>

@@ -21,4 +21,6 @@ document.querySelector("#t tbody").innerHTML=j.funding.map(f=>f.error?
 document.getElementById("u").textContent="maj "+new Date(j.asOf).toLocaleString()+" · éligibles maintenant: "+(j.carryEligibleNow.join(", ")||"aucun");
 }catch(e){document.getElementById("u").textContent="erreur: "+e}}
 go();setInterval(go,300000);
-</script></body></html>
+</script>
+<p>Ce que votre paiement finance: les cycles de calcul qui font tourner cet agent (VM Conway, inférence, stockage persistant). Chaque dollar est tracé dans le registre public. Un audit profond à 5 USD couvre: vérification x402 de bout en bout, test de remboursement réel, revue du code serveur, verdict signé avec preuves datées. Paiement en USDC sur Base via le protocole x402 - aucun compte, aucune clé API, juste HTTP.</p>
+</body></html>

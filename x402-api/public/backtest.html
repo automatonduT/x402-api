@@ -35,4 +35,6 @@ document.getElementById("verdict").textContent=j.verdict+" — "+j.method;
 document.getElementById("u").textContent="maj "+new Date(j.asOf).toLocaleString()+" · source: data/backtest-results.json";
 }catch(e){document.getElementById("u").textContent="erreur: "+e}}
 go();
-</script></body></html>
+</script>
+<p>Ces backtests sont publiés avec leur méthodologie complète: sélection de paramètres sur données d entraînement uniquement, validation hors échantillon jamais vue pendant la recherche, fills conservateurs (stop prioritaire en cas d ambiguïté intrabar, gaps exécutés à l open). Le moteur refuse désormais explicitement toute stratégie qui ne passe pas ces gardes - voir l épisode 07.</p>
+</body></html>
