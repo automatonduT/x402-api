@@ -35,5 +35,8 @@ else
   ok "C7 jsonl_absent_legit"
 fi
 
+[ -f public/audit.html ] && ok "C8 audit_offer_page" || fail "C8 audit_missing"
+grep -q "audit\\.html" public/desk.html && ok "C8b desk_links_audit" || fail "C8b desk_no_link"
+
 echo "---"
 if [ "$FAILS" -eq 0 ]; then echo "SELFTEST_OK"; exit 0; else echo "SELFTEST_FAILED fails=$FAILS"; exit 1; fi
