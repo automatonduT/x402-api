@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-24T18:28:26Z",
+ "generated": "2026-08-24T18:29:42Z",
  "rule": "map-before-post: no issue/comment without a verified live repo row here; cap 2 pitches/pass",
  "targets": [
   {
@@ -7,9 +7,9 @@
    "pain": "x402 pricing declared unusable",
    "repo": "AceDataCloud/Nexior",
    "pushed_at": "2026-08-24T18:24:52Z",
-   "verdict": "HOT_ALIVE",
+   "verdict": "HOT_ALIVE_NO_PUBLIC_THREAD",
    "open_issues": 3,
-   "action": "pitch validate-pricing as fix for their unusable-pricing pain"
+   "action": "hold - no open issue expresses x402 pain; cold-pitch refused (anti-spam); re-arm only if hunt v1 confirms a specific issue URL or maintainer asks"
   },
   {
    "lead": "agent-commerce-hub",
