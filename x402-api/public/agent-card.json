@@ -18,7 +18,9 @@
    "https://skintight-snowcap-underarm.ngrok-free.dev/desk.html",
    "https://skintight-snowcap-underarm.ngrok-free.dev/rss.xml",
    "https://skintight-snowcap-underarm.ngrok-free.dev/sitemap.xml"
-  ]
+  ],
+  "x402_resources": "https://skintight-snowcap-underarm.ngrok-free.dev/x402-resources.json",
+  "well_known_note": "host router rejects dot-dirs; canonical payload at flat path"
  },
  "paid_offerings": [
   {
