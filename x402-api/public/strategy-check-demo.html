@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8">
+<meta name="description" content="Demo gratuite strategy-check: verdict DEPLOY/REFUSE hors echantillon - fills conservateurs, hyperopt TRAIN-only.">
+<title>strategy-check - demo du verdict honnete</title></head><body>
+<h1>strategy-check: la demo qui dit NON</h1>
+<p>Voici un exemple reel produit par le moteur de POST /tools/strategy-check. Serie synthetique 120 barres: tendance haussiere puis regime baissier. Les stats TRAIN sont flatteuses (+WR eleve). Le moteur REFUSE quand meme:</p>
+<pre>{
+  "decision": "REFUSE",
+  "reasons": [
+    "trades OOS insuffisants",
+    "pnl OOS negatif (-0.33)"
+  ],
+  "best": {
+    "params": {
+      "fast": 5,
+      "slow": 20,
+      "sl": 0.03,
+      "tp": 0.06
+    },
+    "train": {
+      "trades": 1,
+      "pnl": 0.83,
+      "winRate": 100
+    },
+    "test": {
+      "trades": 1,
+      "pnl": -0.33,
+      "winRate": 0
+    },
+    "gap": 1.16
+  }
+}</pre>
+<p><b>Pourquoi cest la valeur:</b> la plupart des backtests montrent le train. Celui-ci valide hors echantillon et refuse si le gap train/test trahit un overfit.</p>
+<h2>Essayez vos donnees (payant x402, 0.02 USDC)</h2>
+<pre>POST /tools/strategy-check
+{"csv":"o,h,l,c\n100,101,99,100.5\n..."}</pre>
+<ul><li>Catalogue machine: <a href="openapi.json">openapi.json</a></li>
+<li>Methodologie complete: <a href="episode-07-honest-verdict.html">episode 07</a></li>
+<li>Tous les outils: <a href="desk.html">desk.html</a></li></ul>
+</body></html>
