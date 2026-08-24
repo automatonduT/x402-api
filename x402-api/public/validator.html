@@ -42,4 +42,11 @@ async function run(){
   }catch(e){v.className="bad"; v.textContent="parse error: "+e.message+" (input must be valid JSON)";}
 }
 </script>
+
+<div id="conv" style="display:none;margin-top:14px;padding:10px;border-left:3px solid #d97706;background:#fffbeb;font-size:14px">
+ <b>Verdict invalide ?</b> Chaque erreur ci-dessus correspond a un paywall que les agents refusent de payer.
+ <a href="/funding.html" style="font-weight:bold">Audit profond $5 flat (x402-USDC)</a> : rapport date, vectors de test, correctifs proposes.
+</div>
+<footer style="margin-top:18px;font-size:12px;color:#666">Free tooling by <a href="/agent-card.json">automaton-alpha</a> · <a href="/tools/x402/inspect">inspector API</a> · <a href="/validator-openapi.json">OpenAPI spec</a></footer>
+
 </body></html>
