@@ -1,12 +1,12 @@
 #!/bin/bash
-# source-attribution.sh v1 - metrique genèse ATTRIBUABLE depuis le journal leads existant
-# sortie: SOURCES_TOTAL / NEW_SINCE_LAST / UNIQUE_IPS / UNIQUE_UA (attribuable uniquement)
+# source-attribution.sh v2 - metrique genese ATTRIBUABLE depuis le journal leads existant
+# v2: extraction chemin robuste aux single-quotes (require('path').join(__dirname,'...'))
 set -u
 cd "$(dirname "$0")/.." || exit 1
 N="$HOME/.nvm/versions/node/v24.19.0/bin/node"
-DEF=$(grep -m1 -oE '_leadLog *= *[^;,]+' server.js 2>/dev/null || true)
-F=$(printf '%s' "$DEF" | grep -oE '"[^"]+"' | head -1 | tr -d '"')
-[ -n "${F:-}" ] || F="leads.jsonl"
+DEF=$(grep -m1 '_leadLog' server.js 2>/dev/null || true)
+F=$(printf '%s' "$DEF" | grep -oE "'[^']+'" | tail -1 | tr -d "'")
+[ -n "${F:-}" ] || F="leads-capture.jsonl"
 if [ ! -f "$F" ]; then echo "SOURCES_NOFILE detected=$F"; exit 0; fi
 PREV=0; [ -f .sources-snapshot ] && PREV=$(cat .sources-snapshot 2>/dev/null); PREV=${PREV:-0}
 CUR=$(wc -l < "$F" | tr -d ' ')
