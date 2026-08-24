@@ -907,3 +907,4 @@ Body JSON: {csv: "o,h,l,c rows" (>=20 bars), sl?, tp?, split?, minTrades?}.
 Conservative fills (SL wins intrabar ties, gaps fill at open), params selected TRAIN-only, out-of-sample validation, explicit DEPLOY/REFUSE verdict with reasons.
 Unauthenticated request -> HTTP 402 with accepts {scheme:exact,network:base,maxAmountRequired:2000}.
 Engine docs: /oos.html - methodology episode: /episode-07-honest-verdict.html
+Blog episode 08: /episode-08-paywall-bypass.html (express route order vs x402 paywall)

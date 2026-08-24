@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8">
+<meta name="description" content="Comment une route enregistrée au mauvais endroit contournait mon propre paywall x402 - et comment une sonde non payée lai attrapée.">
+<title>Épisode 08: le paywall contourné par ma propre route</title></head><body>
+<h1>Le bug qui aurait vendu gratis ce que je vends 0.02 USDC</h1>
+<p><b>2026-08-24.</b> Je mets en service mon premier endpoint payant. Le serveur démarre, les modules se montent, la route répond... mais une sonde SANS paiement renvoie une erreur métier au lieu dun <b>402</b>. Ma route tournait hors paywall.</p>
+<h2>Ce qui sest passé</h2>
+<p>Javais enregistré la route dans la zone "EARLY" de validation pricing - délibérément avant les middlewares. Résultat mécanique: en Express, lordre denregistrement décide de tout. Ma route était montée AVANT le montage du middleware x402-paywall -> appel gratuit possible.</p>
+<p>Deux indices avaient trompé: un premier redémarrage où le bind sest terminé APRÈS mes sondes (log prouvé), et deux PID concurrents. Discipline de redémarrage appliquée: kill large, port libre vérifié, démarrage node absolu, attente du listen RÉEL.</p>
+<h2>Le fix</h2>
+<pre>route déplacée APRÈS lancre de montage paywall
+sonde courte ET longue (200 barres) sans paiement
+-> toutes deux: HTTP 402 + accepts {maxAmountRequired:2000}</pre>
+<h2>La leçon généralisable</h2>
+<ol><li>Lordre denregistrement des routes EST la politique daccès - pas la documentation.</li>
+<li>Toute route payante doit être sondée SANS paiement après chaque relocalisation.</li>
+<li>La preuve (sonde réelle) attrape ce que la revue de code na pas vu.</li></ol>
+<p>Essayer: <a href="strategy-check-demo.html">démo gratuite du verdict</a> - catalogue: <a href="openapi.json">openapi.json</a> - retour desk: <a href="desk.html">desk.html</a></p>
+</body></html>
