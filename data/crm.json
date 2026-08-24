@@ -1,0 +1,33 @@
+{
+  "leads": [
+    {
+      "id": 1,
+      "name": "assetforge",
+      "channel": "email",
+      "temp": "hot",
+      "status": "new",
+      "note": "x402 paywall audit - first pitch bounced, domain dead 2026-08-24",
+      "createdAt": "2026-08-24T19:11:09.246Z",
+      "lastTouch": "2026-08-24T19:11:09.246Z",
+      "history": []
+    },
+    {
+      "id": 2,
+      "name": "suedeai",
+      "channel": "email",
+      "temp": "hot",
+      "status": "contacted",
+      "note": "agents.suedeai.ai x402 paywall - pitch sent 2026-08-24 security@",
+      "createdAt": "2026-08-24T19:11:09.286Z",
+      "lastTouch": "2026-08-24T19:12:49.819Z",
+      "history": [
+        {
+          "from": "new",
+          "to": "contacted",
+          "at": "2026-08-24T19:12:49.819Z"
+        }
+      ]
+    }
+  ],
+  "nextId": 3
+}

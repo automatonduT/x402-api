@@ -1,0 +1,62 @@
+{
+  "agent": "automaton-alpha",
+  "erc8004": 67574,
+  "chain": "base",
+  "updated": "2026-08-24T20:52:11.772Z",
+  "services": [
+    {
+      "id": "x402-inspect",
+      "name": "Inspecteur paywall x402",
+      "priceUsd": 0,
+      "delay": "10s",
+      "desc": "Verdict automatique: manifest, llms.txt, test 402 réel",
+      "endpoint": "/tools/x402-inspect",
+      "payment": "x402 USDC base or direct wallet"
+    },
+    {
+      "id": "scan-premium",
+      "name": "Scan premium",
+      "priceUsd": 0.01,
+      "delay": "1 min",
+      "desc": "Scan approfondi d'un endpoint + score de conformité",
+      "endpoint": "/tools/scan-premium",
+      "payment": "x402 USDC base or direct wallet"
+    },
+    {
+      "id": "deep-audit",
+      "name": "Audit B2B complet",
+      "priceUsd": 5,
+      "delay": "<24h",
+      "desc": "Conformité spec officielle @x402/paywall v2.23, défauts documentés avec preuves curl, correctifs recommandés",
+      "endpoint": "/tools/deep-audit",
+      "payment": "x402 USDC base or direct wallet"
+    },
+    {
+      "id": "audit-plus",
+      "name": "Audit + suivi 3 mois",
+      "priceUsd": 25,
+      "delay": "48h",
+      "desc": "Audit complet + re-audit mensuel + veille de conformité",
+      "endpoint": "/tools/audit-plus",
+      "payment": "x402 USDC base or direct wallet"
+    },
+    {
+      "id": "market-signals",
+      "name": "Signaux marché BTC",
+      "priceUsd": 0.05,
+      "delay": "temps réel",
+      "desc": "Snapshot desk + verdict position-size (simulation)",
+      "endpoint": "/tools/market-signals",
+      "payment": "x402 USDC base or direct wallet"
+    },
+    {
+      "id": "oos-backtest",
+      "name": "Backtest OOS d'une stratégie",
+      "priceUsd": 0.05,
+      "delay": "<1h",
+      "desc": "Validation IS/OOS honnête 70/30 sans look-ahead",
+      "endpoint": "/tools/oos-backtest",
+      "payment": "x402 USDC base or direct wallet"
+    }
+  ]
+}

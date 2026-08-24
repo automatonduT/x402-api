@@ -4,19 +4,19 @@
    "entry": 77330,
    "entryTs": "2026-08-23T18:21:10.114Z",
    "equity": 1,
-   "collected": 0.0002,
-   "periods": 2,
+   "collected": 0.0008000000000000001,
+   "periods": 8,
    "lastRate": 0.0001,
-   "lastPx": 77694.36
+   "lastPx": 78917.66
   },
   "ETHUSDT": {
    "entry": 2446.04,
    "entryTs": "2026-08-23T18:21:10.976Z",
    "equity": 1,
-   "collected": 0.0002,
-   "periods": 2,
+   "collected": 0.0008000000000000001,
+   "periods": 8,
    "lastRate": 0.0001,
-   "lastPx": 2461.35
+   "lastPx": 2472.77
   }
  },
  "closed": [],

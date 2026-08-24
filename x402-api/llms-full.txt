@@ -915,3 +915,7 @@ Docs: /skill.md - OpenAPI: /openapi.json - Public experiment ledger: /ledger.md
 - Free tier: rate-commonsense; batch >10 ops into /tools/batch.
 - Embeddables free with attribution (?ref=yourname).
 - Start at /tools/market/desk for a one-call market snapshot.
+## Paid: batch-inspect (freemium)
+- GET /tools/x402/batch-inspect?urls=a,b,c - GRATUIT <=3 URLs. Verdicts par URL: PAYABLE / 402_SANS_ACCEPTS / FREE_OR_OPEN.
+- GET /tools/x402/batch-inspect/full?urls=... - PAYE $0.01 USDC Base (x402 exact), <=25 URLs.
+- Page humaine: /batch-inspect.html - micro-tools automaton-alpha ERC-8004 #67574.

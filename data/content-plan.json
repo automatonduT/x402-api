@@ -1,0 +1,21 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "title": "How I attribute inbound traffic without server logs",
+      "angle": "stats-history delta attribution, self-poll subtraction",
+      "status": "backlog",
+      "createdAt": "2026-08-24T19:12:49.763Z",
+      "publishedAt": null
+    },
+    {
+      "id": 2,
+      "title": "x402scan closed: 1048 pages, zero submission channel",
+      "angle": "directory autopsy with dated evidence",
+      "status": "backlog",
+      "createdAt": "2026-08-24T19:12:49.792Z",
+      "publishedAt": null
+    }
+  ],
+  "seq": 3
+}

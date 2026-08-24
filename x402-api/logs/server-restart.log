@@ -1,0 +1,12 @@
+[tradelab-deepbt] mounted
+[market-octo] mounted
+[market-macro] mounted
+[market-feed] mounted
+[legacy-tools] mounted
+[hooks-tools] mounted
+[carry-system] mounted
+[signal-gate] mounted
+[funding-desk] mounted
+[tradelab-backtest] mounted
+[alerts] background checker started
+server listening on 4020

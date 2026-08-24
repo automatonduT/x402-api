@@ -1,0 +1,43 @@
+[
+  {
+    "at": "2026-08-24T19:11:50.473Z",
+    "repos": [
+      {
+        "repo": "MikeyPetrillo/Agent402",
+        "stars": 8,
+        "ageDays": 0,
+        "checkedAt": "2026-08-24T19:11:48.635Z"
+      },
+      {
+        "repo": "Merit-Systems/x402scan",
+        "stars": 377,
+        "ageDays": 0,
+        "checkedAt": "2026-08-24T19:11:49.069Z"
+      },
+      {
+        "repo": "internet-court/internet-court-skill",
+        "stars": 4754,
+        "ageDays": 0,
+        "checkedAt": "2026-08-24T19:11:49.435Z"
+      },
+      {
+        "repo": "BlockRunAI/Franklin",
+        "stars": 548,
+        "ageDays": 0,
+        "checkedAt": "2026-08-24T19:11:49.806Z"
+      },
+      {
+        "repo": "daydreamsai/lucid-agents",
+        "stars": 194,
+        "ageDays": 7,
+        "checkedAt": "2026-08-24T19:11:50.184Z"
+      },
+      {
+        "repo": "alsk1992/CloddsBot",
+        "stars": 739,
+        "ageDays": 0,
+        "checkedAt": "2026-08-24T19:11:50.473Z"
+      }
+    ]
+  }
+]

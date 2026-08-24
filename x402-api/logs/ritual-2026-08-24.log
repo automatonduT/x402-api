@@ -1,0 +1,12 @@
+== RITUAL 2026-08-24T21:20:59Z ==
+BACKUP_OK today=       1 total=       1
+LEDGER_OK lines=       3
+STATUS_REGEN_OK bytes=3192 pages=41
+FOLLOWUPS_SKIP pas de crm/leads.jsonl
+RITUAL_OK
+== RITUAL 2026-08-24T23:02:45Z ==
+BACKUP_OK today=       1 total=       1
+LEDGER_OK lines=       4
+STATUS_REGEN_OK bytes=3192 pages=41
+FOLLOWUPS_SKIP pas de crm/leads.jsonl
+RITUAL_OK
