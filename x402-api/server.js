@@ -13,6 +13,11 @@ app.post("/tools/x402/validate-pricing",(req,res)=>{
   }catch(e){ res.status(500).json({error:String(e)}); }
 });
 
+app.use(require("./tools/funnel-metrics.js"));
+app.get("/tools/funnel",(q,r)=>r.json(require("./tools/funnel-metrics.js").snapshot()));
+app.use(require("./tools/x402-paywall.js"));
+app.use(require("./tools/x402-deep-audit.js"));
+app.use(require("./tools/x402-digest.js"));
 // POST /tools/strategy-check (paid x402: CSV -> DEPLOY/REFUSE verdict, week2 engine)
 app.post("/tools/strategy-check",(req,res)=>{
   try{
@@ -20,11 +25,6 @@ app.post("/tools/strategy-check",(req,res)=>{
     res.json(run(req.body||{}));
   }catch(e){res.status(400).json({error:String(e&&e.message||e).slice(0,200)});}
 });
-app.use(require("./tools/funnel-metrics.js"));
-app.get("/tools/funnel",(q,r)=>r.json(require("./tools/funnel-metrics.js").snapshot()));
-app.use(require("./tools/x402-paywall.js"));
-app.use(require("./tools/x402-deep-audit.js"));
-app.use(require("./tools/x402-digest.js"));
 app.use((q,r,n)=>{if(q.query&&q.query.urls){String(q.query.urls).split(",").forEach(u=>leadCapture(u,"batch"))}n();});
 app.use(require("./tools/x402-batch-inspect.js").freeR);
 app.use(require("./tools/x402-batch-inspect.js").fullR);
