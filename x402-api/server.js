@@ -1,5 +1,22 @@
 const express=require("express");
-const app=express();
+const app=express()
+/* REQUEST_LOG_V1 - capture des sources a l'ENTREE (free-tool-lead-magnet regle 1).
+ * anti-self: localhost/127./::1 + host public exclus. Erreurs -> lead-errors.log. */
+const _leadLog=require('path').join(__dirname,'leads-capture.jsonl');
+const _leadErr=require('path').join(__dirname,'lead-errors.log');
+const _fsRL=require('fs');
+const _pubHost=(()=>{try{return new URL(_fsRL.readFileSync(require('path').join(__dirname,'.public-base'),'utf8').trim()).host}catch(e){return null}})();
+app.use((req,res,next)=>{
+  try{
+    const h=req.headers.host||''; const ip=(req.socket&&req.socket.remoteAddress)||'';
+    const self=/^(localhost|127\.0\.0\.1)(:|$)/i.test(h)||/^127\.|^::1/.test(ip)||!!(_pubHost&&h===_pubHost);
+    if(!self && !String(req.path).startsWith('/stats')){
+      _fsRL.appendFileSync(_leadLog,JSON.stringify({ts:Date.now(),ip,ua:String(req.headers['user-agent']||'').slice(0,120),path:String(req.path).slice(0,120)})+'\n');
+    }
+  }catch(e){try{_fsRL.appendFileSync(_leadErr,new Date().toISOString()+' '+e.message+'\n')}catch(_){}}
+  next();
+});
+;
 const fs=require("fs");
 const path=require("path");
 const crypto=require("crypto");
