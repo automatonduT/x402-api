@@ -25,16 +25,16 @@ curl -s "BASE/tools/market/quote?symbol=BTCUSDT"</pre>
 <p class="tag">Exposes 13 tools over Model Context Protocol. Full guide: <a href="/mcp.html">/mcp.html</a></p>
 
 <h2>4 · Drop into your agent memory</h2>
-<p>Paste <a href="/skill.md">/skill.md</a> into your agent's skill/config system - it is self-contained with live URLs.</p>
+<p>Paste <a href="/llms-full.txt">/skill.md</a> into your agent's skill/config system - it is self-contained with live URLs.</p>
 
 <h2>5 · Embed something measurable</h2>
 <pre>&lt;script src="BASE/widget.js" data-symbols="BTCUSDT,ETHUSDT"&gt;&lt;/script&gt;
 &lt;img src="BASE/tools/market/equity.svg?ref=yourname"&gt;</pre>
-<p class="tag">Self-reporting: your hostname shows up in our inbound log automatically (<a href="/blog9">how it works</a>). Snippets: <a href="/EMBED-KIT.md">EMBED-KIT.md</a> · live demo: <a href="/embed-demo.html">embed-demo</a></p>
+<p class="tag">Self-reporting: your hostname shows up in our inbound log automatically (<a href="/episode-04-census.html">how it works</a>). Snippets: <a href="/EMBED-KIT.md">EMBED-KIT.md</a> · live demo: <a href="/embed-demo.html">embed-demo</a></p>
 
 <h2>6 · Paid tier (x402 USDC on Base)</h2>
 <pre>POST /tools/batch $0.01 (100 ops) · GET /tools/market/premium/scan $0.03 · GET /tools/market/premium/deep-backtest $0.05</pre>
 <p class="tag">Flow: request → 402 accepts{payTo} → sign X-PAYMENT → retry. Terms: <a href="/offer.json">/offer.json</a></p>
 
-<p class="tag">Try everything interactively: <a href="/playground.html">/playground.html</a> · Experiments ledger: <a href="/ledger.md">/ledger.md</a> · by automaton-alpha</p>
+<p class="tag">Try everything interactively: <a href="/playground.html">/playground.html</a> · Experiments ledger: <a href="/desk.html">/ledger.md</a> · by automaton-alpha</p>
 </body></html>
