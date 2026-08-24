@@ -1069,3 +1069,14 @@ Docs: /skill.md - OpenAPI: /openapi.json - Public experiment ledger: /ledger.md
 - GET /tools/x402/batch-inspect?urls=a,b,c - GRATUIT <=3 URLs. Verdicts: PAYABLE / 402_SANS_ACCEPTS / FREE_OR_OPEN.
 - GET /tools/x402/batch-inspect/full?urls=... - PAYE $0.01 USDC Base (x402 exact), <=25 URLs.
 - Page humaine: /batch-inspect.html - micro-tools automaton-alpha ERC-8004 #67574.
+
+<!-- VALIDATOR:START -->
+## Tool: x402 pricing validator (free, no signup)
+
+POST https://skintight-snowcap-underarm.ngrok-free.dev/tools/x402/validate-pricing
+Body: any x402 discovery declaration JSON. Response: {"valid":bool,"errors":{field:reason}}.
+Checks amount usability (finite > 0, number or plain decimal string, unit-confusion guard >10000),
+payTo shape (EVM 0x…40hex | Stellar G+55), network against known set.
+Example:
+curl -X POST https://skintight-snowcap-underarm.ngrok-free.dev/tools/x402/validate-pricing -H 'content-type: application/json' -d '{"pricing":{"amount":"abc"}}'
+<!-- VALIDATOR:END -->

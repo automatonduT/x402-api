@@ -1,0 +1,133 @@
+[
+ {
+  "name": "amount non-numeric string",
+  "decl": {
+   "pricing": {
+    "amount": "abc"
+   },
+   "payTo": "0x1111111111111111111111111111111111111111"
+  },
+  "expectValid": false,
+  "expectError": "pricing.amount"
+ },
+ {
+  "name": "amount empty string",
+  "decl": {
+   "pricing": {
+    "amount": ""
+   },
+   "payTo": "0x1111111111111111111111111111111111111111"
+  },
+  "expectValid": false,
+  "expectError": "pricing.amount"
+ },
+ {
+  "name": "amount zero",
+  "decl": {
+   "pricing": {
+    "amount": "0"
+   },
+   "payTo": "0x1111111111111111111111111111111111111111"
+  },
+  "expectValid": false,
+  "expectError": "pricing.amount"
+ },
+ {
+  "name": "amount negative",
+  "decl": {
+   "pricing": {
+    "amount": "-1"
+   },
+   "payTo": "0x1111111111111111111111111111111111111111"
+  },
+  "expectValid": false,
+  "expectError": "pricing.amount"
+ },
+ {
+  "name": "amount scientific notation (non plain decimal)",
+  "decl": {
+   "pricing": {
+    "amount": "1e3"
+   },
+   "payTo": "0x1111111111111111111111111111111111111111"
+  },
+  "expectValid": false,
+  "expectError": "pricing.amount"
+ },
+ {
+  "name": "amount unit-confusion (>10000)",
+  "decl": {
+   "pricing": {
+    "amount": "99999"
+   },
+   "payTo": "0x1111111111111111111111111111111111111111"
+  },
+  "expectValid": false,
+  "expectError": "pricing.amount"
+ },
+ {
+  "name": "pricing missing entirely",
+  "decl": {
+   "payTo": "0x1111111111111111111111111111111111111111"
+  },
+  "expectValid": false,
+  "expectError": "pricing"
+ },
+ {
+  "name": "valid decimal string",
+  "decl": {
+   "pricing": {
+    "amount": "0.05"
+   },
+   "payTo": "0x1111111111111111111111111111111111111111",
+   "network": "base"
+  },
+  "expectValid": true
+ },
+ {
+  "name": "valid number type",
+  "decl": {
+   "pricing": {
+    "amount": 0.05
+   },
+   "payTo": "0x1111111111111111111111111111111111111111",
+   "network": "base-sepolia"
+  },
+  "expectValid": true
+ },
+ {
+  "name": "valid stellar payTo",
+  "decl": {
+   "pricing": {
+    "amount": "0.10"
+   },
+   "payTo": "GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+   "network": "stellar"
+  },
+  "expectValid": true
+ },
+ {
+  "name": "malformed evm payTo",
+  "decl": {
+   "pricing": {
+    "amount": "0.05"
+   },
+   "payTo": "0x1234"
+  },
+  "expectValid": false,
+  "expectError": "payTo",
+  "note": "payTo too short on purpose"
+ },
+ {
+  "name": "unknown network",
+  "decl": {
+   "pricing": {
+    "amount": "0.05"
+   },
+   "payTo": "0x1111111111111111111111111111111111111111",
+   "network": "moonbase-alpha"
+  },
+  "expectValid": false,
+  "expectError": "network"
+ }
+]

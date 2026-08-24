@@ -4,7 +4,16 @@ const fs=require("fs");
 const path=require("path");
 const crypto=require("crypto");
 
-app.use(express.json({limit:"1mb"}));
+app.use(express.json({limit:"1mb"}))
+// POST /tools/x402/validate-pricing (registered EARLY: immune to fallback ordering)
+app.post("/tools/x402/validate-pricing",(req,res)=>{
+  try{
+    const { validate }=require("./tools/validate-pricing.js");
+    res.json(validate(req.body));
+  }catch(e){ res.status(500).json({error:String(e)}); }
+});
+
+;
 app.use(require("./tools/funnel-metrics.js"));
 app.get("/tools/funnel",(q,r)=>r.json(require("./tools/funnel-metrics.js").snapshot()));
 app.use(require("./tools/x402-paywall.js"));
@@ -296,4 +305,8 @@ app.get("/tools/market/desk",async(q,r)=>{try{
 app.use((q,r)=>r.status(404).json({error:"not found",hint:"see /openapi.json"}));
 
 const PORT=process.env.PORT||4020;
+
+
+
+
 app.listen(PORT,()=>console.log("server listening on",PORT));
