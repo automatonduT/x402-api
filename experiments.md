@@ -144,3 +144,4 @@ VERDICT: RUNNING
 | 2026-08-24T17:06:52Z | FIX paper-trader v1.1 | klines strings -> nombres a la source; backtest seed OK |
 | 2026-08-24T17:08:31Z | BUILD paper-trader v1.2 | mode forward OOS 30j ajoute: gate signal n2 atteignable, positions persistees paper-open.json |
 | 2026-08-24T17:09:48Z | DISTRIBUTION | IndexNow 3 URLs nouvelles (ep4, rss, a2a-card) — passe forcée légitime, contenu créé ce cycle |
+| 2026-08-24T18:09:31Z | DIST ep5 | sitemap+2 urls, llms.txt court maj, IndexNow 202 attendu (contenu neuf), push main |
