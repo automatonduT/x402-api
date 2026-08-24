@@ -146,3 +146,4 @@ VERDICT: RUNNING
 | 2026-08-24T17:09:48Z | DISTRIBUTION | IndexNow 3 URLs nouvelles (ep4, rss, a2a-card) — passe forcée légitime, contenu créé ce cycle |
 | 2026-08-24T18:09:31Z | DIST ep5 | sitemap+2 urls, llms.txt court maj, IndexNow 202 attendu (contenu neuf), push main |
 | 2026-08-24T18:13:46Z | BUILD validator-openapi.json | spec OpenAPI 3.1 autonome emise par gen-validator-docs.js, llms-full referencee, push main |
+| 2026-08-24T18:16:17Z | FIX gen py-port | generateur porte sous python3 (node RC=1 silencieux), spec OpenAPI + section llms-full regenerees |
