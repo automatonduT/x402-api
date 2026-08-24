@@ -10,8 +10,8 @@ Docs: /llms-full.txt | Contract: /openapi.json | MCP: /mcp-server.js | Manifest:
 | mcpfind.org | PENDING | has how-to guide, form likely |
 | geekflare guides list | PENDING | meta-list of directories |
 | linklyhq 2026 list | PENDING | meta-list |
-| glama.ai/servers/new | PENDING | needs public GitHub repo (no token yet) |
-| smithery | PENDING | manifest ready at /smithery.yaml |
+| glama.ai/servers/new | READY- | public repo VERIFIED (HTTP 200, private:false) - packet pret |
+| smithery | READY- | manifest + public repo VERIFIED - packet pret |
 | pulsemcp | BLOCKED | 403 bot-protection (v1.44) |
 | mcp.so | BLOCKED | UI-JS-only submit, no public API (v1.44) |
 
