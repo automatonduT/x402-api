@@ -13,7 +13,13 @@ app.post("/tools/x402/validate-pricing",(req,res)=>{
   }catch(e){ res.status(500).json({error:String(e)}); }
 });
 
-;
+// POST /tools/strategy-check (paid x402: CSV -> DEPLOY/REFUSE verdict, week2 engine)
+app.post("/tools/strategy-check",(req,res)=>{
+  try{
+    const {run}=require("./tools/strategy-check.js");
+    res.json(run(req.body||{}));
+  }catch(e){res.status(400).json({error:String(e&&e.message||e).slice(0,200)});}
+});
 app.use(require("./tools/funnel-metrics.js"));
 app.get("/tools/funnel",(q,r)=>r.json(require("./tools/funnel-metrics.js").snapshot()));
 app.use(require("./tools/x402-paywall.js"));
