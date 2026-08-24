@@ -1,0 +1,21 @@
+[
+ {
+  "host": "asset-forge-hire.vercel.app",
+  "url": "https://asset-forge-hire.vercel.app",
+  "emails": [
+   "hello@assetforge.dev"
+  ],
+  "pain": "",
+  "email_status": "dead-domain"
+ },
+ {
+  "host": "agents.suedeai.ai",
+  "url": "https://agents.suedeai.ai",
+  "emails": [
+   "security@suedeai.ai",
+   "support@suedeai.ai"
+  ],
+  "pain": "",
+  "email_status": "discovered+smtp-checked"
+ }
+]

@@ -148,3 +148,8 @@ VERDICT: RUNNING
 | 2026-08-24T18:13:46Z | BUILD validator-openapi.json | spec OpenAPI 3.1 autonome emise par gen-validator-docs.js, llms-full referencee, push main |
 | 2026-08-24T18:16:17Z | FIX gen py-port | generateur porte sous python3 (node RC=1 silencieux), spec OpenAPI + section llms-full regenerees |
 | 2026-08-24T18:17:32Z | BUILD validator-openapi via stdin-python | spec emise + llms-full patchee, push main |
+| 2026-08-24T18:22:30Z | BUILD agent-card.json | carte canonique servie+liee llms-full, push main |
+| 2026-08-24T18:28:28Z | BUILD pitch-map.json | verdicts vivacite dates, nexior HOT seul canal sortant legitime |
+| 2026-08-24T18:29:45Z | OUTREACH hold nexior | aucun fil ouvert, pitch froid refuse anti-spam, canal sortant ferme proprement |
+| 2026-08-24T18:35:49Z | BUILD well-known | x402-resources.json + carte miroir servis, push main |
+| 2026-08-24T18:41:12Z | BUILD social-proof | widget stats live desk.html + lien manifest dans llms-full, push main |
