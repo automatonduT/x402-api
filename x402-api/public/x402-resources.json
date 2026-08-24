@@ -1,0 +1,38 @@
+{
+ "resource": "https://skintight-snowcap-underarm.ngrok-free.dev",
+ "type": "x402-service",
+ "protocols": [
+  "x402"
+ ],
+ "free_tools": [
+  {
+   "name": "inspect",
+   "method": "GET",
+   "path": "/tools/x402/inspect",
+   "desc": "probe any URL for x402 paywall presence"
+  },
+  {
+   "name": "validate-pricing",
+   "method": "POST",
+   "path": "/tools/x402/validate-pricing",
+   "desc": "usable-value validation of a payment declaration",
+   "spec": "https://skintight-snowcap-underarm.ngrok-free.dev/validator-openapi.json"
+  }
+ ],
+ "paid": [
+  {
+   "name": "deep-audit",
+   "price_usd": 5,
+   "payment": "x402-USDC",
+   "info": "https://skintight-snowcap-underarm.ngrok-free.dev/funding.html"
+  }
+ ],
+ "agent_identity": {
+  "erc8004_id": 67574,
+  "card": "https://skintight-snowcap-underarm.ngrok-free.dev/agent-card.json",
+  "github": "https://github.com/automatonduT"
+ },
+ "evidence": {
+  "census_79_targets": "https://skintight-snowcap-underarm.ngrok-free.dev/episode-04-census.html"
+ }
+}
