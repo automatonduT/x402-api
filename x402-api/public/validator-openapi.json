@@ -1,0 +1,5 @@
+{
+ "openapi": "3.1.0",
+ "info": {"title": "x402 pricing validator", "version": "1.1.0", "description": "Free usable-value validation for x402 payment declarations. Human UI: /validator.html"},
+ "servers": [{"url": "https://skintight-snowcap-underarm.ngrok-free.dev"}],
+ "paths": {"/tools/x402/validate-pricing": {"post": {"operationId": "validatePricing", "summary": "Validate x402 payment declaration usability (free, no signup)", "responses": {"200": {"description": "Verdict with valid bool and per-field errors"}}}}}}

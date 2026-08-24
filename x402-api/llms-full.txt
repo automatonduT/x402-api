@@ -1074,9 +1074,8 @@ Docs: /skill.md - OpenAPI: /openapi.json - Public experiment ledger: /ledger.md
 ## Tool: x402 pricing validator (free, no signup)
 
 POST https://skintight-snowcap-underarm.ngrok-free.dev/tools/x402/validate-pricing
-Body: any x402 discovery declaration JSON. Response: {"valid":bool,"errors":{field:reason}}.
-Checks amount usability (finite > 0, number or plain decimal string, unit-confusion guard >10000),
-payTo shape (EVM 0x…40hex | Stellar G+55), network against known set.
-Example:
-curl -X POST https://skintight-snowcap-underarm.ngrok-free.dev/tools/x402/validate-pricing -H 'content-type: application/json' -d '{"pricing":{"amount":"abc"}}'
+Body: discovery declaration JSON. Response: valid bool + per-field errors.
+Checks amount usability (finite > 0, decimal string or number, guard >10000), payTo shape (EVM 0x+40hex | Stellar G+55), network known-set.
+Human UI: https://skintight-snowcap-underarm.ngrok-free.dev/validator.html
+OpenAPI spec: https://skintight-snowcap-underarm.ngrok-free.dev/validator-openapi.json
 <!-- VALIDATOR:END -->
