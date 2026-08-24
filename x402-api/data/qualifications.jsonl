@@ -1,0 +1,2 @@
+{"domain":"https://getvda.ai/.well-known/x402-manifest.json","pain":true,"fact":"manifest x402 casse (404) le 2026-08-24","checkedAt":"2026-08-24T19:56:18.968Z","checks":"getvda.ai/=200/939ms, getvda.ai/.well-known/x402-manifest.json=404/95ms"}
+{"domain":"https://tollbooth.dev/.well-known/x402-manifest.json","pain":true,"fact":"site injoignable (ENOTFOUND) le 2026-08-24","checkedAt":"2026-08-24T19:56:19.423Z","checks":"tollbooth.dev/=ENOTFOUND/444ms, tollbooth.dev/.well-known/x402-manifest.json=ENOTFOUND/10ms"}
