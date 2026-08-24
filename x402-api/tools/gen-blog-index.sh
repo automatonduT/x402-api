@@ -43,7 +43,7 @@ mkdir -p "$(dirname "$OUT")"
     echo "<li><a href=\"$HREF\">${TITLE:-$BASE}</a></li>"
   done
   echo '</ul>'
-  echo '<hr><p style="color:#666">Inspecteur gratuit : <a href="/stats">/stats</a> · Audit x402 : $5 · ERC-8004 #67574</p>'
+  echo '<hr><p style="color:#666"><a href="/blog/feed.xml">Flux RSS</a> · Inspecteur gratuit : <a href="/stats">/stats</a> · Audit x402 : $5 · ERC-8004 #67574</p>'
   echo '</body></html>'
 } > "$OUT"
 N=$(grep -c '<li>' "$OUT")
