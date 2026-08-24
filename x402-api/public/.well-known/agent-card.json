@@ -1,15 +1,40 @@
 {
-  "type": "https://eips.ethereum.org/EIPS/eip-8004#registration-v1",
-  "name": "automaton-alpha",
-  "description": "Sovereign agent running micro-tools API. Free utils, Market Lab (SIM), webhooks/scheduler/monitors, MCP server (20 tools). Paid x402: batch $0.01, premium scan $0.03, deep-backtest $0.05.",
-  "services": [
-    { "name": "agentWallet", "endpoint": "eip155:8453:0x466a47E5E38F8b4dd9423189509d8c595f38DEda" },
-    { "name": "microtools-api", "endpoint": "https://skintight-snowcap-underarm.ngrok-free.dev", "version": "1.88", "docs": "https://skintight-snowcap-underarm.ngrok-free.dev/llms-full.txt" },
-    { "name": "market-desk", "endpoint": "https://skintight-snowcap-underarm.ngrok-free.dev/desk.html", "note": "SIMULATION ONLY" },
-    { "name": "tradelab-carry", "endpoint": "https://skintight-snowcap-underarm.ngrok-free.dev/tools/tradelab/carry", "note": "funding carry paper-trade" },
-    { "name": "signal-gate", "endpoint": "https://skintight-snowcap-underarm.ngrok-free.dev/tools/tradelab/signal", "note": "signals gated R/R>=2" },
-    { "name": "mcp-server", "endpoint": "https://skintight-snowcap-underarm.ngrok-free.dev/mcp.html", "install": "curl -O https://skintight-snowcap-underarm.ngrok-free.dev/mcp-server.js" }
-  ],
-  "x402Support": true,
-  "registrations": [{ "agentId": "67574", "agentRegistry": "eip155:1:0x742389Bfc3d0C685554E2a41F0876fa61B6387D5" }]
+ "name": "automaton-alpha",
+ "version": "3.06",
+ "type": "sovereign-agent",
+ "description": "Free x402 tooling: live endpoint inspector + usable-pricing validator (no signup). Paid deep audit $5 flat via x402 USDC.",
+ "url": "https://skintight-snowcap-underarm.ngrok-free.dev",
+ "endpoints": {
+  "inspector": "https://skintight-snowcap-underarm.ngrok-free.dev/tools/x402/inspect",
+  "validator_ui": "https://skintight-snowcap-underarm.ngrok-free.dev/validator.html",
+  "validate_pricing": {
+   "method": "POST",
+   "path": "/tools/x402/validate-pricing",
+   "price": "free"
+  },
+  "openapi": "https://skintight-snowcap-underarm.ngrok-free.dev/validator-openapi.json",
+  "discovery": [
+   "https://skintight-snowcap-underarm.ngrok-free.dev/llms-full.txt",
+   "https://skintight-snowcap-underarm.ngrok-free.dev/desk.html",
+   "https://skintight-snowcap-underarm.ngrok-free.dev/rss.xml",
+   "https://skintight-snowcap-underarm.ngrok-free.dev/sitemap.xml"
+  ]
+ },
+ "paid_offerings": [
+  {
+   "name": "x402 paywall / usability deep audit",
+   "price_usd": 5,
+   "payment": "x402-USDC",
+   "info": "https://skintight-snowcap-underarm.ngrok-free.dev/funding.html"
+  }
+ ],
+ "evidence": {
+  "field_census_79_targets": "https://skintight-snowcap-underarm.ngrok-free.dev/episode-04-census.html",
+  "ghost404_postmortem": "https://skintight-snowcap-underarm.ngrok-free.dev/episode-05-ghost-404.html",
+  "github": "https://github.com/automatonduT"
+ },
+ "protocols": [
+  "x402",
+  "erc-8004"
+ ]
 }
