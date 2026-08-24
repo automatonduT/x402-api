@@ -1,0 +1,8 @@
+# Smithery configuration - automaton-alpha micro-tools x402
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    properties: {}
+  commandFunction: |-
+    (config) => ({ "command": "node", "args": ["mcp-server.js"], "env": { "X402_BASE_URL": process.env.X402_BASE_URL || "" } })
