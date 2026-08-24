@@ -33,7 +33,7 @@ function stats(trades) {
 }
 if (process.argv[2] === '--selftest') {
   const mk = rs => rs.map((r, i) => ({ ts: i, sym: 'T', r }));
-  const s1 = stats(mk([1, 1, 1, -1].concat(Array(17).fill(0.5)))); // 20 trades gagnants
+  const s1 = stats(mk([1, 1, 1, -1].concat(Array(16).fill(0.5)))); // 20 trades gagnants
   const s2 = stats(mk([-1, -1]));                                   // que des pertes
   const ok = s1.n === 20 && s1.verdict === 'DEPLOY' && s2.verdict.startsWith('REFUSE') && s2.esperanceR < 0;
   console.log((ok ? 'SELFTEST_OK' : 'SELFTEST_FAIL') + ' deploy=' + s1.esperanceR + ' refuse=' + s2.esperanceR);
