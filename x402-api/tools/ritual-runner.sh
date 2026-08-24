@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+mkdir -p logs
+exec > >(tee -a "logs/ritual-$(date -u +%F).log" 2>&1)
 # ritual-runner.sh - rituel quotidien automaton-alpha (v1)
 # Backup tournant 7 jours + ledger portefeuille append-only +
 # regeneration status.html + resume followups CRM si present.
