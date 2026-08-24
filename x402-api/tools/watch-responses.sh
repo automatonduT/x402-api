@@ -8,7 +8,7 @@ echo "== WATCH $(date -u +%FT%TZ) =="
 echo "-- github issues --"
 # slugs reels dans tools/issue-map.txt (format repo:num par ligne); sinon skip honnete
 if [ ! -f tools/issue-map.txt ]; then echo "SKIP pas de issue-map.txt (creds/slug createur #6)"; fi
-while [ -f tools/issue-map.txt ] && read -r pair; do
+while read -r pair; do
   [ -z "$pair" ] && continue
   repo="${pair%:*}"; num="${pair#*:}"
   out=$(curl -sS --max-time 8 "https://api.github.com/repos/${repo}/issues/${num}" 2>/dev/null | $N -e '
@@ -18,13 +18,13 @@ if(j.number!==undefined){console.log("#"+j.number+" comments="+j.comments+" upda
 else{console.log("ERR:"+(j.message||"reponse inattendue").slice(0,60));}
 }catch(e){console.log("ERR:parse");}});' 2>&1)
   echo "${repo}#${num} -> $out"
-done < tools/issue-map.txt
+done < <(cat tools/issue-map.txt 2>/dev/null)
 
 echo "-- stats delta (metrique genese) --"
 [ -f .stats-snapshot ] && PREV=$(cat .stats-snapshot) || PREV=0
 CUR=$(curl -sS --max-time 8 "$BASE/stats" 2>/dev/null | $N -e '
 let d="";process.stdin.on("data",c=>c&&(d+=c)).on("end",()=>{try{const j=JSON.parse(d);
-const t=(j.totalRequests??j.total_requests??j.requests??j.count)??null;
+const t=(j.totalRequests??j.total_requests??j.requests??j.count??j.total)??null;
 console.log(t===null?"ERR:"+JSON.stringify(j).slice(0,60):t);}catch(e){console.log("ERR:pas-du-json");}});' 2>/dev/null)
 echo "prev=$PREV cur=${CUR:-?}"
 case "$CUR" in ""|ERR*) echo "NO_DELTA(stats injoignable)";;
