@@ -39,3 +39,4 @@ Honest IS/OOS strategy verdict (free): Turtle S1/S2 + momentum, 70/30 split, nex
 ## Human UI for batch inspector: GET /batch-inspect.html
 
 ## How to pay (copy-paste x402 flow): GET /pay-quickstart.html
+- POST /tools/strategy-check ($0.02 x402): OHLC CSV -> DEPLOY/REFUSE verdict (OOS validation, conservative fills). 402+accepts sans paiement.
