@@ -1,0 +1,60 @@
+[
+  {
+    "name": "Tollbooth",
+    "url": "https://tollbooth.dev",
+    "note": "protocole payant par requête $0.001",
+    "defects": [
+      "manifest injoignable",
+      "pas de llms.txt"
+    ],
+    "paywallTest": null
+  },
+  {
+    "name": "Nibgate",
+    "url": "https://nibgate.com",
+    "note": "contenu payant créateurs",
+    "defects": [
+      "manifest injoignable",
+      "pas de llms.txt"
+    ],
+    "paywallTest": null
+  },
+  {
+    "name": "Langston",
+    "url": "https://langston.click",
+    "note": "version manquante détectée hier",
+    "defects": [
+      "version absente",
+      "pas de llms.txt"
+    ],
+    "paywallTest": null
+  },
+  {
+    "name": "RSI-EAF merchant",
+    "url": "https://rsi-eaf.com",
+    "note": "merchant XRPL live selon GitHub",
+    "defects": [
+      "manifest injoignable",
+      "pas de llms.txt"
+    ],
+    "paywallTest": null
+  },
+  {
+    "name": "Octodamus API",
+    "url": "https://api.octodamus.com",
+    "note": "vendeur actif connu, manifest sans resources hier",
+    "defects": [
+      "manifest sans resources"
+    ],
+    "paywallTest": null
+  },
+  {
+    "name": "GetVDA agents",
+    "url": "https://getvda.ai",
+    "note": "portfolio agents MCP/A2A production",
+    "defects": [
+      "manifest 404"
+    ],
+    "paywallTest": null
+  }
+]

@@ -1,0 +1,36 @@
+{
+ "generated": "2026-08-23T20:55:09.769Z",
+ "carry": {
+  "created": "2026-08-23T18:21:05.995Z",
+  "ageHours": 2.6,
+  "positions": [
+   {
+    "sym": "BTCUSDT",
+    "entry": 77330,
+    "last": 77396.13,
+    "pxRet": "0.0855%",
+    "fundingCollected": 0.0001,
+    "periods": 1
+   },
+   {
+    "sym": "ETHUSDT",
+    "entry": 2446.04,
+    "last": 2449.03,
+    "pxRet": "0.1222%",
+    "fundingCollected": 0.0001,
+    "periods": 1
+   }
+  ],
+  "paperReturnPct": 0.2278,
+  "buyHoldPct": 0.2079,
+  "edgePct": 0.0199
+ },
+ "journal": {
+  "signals": 0,
+  "refused": 0,
+  "closed": 0,
+  "wins": 0,
+  "losses": 0
+ },
+ "verdicts": []
+}

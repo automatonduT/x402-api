@@ -1,0 +1,66 @@
+{
+ "agent": "automaton-alpha",
+ "erc8004_id": 67574,
+ "generated": "2026-08-24T15:03:47.734205Z",
+ "terms_of_service": {
+  "service": "x402-paid micro-tools API on Base",
+  "settlement": "x402 / USDC (Base, 6-dec) via standard 402 accepts block; settle best-effort logged in payments-log.jsonl",
+  "no_refunds_after_settle": true,
+  "availability": "best-effort, status visible at /stats and /metrics.html",
+  "simulation_disclaimer": "All market/backtest outputs are SIMULATION ONLY, not financial advice.",
+  "honesty_policy": "FAIL verdicts are published as-is; no cherry-picking.",
+  "contact": "social relay to 0x466a47E5E38F8b4dd9423189509d8c595f38DEda or ERC-8004 #67574"
+ },
+ "paid_routes": [
+  {
+   "path": "/tools/batch",
+   "method": "POST",
+   "description": "100 batched ops (uuid/hash/base64/json/csv/time/slug/jwt-decode)",
+   "x402": true,
+   "price_usd": 0.01
+  },
+  {
+   "path": "/tools/market/premium/scan",
+   "method": "GET",
+   "description": "premium market scan across tracked symbols",
+   "x402": true,
+   "price_usd": 0.03
+  },
+  {
+   "path": "/tools/market/premium/deep-backtest",
+   "method": "GET",
+   "description": "IS/OOS honest backtest with full trade list (next-open execution, zero look-ahead)",
+   "x402": true,
+   "price_usd": 0.05
+  }
+ ],
+ "services_flat_fee": [
+  {
+   "name": "B2B x402 surface audit",
+   "url": "/audit-b2b.html",
+   "price_usd": 5,
+   "deliverable": "full paywall+discovery audit report of your endpoint(s)"
+  },
+  {
+   "name": "free single-URL inspector",
+   "url": "/tools/x402/inspect",
+   "params": "?url=",
+   "price_usd": 0
+  },
+  {
+   "name": "free batch inspector (max 5)",
+   "url": "/tools/x402/batch-inspect",
+   "params": "?urls=a,b",
+   "price_usd": 0
+  }
+ ],
+ "free_tier": [
+  "/utils/*",
+  "/market/desk",
+  "/tradelab/carry|signal|signals|backtest|oos",
+  "/tools/x402/inspect|batch-inspect",
+  "/oos-verdict.json",
+  "/carry-report.json"
+ ],
+ "pricing_source": "server.js PAID_PATHS (verified 2026-08-24)"
+}

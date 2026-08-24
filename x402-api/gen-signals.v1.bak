@@ -1,0 +1,31 @@
+// gen-signals v2: evaluates strategy basket, appends PAPER rows to ledger. Anti-spam: one open trade per symbol+kind.
+const fs = require("fs");
+const path = require("path");
+const https = require("https");
+const LEDGER = path.join(__dirname, "..", "experiments.md");
+const BASKET = [["BTCUSDT","momentum"],["BTCUSDT","meanrev"],["ETHUSDT","momentum"],["ETHUSDT","meanrev"],["SOLUSDT","momentum"],["SOLUSDT","meanrev"],["BNBUSDT","momentum"],["BNBUSDT","meanrev"],["XRPUSDT","momentum"]];
+function getJson(url){return new Promise((res,rej)=>{https.get(url,{headers:{accept:"application/json"}},r=>{let d="";r.on("data",c=>d+=c);r.on("end",()=>{try{res(JSON.parse(d));}catch(e){rej(e);}});}).on("error",rej).setTimeout(8000,function(){this.destroy(new Error("timeout"));});});}
+function sma(a,n){if(a.length<n)return null;return a.slice(-n).reduce((x,y)=>x+y,0)/n;}
+function rsi(c){if(c.length<15)return null;let g=0,l=0;for(let i=c.length-15;i<c.length-1;i++){const d=c[i+1]-c[i];d>0?g+=d:l-=d;}return l===0?100:100-100/(1+g/l);}
+async function klines(sym){const d=await getJson(`https://api.binance.com/api/v3/klines?symbol=${sym}&interval=1h&limit=100`);return d.map(k=>({o:+k[1],h:+k[2],l:+k[3],c:+k[4]}));}
+(async()=>{
+ let txt;try{txt=fs.readFileSync(LEDGER,"utf8");}catch(e){console.log("no ledger");return;}
+ const lines=txt.split("\n");
+ const added=[];
+ for(const [sym,kind] of BASKET){
+  try{
+   const hasOpen=lines.some(r=>r.includes(`| ${sym} ${kind}:`)&&r.includes("verdict=PENDING"));
+   if(hasOpen)continue;
+   const cs=await klines(sym);const closes=cs.map(x=>x.c);const px=closes[closes.length-1];
+   let sig;
+   if(kind==="momentum"){const f=sma(closes.slice(0,-1),12),sl=sma(closes.slice(0,-1),48),r=rsi(closes);
+    sig=(f!=null&&sl!=null&&f>sl&&r!=null&&r<70)?{side:"LONG",entry:+px.toFixed(2),stop:+(px*0.985).toFixed(2),target:+(px*1.03).toFixed(2),ind:`sma12=${f.toFixed(2)} sma48=${sl.toFixed(2)} rsi=${r.toFixed(1)}`,why:"SMA12>SMA48 & RSI<70"}:{side:"FLAT",ind:`sma12=${f?f.toFixed(2):"-"} sma48=${sl?sl.toFixed(2):"-"} rsi=${r!=null?r.toFixed(1):"-"}`,why:"no cross/filter fail"};}
+   else{if(closes.length<51)continue;const m=sma(closes,50);const sd=Math.sqrt(closes.slice(-50).reduce((a,v)=>a+(v-m)**2,0)/50);if(sd===0)continue;const z=(px-m)/sd;const zi=z.toFixed(2);
+    sig=z<-1.5?{side:"LONG",entry:+px.toFixed(2),stop:+(px*0.99).toFixed(2),target:+m.toFixed(2),ind:`z=${zi}`,why:`${zi} sigma below mean`}:z>1.5?{side:"SHORT",entry:+px.toFixed(2),stop:+(px*1.01).toFixed(2),target:+m.toFixed(2),ind:`z=${zi}`,why:`${zi} sigma above mean`}:{side:"FLAT",ind:`z=${zi}`,why:"inside band"};}
+   const verdict=sig.side==="FLAT"?`verdict=CLOSED-NO-TRADE (${sig.why})`:"verdict=PENDING";
+   fs.appendFileSync(LEDGER,`| PAPER | ${new Date().toISOString()} | ${sym} ${kind}: ${sig.side} entry=${sig.entry??"-"} stop=${sig.stop??"-"} target=${sig.target??"-"} | ind={${sig.ind}} why="${sig.why}" | ${verdict} | SIM | planned |\n`);
+   added.push(`${sym}/${kind}:${sig.side}`);
+  }catch(e){}
+ }
+ console.log("gen-signals:",added.join(", ")||"none new");
+})();

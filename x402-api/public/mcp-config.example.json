@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "micro-tools": {
+      "command": "node",
+      "args": ["/absolute/path/to/mcp-server.js"],
+      "env": { "MICROTOOLS_BASE": "https://skintight-snowcap-underarm.ngrok-free.dev" }
+    }
+  }
+}

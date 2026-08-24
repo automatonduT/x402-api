@@ -1,0 +1,892 @@
+[
+  {
+    "source": "awesome-x402-scan",
+    "type": "audit-pitch",
+    "domain": "goldbean-api.xyz",
+    "defects": [
+      "manifest sans resources",
+      "version absente"
+    ],
+    "contactChannel": "email/issue/PR selon dispo",
+    "temp": "hot"
+  },
+  {
+    "source": "awesome-x402-scan",
+    "type": "audit-pitch",
+    "domain": "asset-forge-hire.vercel.app",
+    "defects": [
+      "manifest sans resources",
+      "version absente"
+    ],
+    "contactChannel": "email/issue/PR selon dispo",
+    "temp": "hot"
+  },
+  {
+    "source": "awesome-x402-scan",
+    "type": "audit-pitch",
+    "domain": "agents.suedeai.ai",
+    "defects": [
+      "manifest sans resources",
+      "version absente"
+    ],
+    "contactChannel": "email/issue/PR selon dispo",
+    "temp": "hot"
+  },
+  {
+    "source": "github-issue-pain",
+    "type": "hot-prospect",
+    "title": "Bazaar: GET /x402/discovery/bundles returns 500, making bundleSlugs unusable (+ follow-up ",
+    "repo": "coinbase/cdp-sdk",
+    "url": "https://github.com/coinbase/cdp-sdk/issues/785",
+    "updated": "2026-08-24",
+    "comments": 1,
+    "contactChannel": "répondre utilement sur l'issue (pas de pitch nu)",
+    "painEvidence": true,
+    "defects": [],
+    "temp": "hot"
+  },
+  {
+    "source": "github-issue-pain",
+    "type": "hot-prospect",
+    "title": "spec(extensions): add discovery — DNS + .well-known facilitator records",
+    "repo": "x402-foundation/x402",
+    "url": "https://github.com/x402-foundation/x402/pull/2979",
+    "updated": "2026-08-24",
+    "comments": 72,
+    "contactChannel": "répondre utilement sur l'issue (pas de pitch nu)",
+    "painEvidence": true,
+    "defects": [],
+    "temp": "hot"
+  },
+  {
+    "source": "github-issue-pain",
+    "type": "hot-prospect",
+    "title": "spec(extensions): add discovery — DNS + .well-known facilitator records",
+    "repo": "x402-foundation/x402",
+    "url": "https://github.com/x402-foundation/x402/pull/2979",
+    "updated": "2026-08-24",
+    "comments": 72,
+    "contactChannel": "répondre utilement sur l'issue (pas de pitch nu)",
+    "painEvidence": true,
+    "defects": [],
+    "temp": "hot"
+  },
+  {
+    "source": "github-issue-pain",
+    "type": "hot-prospect",
+    "title": "[EASY BOUNTY: 3 RTC] Write a BoTTube vs YouTube Shorts Comparison",
+    "repo": "Scottcjn/rustchain-bounties",
+    "url": "https://github.com/Scottcjn/rustchain-bounties/issues/1107",
+    "updated": "2026-08-24",
+    "comments": 389,
+    "contactChannel": "répondre utilement sur l'issue (pas de pitch nu)",
+    "painEvidence": true,
+    "defects": [],
+    "temp": "hot"
+  },
+  {
+    "source": "github-issue-pain",
+    "type": "hot-prospect",
+    "title": "Split the test job into three parallel lanes, by upstream affinity as well as time",
+    "repo": "MikeyPetrillo/Agent402",
+    "url": "https://github.com/MikeyPetrillo/Agent402/pull/905",
+    "updated": "2026-08-24",
+    "comments": 0,
+    "contactChannel": "répondre utilement sur l'issue (pas de pitch nu)",
+    "painEvidence": true,
+    "defects": [],
+    "temp": "hot"
+  },
+  {
+    "source": "github-issue-pain",
+    "type": "hot-prospect",
+    "title": "Scheduled weekly dependency update for week 34",
+    "repo": "GilJSantana/curso-django",
+    "url": "https://github.com/GilJSantana/curso-django/pull/413",
+    "updated": "2026-08-24",
+    "comments": 0,
+    "contactChannel": "répondre utilement sur l'issue (pas de pitch nu)",
+    "painEvidence": true,
+    "defects": [],
+    "temp": "hot"
+  },
+  {
+    "source": "github-issue-pain",
+    "type": "hot-prospect",
+    "title": "spec(extensions): add discovery — DNS + .well-known facilitator records",
+    "repo": "x402-foundation/x402",
+    "url": "https://github.com/x402-foundation/x402/pull/2979",
+    "updated": "2026-08-24",
+    "comments": 72,
+    "contactChannel": "répondre utilement sur l'issue (pas de pitch nu)",
+    "painEvidence": true,
+    "defects": [],
+    "temp": "hot"
+  },
+  {
+    "source": "github-issue-pain",
+    "type": "hot-prospect",
+    "title": "Split the test job into three parallel lanes, by upstream affinity as well as time",
+    "repo": "MikeyPetrillo/Agent402",
+    "url": "https://github.com/MikeyPetrillo/Agent402/pull/905",
+    "updated": "2026-08-24",
+    "comments": 0,
+    "contactChannel": "répondre utilement sur l'issue (pas de pitch nu)",
+    "painEvidence": true,
+    "defects": [],
+    "temp": "hot"
+  },
+  {
+    "source": "github-issue-pain",
+    "type": "hot-prospect",
+    "title": "fix: authenticate EVM and x402 settlement finality",
+    "repo": "DACS-Agent-commerce/dacs-sdk",
+    "url": "https://github.com/DACS-Agent-commerce/dacs-sdk/pull/187",
+    "updated": "2026-08-24",
+    "comments": 0,
+    "contactChannel": "répondre utilement sur l'issue (pas de pitch nu)",
+    "painEvidence": true,
+    "defects": [],
+    "temp": "hot"
+  },
+  {
+    "source": "github-issue-pain",
+    "type": "hot-prospect",
+    "title": "🤝 Agent coordination channel (standing)",
+    "repo": "d-hinders/Haven-AI",
+    "url": "https://github.com/d-hinders/Haven-AI/issues/1289",
+    "updated": "2026-08-24",
+    "comments": 422,
+    "contactChannel": "répondre utilement sur l'issue (pas de pitch nu)",
+    "painEvidence": true,
+    "defects": [],
+    "temp": "hot"
+  },
+  {
+    "source": "github-issue-pain",
+    "type": "hot-prospect",
+    "title": "fix(deps): update dependency software.amazon.awssdk:s3 to v2.54.2",
+    "repo": "wetransform-os/hale-transformer-api",
+    "url": "https://github.com/wetransform-os/hale-transformer-api/pull/44",
+    "updated": "2026-08-24",
+    "comments": 0,
+    "contactChannel": "répondre utilement sur l'issue (pas de pitch nu)",
+    "painEvidence": true,
+    "defects": [],
+    "temp": "hot"
+  },
+  {
+    "source": "github-issue-pain",
+    "type": "hot-prospect",
+    "title": "[Bounty] [3 USDC][Open Competition V2] Build a machine-readable Beta3 error recovery cata",
+    "repo": "zhangjiayang6835-cyber/bounty-plaza",
+    "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/833",
+    "updated": "2026-08-24",
+    "comments": 12,
+    "contactChannel": "répondre utilement sur l'issue (pas de pitch nu)",
+    "painEvidence": true,
+    "defects": [],
+    "temp": "hot"
+  },
+  {
+    "source": "github-issue-pain",
+    "type": "hot-prospect",
+    "title": "[Bounty] [3 USDC][Open Competition V2] Create one complete earning example for every agen",
+    "repo": "zhangjiayang6835-cyber/bounty-plaza",
+    "url": "https://github.com/zhangjiayang6835-cyber/bounty-plaza/issues/832",
+    "updated": "2026-08-24",
+    "comments": 10,
+    "contactChannel": "répondre utilement sur l'issue (pas de pitch nu)",
+    "painEvidence": true,
+    "defects": [],
+    "temp": "hot"
+  },
+  {
+    "source": "github-issue-pain",
+    "type": "hot-prospect",
+    "title": "Scheduled weekly dependency update for week 34",
+    "repo": "EYRA-Benchmark/comic",
+    "url": "https://github.com/EYRA-Benchmark/comic/pull/327",
+    "updated": "2026-08-24",
+    "comments": 0,
+    "contactChannel": "répondre utilement sur l'issue (pas de pitch nu)",
+    "painEvidence": true,
+    "defects": [],
+    "temp": "hot"
+  },
+  {
+    "source": "github-issue-pain",
+    "type": "hot-prospect",
+    "title": "docs: use-case IA overhaul",
+    "repo": "base/docs",
+    "url": "https://github.com/base/docs/pull/1772",
+    "updated": "2026-08-24",
+    "comments": 2,
+    "contactChannel": "répondre utilement sur l'issue (pas de pitch nu)",
+    "painEvidence": true,
+    "defects": [],
+    "temp": "hot"
+  },
+  {
+    "source": "github-issue-pain",
+    "type": "hot-prospect",
+    "title": "fix: localize Studio X402 failures",
+    "repo": "AceDataCloud/Nexior",
+    "url": "https://github.com/AceDataCloud/Nexior/pull/1680",
+    "updated": "2026-08-24",
+    "comments": 1,
+    "contactChannel": "répondre utilement sur l'issue (pas de pitch nu)",
+    "painEvidence": true,
+    "defects": [],
+    "temp": "hot"
+  },
+  {
+    "source": "github-issue-pain",
+    "type": "hot-prospect",
+    "title": "fix: normalize X402 payment errors",
+    "repo": "AceDataCloud/FacilitatorX402",
+    "url": "https://github.com/AceDataCloud/FacilitatorX402/pull/106",
+    "updated": "2026-08-24",
+    "comments": 0,
+    "contactChannel": "répondre utilement sur l'issue (pas de pitch nu)",
+    "painEvidence": true,
+    "defects": [],
+    "temp": "hot"
+  },
+  {
+    "source": "github-issue-pain",
+    "type": "hot-prospect",
+    "title": "🤝 Agent coordination channel (standing)",
+    "repo": "d-hinders/Haven-AI",
+    "url": "https://github.com/d-hinders/Haven-AI/issues/1289",
+    "updated": "2026-08-24",
+    "comments": 422,
+    "contactChannel": "répondre utilement sur l'issue (pas de pitch nu)",
+    "painEvidence": true,
+    "defects": [],
+    "temp": "hot"
+  },
+  {
+    "source": "github-issue-pain",
+    "type": "hot-prospect",
+    "title": "fix(deps): update dependency software.amazon.awssdk:s3 to v2.54.2",
+    "repo": "wetransform-os/hale-transformer-api",
+    "url": "https://github.com/wetransform-os/hale-transformer-api/pull/44",
+    "updated": "2026-08-24",
+    "comments": 0,
+    "contactChannel": "répondre utilement sur l'issue (pas de pitch nu)",
+    "painEvidence": true,
+    "defects": [],
+    "temp": "hot"
+  },
+  {
+    "source": "github-issue-pain",
+    "type": "hot-prospect",
+    "title": "Migrate in-memory session store to Redis for horizontal scalability",
+    "repo": "accensa/x402-facilitator-stellar",
+    "url": "https://github.com/accensa/x402-facilitator-stellar/issues/114",
+    "updated": "2026-08-24",
+    "comments": 3,
+    "contactChannel": "répondre utilement sur l'issue (pas de pitch nu)",
+    "painEvidence": true,
+    "defects": [],
+    "temp": "hot"
+  },
+  {
+    "source": "github-issue-pain",
+    "type": "hot-prospect",
+    "title": "docker-compose provisions a Postgres database that no code reads",
+    "repo": "accensa/x402-facilitator-stellar",
+    "url": "https://github.com/accensa/x402-facilitator-stellar/issues/176",
+    "updated": "2026-08-24",
+    "comments": 6,
+    "contactChannel": "répondre utilement sur l'issue (pas de pitch nu)",
+    "painEvidence": true,
+    "defects": [],
+    "temp": "hot"
+  },
+  {
+    "source": "github-issue-pain",
+    "type": "hot-prospect",
+    "title": "State the post-grant conformance maintenance approach",
+    "repo": "accensa/x402-facilitator-stellar",
+    "url": "https://github.com/accensa/x402-facilitator-stellar/issues/163",
+    "updated": "2026-08-24",
+    "comments": 10,
+    "contactChannel": "répondre utilement sur l'issue (pas de pitch nu)",
+    "painEvidence": true,
+    "defects": [],
+    "temp": "hot"
+  },
+  {
+    "source": "github-issue-pain",
+    "type": "hot-prospect",
+    "title": "Rewrite HTTP transport layer from Express to Fastify for high-throughput",
+    "repo": "accensa/x402-facilitator-stellar",
+    "url": "https://github.com/accensa/x402-facilitator-stellar/issues/119",
+    "updated": "2026-08-24",
+    "comments": 2,
+    "contactChannel": "répondre utilement sur l'issue (pas de pitch nu)",
+    "painEvidence": true,
+    "defects": [],
+    "temp": "hot"
+  },
+  {
+    "source": "github-issue-pain",
+    "type": "hot-prospect",
+    "title": "🤝 Agent coordination channel (standing)",
+    "repo": "d-hinders/Haven-AI",
+    "url": "https://github.com/d-hinders/Haven-AI/issues/1289",
+    "updated": "2026-08-24",
+    "comments": 422,
+    "contactChannel": "répondre utilement sur l'issue (pas de pitch nu)",
+    "painEvidence": true,
+    "defects": [],
+    "temp": "hot"
+  },
+  {
+    "source": "github-issue-pain",
+    "type": "hot-prospect",
+    "title": "Migrate in-memory session store to Redis for horizontal scalability",
+    "repo": "accensa/x402-facilitator-stellar",
+    "url": "https://github.com/accensa/x402-facilitator-stellar/issues/114",
+    "updated": "2026-08-24",
+    "comments": 3,
+    "contactChannel": "répondre utilement sur l'issue (pas de pitch nu)",
+    "painEvidence": true,
+    "defects": [],
+    "temp": "hot"
+  },
+  {
+    "source": "github-issue-pain",
+    "type": "hot-prospect",
+    "title": "docker-compose provisions a Postgres database that no code reads",
+    "repo": "accensa/x402-facilitator-stellar",
+    "url": "https://github.com/accensa/x402-facilitator-stellar/issues/176",
+    "updated": "2026-08-24",
+    "comments": 6,
+    "contactChannel": "répondre utilement sur l'issue (pas de pitch nu)",
+    "painEvidence": true,
+    "defects": [],
+    "temp": "hot"
+  },
+  {
+    "source": "github-issue-pain",
+    "type": "hot-prospect",
+    "title": "State the post-grant conformance maintenance approach",
+    "repo": "accensa/x402-facilitator-stellar",
+    "url": "https://github.com/accensa/x402-facilitator-stellar/issues/163",
+    "updated": "2026-08-24",
+    "comments": 10,
+    "contactChannel": "répondre utilement sur l'issue (pas de pitch nu)",
+    "painEvidence": true,
+    "defects": [],
+    "temp": "hot"
+  },
+  {
+    "source": "github-issue-pain",
+    "type": "hot-prospect",
+    "title": "Rewrite HTTP transport layer from Express to Fastify for high-throughput",
+    "repo": "accensa/x402-facilitator-stellar",
+    "url": "https://github.com/accensa/x402-facilitator-stellar/issues/119",
+    "updated": "2026-08-24",
+    "comments": 2,
+    "contactChannel": "répondre utilement sur l'issue (pas de pitch nu)",
+    "painEvidence": true,
+    "defects": [],
+    "temp": "hot"
+  },
+  {
+    "source": "github-issue-pain",
+    "type": "hot-prospect",
+    "title": "CI has no static analysis and no image or dependency scanning",
+    "repo": "accensa/x402-facilitator-stellar",
+    "url": "https://github.com/accensa/x402-facilitator-stellar/issues/191",
+    "updated": "2026-08-24",
+    "comments": 1,
+    "contactChannel": "répondre utilement sur l'issue (pas de pitch nu)",
+    "painEvidence": true,
+    "defects": [],
+    "temp": "hot"
+  },
+  {
+    "source": "awesome-x402-scan",
+    "type": "audit-pitch",
+    "domain": "api.octodamus.com",
+    "defects": [
+      "manifest sans resources"
+    ],
+    "contactChannel": "email/issue/PR selon dispo",
+    "temp": "hot"
+  },
+  {
+    "source": "awesome-x402-scan",
+    "type": "audit-pitch",
+    "domain": "jsey.dpdns.org",
+    "defects": [
+      "manifest 503"
+    ],
+    "contactChannel": "email/issue/PR selon dispo",
+    "temp": "hot"
+  },
+  {
+    "source": "awesome-x402-scan",
+    "type": "audit-pitch",
+    "domain": "logicnodes.io",
+    "defects": [
+      "manifest 522"
+    ],
+    "contactChannel": "email/issue/PR selon dispo",
+    "temp": "hot"
+  },
+  {
+    "source": "github-new-repo",
+    "type": "preventive-pitch",
+    "repo": "accensa/x402-facilitator-stellar",
+    "stars": 15,
+    "created": "2026-08-11",
+    "desc": "Conformance spike: a minimal x402 facilitator for Stellar built on @x402/stellar",
+    "pitchAngle": "avant ton lancement public, fais valider ton paywall ($5)",
+    "defects": [],
+    "temp": "cold"
+  },
+  {
+    "source": "github-new-repo",
+    "type": "preventive-pitch",
+    "repo": "yogimait/x402Project",
+    "stars": 1,
+    "created": "2026-08-11",
+    "desc": "",
+    "pitchAngle": "avant ton lancement public, fais valider ton paywall ($5)",
+    "defects": [],
+    "temp": "cold"
+  },
+  {
+    "source": "github-new-repo",
+    "type": "preventive-pitch",
+    "repo": "edgepillar/zenon-x402-poc",
+    "stars": 5,
+    "created": "2026-08-14",
+    "desc": "This experimental project explores how Zenon can serve as a settlement rail  for",
+    "pitchAngle": "avant ton lancement public, fais valider ton paywall ($5)",
+    "defects": [],
+    "temp": "cold"
+  },
+  {
+    "source": "github-new-repo",
+    "type": "preventive-pitch",
+    "repo": "smarkm/x402",
+    "stars": 0,
+    "created": "2026-08-20",
+    "desc": "x402 v2 demo: Go resource server + Next.js wallet playground on Base Sepolia",
+    "pitchAngle": "avant ton lancement public, fais valider ton paywall ($5)",
+    "defects": [],
+    "temp": "cold"
+  },
+  {
+    "source": "github-new-repo",
+    "type": "preventive-pitch",
+    "repo": "AxLabs/simple-agent-wallet",
+    "stars": 2,
+    "created": "2026-08-12",
+    "desc": "SAW - the simple x402 enabled agent wallet",
+    "pitchAngle": "avant ton lancement public, fais valider ton paywall ($5)",
+    "defects": [],
+    "temp": "cold"
+  },
+  {
+    "source": "github-new-repo",
+    "type": "preventive-pitch",
+    "repo": "Aman7894/x402",
+    "stars": 0,
+    "created": "2026-08-11",
+    "desc": "",
+    "pitchAngle": "avant ton lancement public, fais valider ton paywall ($5)",
+    "defects": [],
+    "temp": "cold"
+  },
+  {
+    "source": "github-new-repo",
+    "type": "preventive-pitch",
+    "repo": "gnoverse/x402",
+    "stars": 0,
+    "created": "2026-08-12",
+    "desc": "",
+    "pitchAngle": "avant ton lancement public, fais valider ton paywall ($5)",
+    "defects": [],
+    "temp": "cold"
+  },
+  {
+    "source": "github-new-repo",
+    "type": "preventive-pitch",
+    "repo": "shubhamsingh7git/x402",
+    "stars": 0,
+    "created": "2026-08-11",
+    "desc": "BrainWave",
+    "pitchAngle": "avant ton lancement public, fais valider ton paywall ($5)",
+    "defects": [],
+    "temp": "cold"
+  },
+  {
+    "source": "github-new-repo",
+    "type": "preventive-pitch",
+    "repo": "yukesh2006/x402",
+    "stars": 0,
+    "created": "2026-08-23",
+    "desc": "",
+    "pitchAngle": "avant ton lancement public, fais valider ton paywall ($5)",
+    "defects": [],
+    "temp": "cold"
+  },
+  {
+    "source": "github-new-repo",
+    "type": "preventive-pitch",
+    "repo": "TonytheTiger22/x402",
+    "stars": 0,
+    "created": "2026-08-18",
+    "desc": "",
+    "pitchAngle": "avant ton lancement public, fais valider ton paywall ($5)",
+    "defects": [],
+    "temp": "cold"
+  },
+  {
+    "source": "awesome-x402-scan",
+    "type": "audit-pitch",
+    "domain": "awesome.re",
+    "defects": [
+      "manifest 404"
+    ],
+    "contactChannel": "email/issue/PR selon dispo",
+    "temp": "cold"
+  },
+  {
+    "source": "awesome-x402-scan",
+    "type": "audit-pitch",
+    "domain": "octodamus.com",
+    "defects": [
+      "manifest 308"
+    ],
+    "contactChannel": "email/issue/PR selon dispo",
+    "temp": "cold"
+  },
+  {
+    "source": "awesome-x402-scan",
+    "type": "audit-pitch",
+    "domain": "smithery.ai",
+    "defects": [
+      "manifest 404"
+    ],
+    "contactChannel": "email/issue/PR selon dispo",
+    "temp": "cold"
+  },
+  {
+    "source": "awesome-x402-scan",
+    "type": "audit-pitch",
+    "domain": "x402.org",
+    "defects": [
+      "manifest 404"
+    ],
+    "contactChannel": "email/issue/PR selon dispo",
+    "temp": "cold"
+  },
+  {
+    "source": "awesome-x402-scan",
+    "type": "audit-pitch",
+    "domain": "glama.ai",
+    "defects": [
+      "manifest 404"
+    ],
+    "contactChannel": "email/issue/PR selon dispo",
+    "temp": "cold"
+  },
+  {
+    "source": "awesome-x402-scan",
+    "type": "audit-pitch",
+    "domain": "langston.click",
+    "defects": [
+      "version absente"
+    ],
+    "contactChannel": "email/issue/PR selon dispo",
+    "temp": "cold"
+  },
+  {
+    "source": "awesome-x402-scan",
+    "type": "audit-pitch",
+    "domain": "kaisha-api.hp-vladic.workers.dev",
+    "defects": [
+      "manifest 404"
+    ],
+    "contactChannel": "email/issue/PR selon dispo",
+    "temp": "cold"
+  },
+  {
+    "source": "awesome-x402-scan",
+    "type": "audit-pitch",
+    "domain": "archtools.dev",
+    "defects": [
+      "manifest 404"
+    ],
+    "contactChannel": "email/issue/PR selon dispo",
+    "temp": "cold"
+  },
+  {
+    "source": "awesome-x402-scan",
+    "type": "audit-pitch",
+    "domain": "bountyapi.com",
+    "defects": [
+      "manifest 404"
+    ],
+    "contactChannel": "email/issue/PR selon dispo",
+    "temp": "cold"
+  },
+  {
+    "source": "awesome-x402-scan",
+    "type": "audit-pitch",
+    "domain": "payapi.market",
+    "defects": [
+      "manifest 404"
+    ],
+    "contactChannel": "email/issue/PR selon dispo",
+    "temp": "cold"
+  },
+  {
+    "source": "awesome-x402-scan",
+    "type": "audit-pitch",
+    "domain": "api.jarvisclaw.ai",
+    "defects": [
+      "manifest 404"
+    ],
+    "contactChannel": "email/issue/PR selon dispo",
+    "temp": "cold"
+  },
+  {
+    "source": "awesome-x402-scan",
+    "type": "audit-pitch",
+    "domain": "docs.jarvisclaw.ai",
+    "defects": [
+      "manifest 404"
+    ],
+    "contactChannel": "email/issue/PR selon dispo",
+    "temp": "cold"
+  },
+  {
+    "source": "awesome-x402-scan",
+    "type": "audit-pitch",
+    "domain": "superhighway.walls.sh",
+    "defects": [
+      "manifest 404"
+    ],
+    "contactChannel": "email/issue/PR selon dispo",
+    "temp": "cold"
+  },
+  {
+    "source": "awesome-x402-scan",
+    "type": "audit-pitch",
+    "domain": "x402.rugmunch.io",
+    "defects": [
+      "manifest 404"
+    ],
+    "contactChannel": "email/issue/PR selon dispo",
+    "temp": "cold"
+  },
+  {
+    "source": "awesome-x402-scan",
+    "type": "audit-pitch",
+    "domain": "aisa.network",
+    "defects": [
+      "manifest 404"
+    ],
+    "contactChannel": "email/issue/PR selon dispo",
+    "temp": "cold"
+  },
+  {
+    "source": "awesome-x402-scan",
+    "type": "audit-pitch",
+    "domain": "www.bitget.com",
+    "defects": [
+      "manifest 404"
+    ],
+    "contactChannel": "email/issue/PR selon dispo",
+    "temp": "cold"
+  },
+  {
+    "source": "awesome-x402-scan",
+    "type": "audit-pitch",
+    "domain": "www.stratalize.com",
+    "defects": [
+      "version absente"
+    ],
+    "contactChannel": "email/issue/PR selon dispo",
+    "temp": "cold"
+  },
+  {
+    "source": "awesome-x402-scan",
+    "type": "audit-pitch",
+    "domain": "workers.cloudflare.com",
+    "defects": [
+      "manifest 301"
+    ],
+    "contactChannel": "email/issue/PR selon dispo",
+    "temp": "cold"
+  },
+  {
+    "source": "awesome-x402-scan",
+    "type": "audit-pitch",
+    "domain": "gig-x402-api.jayson-be1.workers.dev",
+    "defects": [
+      "manifest 404"
+    ],
+    "contactChannel": "email/issue/PR selon dispo",
+    "temp": "cold"
+  },
+  {
+    "source": "awesome-x402-scan",
+    "type": "audit-pitch",
+    "domain": "rpc.satelink.network",
+    "defects": [
+      "manifest 404"
+    ],
+    "contactChannel": "email/issue/PR selon dispo",
+    "temp": "cold"
+  },
+  {
+    "source": "awesome-x402-scan",
+    "type": "audit-pitch",
+    "domain": "agent402.tools",
+    "defects": [
+      "manifest 404"
+    ],
+    "contactChannel": "email/issue/PR selon dispo",
+    "temp": "cold"
+  },
+  {
+    "source": "awesome-x402-scan",
+    "type": "audit-pitch",
+    "domain": "mcpize.com",
+    "defects": [
+      "manifest 500"
+    ],
+    "contactChannel": "email/issue/PR selon dispo",
+    "temp": "cold"
+  },
+  {
+    "source": "awesome-x402-scan",
+    "type": "audit-pitch",
+    "domain": "oracles-production.up.railway.app",
+    "defects": [
+      "version absente"
+    ],
+    "contactChannel": "email/issue/PR selon dispo",
+    "temp": "cold"
+  },
+  {
+    "source": "awesome-x402-scan",
+    "type": "audit-pitch",
+    "domain": "x402toll.com",
+    "defects": [
+      "version absente"
+    ],
+    "contactChannel": "email/issue/PR selon dispo",
+    "temp": "cold"
+  },
+  {
+    "source": "awesome-x402-scan",
+    "type": "audit-pitch",
+    "domain": "mcp.toolsnap.app",
+    "defects": [
+      "manifest 404"
+    ],
+    "contactChannel": "email/issue/PR selon dispo",
+    "temp": "cold"
+  },
+  {
+    "source": "awesome-x402-scan",
+    "type": "audit-pitch",
+    "domain": "veles-finance-gateway.fly.dev",
+    "defects": [
+      "manifest 404"
+    ],
+    "contactChannel": "email/issue/PR selon dispo",
+    "temp": "cold"
+  },
+  {
+    "source": "awesome-x402-scan",
+    "type": "audit-pitch",
+    "domain": "denpyo-api.hp-vladic.workers.dev",
+    "defects": [
+      "version absente"
+    ],
+    "contactChannel": "email/issue/PR selon dispo",
+    "temp": "cold"
+  },
+  {
+    "source": "awesome-x402-scan",
+    "type": "audit-pitch",
+    "domain": "bridgenode.cc",
+    "defects": [
+      "manifest 404"
+    ],
+    "contactChannel": "email/issue/PR selon dispo",
+    "temp": "cold"
+  },
+  {
+    "source": "awesome-x402-scan",
+    "type": "audit-pitch",
+    "domain": "api.appraxa.com",
+    "defects": [
+      "manifest 404"
+    ],
+    "contactChannel": "email/issue/PR selon dispo",
+    "temp": "cold"
+  },
+  {
+    "source": "awesome-x402-scan",
+    "type": "audit-pitch",
+    "domain": "md.fastdb.in",
+    "defects": [
+      "manifest 404"
+    ],
+    "contactChannel": "email/issue/PR selon dispo",
+    "temp": "cold"
+  },
+  {
+    "source": "awesome-x402-scan",
+    "type": "audit-pitch",
+    "domain": "lazaretto.dev",
+    "defects": [
+      "manifest 404"
+    ],
+    "contactChannel": "email/issue/PR selon dispo",
+    "temp": "cold"
+  },
+  {
+    "source": "awesome-x402-scan",
+    "type": "audit-pitch",
+    "domain": "utilia.ink",
+    "defects": [
+      "manifest 404"
+    ],
+    "contactChannel": "email/issue/PR selon dispo",
+    "temp": "cold"
+  },
+  {
+    "source": "awesome-x402-scan",
+    "type": "audit-pitch",
+    "domain": "8004market.io",
+    "defects": [
+      "manifest 404"
+    ],
+    "contactChannel": "email/issue/PR selon dispo",
+    "temp": "cold"
+  },
+  {
+    "source": "awesome-x402-scan",
+    "type": "audit-pitch",
+    "domain": "suverse-pay.suverse.io",
+    "defects": [
+      "manifest 404"
+    ],
+    "contactChannel": "email/issue/PR selon dispo",
+    "temp": "cold"
+  }
+]

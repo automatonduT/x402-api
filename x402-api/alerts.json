@@ -1,0 +1,12 @@
+{
+ "selftest": {
+  "symbol": "BTCUSDT",
+  "op": "below",
+  "price": 9999999,
+  "url": "http://localhost:4020/hook/selftest",
+  "fired": true,
+  "createdAt": "2026-08-23T00:19:54.621Z",
+  "firedAt": "2026-08-23T00:20:53.357Z",
+  "triggerPrice": 77120
+ }
+}

@@ -1,0 +1,7 @@
+{"generated":"2026-08-23","method":"70/30 IS/OOS, close fills, ATR14x2 stops","source":"/backtest-v3.js",
+"results":{"BTCUSDT":{"turtleS1":7.3,"turtleS2":1.5,"momentum":-17.5,"breakout":4.7},
+"ETHUSDT":{"turtleS1":-41.7,"turtleS2":-1.8,"momentum":-12.8,"breakout":-26.6},
+"SOLUSDT":{"turtleS1":-13.4,"turtleS2":2.4,"momentum":2.1,"breakout":-6.8},
+"BNBUSDT":{"turtleS1":-0.8,"turtleS2":-12.6,"momentum":-3.0,"breakout":7.9},
+"XRPUSDT":{"turtleS1":4.2,"turtleS2":21.1,"momentum":-1.5,"breakout":14.5}},
+"honestVerdict":"No robust OOS edge across majors. Momentum overfits. Edge is regime-dependent."}

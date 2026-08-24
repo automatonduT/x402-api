@@ -1,0 +1,232 @@
+[
+ {
+  "symbol": "bnbusdt",
+  "n": 1095,
+  "S1": {
+   "IS": {
+    "ann": 31.1,
+    "maxDD": 7,
+    "sharpe": 2.1,
+    "days": 765
+   },
+   "OOS": {
+    "ann": 20.4,
+    "maxDD": 4.6,
+    "sharpe": 1.74,
+    "days": 328
+   }
+  },
+  "S2": {
+   "IS": {
+    "ann": 28.4,
+    "maxDD": 8.1,
+    "sharpe": 1.84,
+    "days": 765
+   },
+   "OOS": {
+    "ann": 10.4,
+    "maxDD": 9.9,
+    "sharpe": 0.71,
+    "days": 328
+   }
+  },
+  "mom": {
+   "IS": {
+    "ann": 151.2,
+    "maxDD": 19.8,
+    "sharpe": 2.34,
+    "days": 765
+   },
+   "OOS": {
+    "ann": 26.7,
+    "maxDD": 31.3,
+    "sharpe": 0.81,
+    "days": 328
+   }
+  }
+ },
+ {
+  "symbol": "btcusdt",
+  "n": 1095,
+  "S1": {
+   "IS": {
+    "ann": 29.3,
+    "maxDD": 4,
+    "sharpe": 2.51,
+    "days": 765
+   },
+   "OOS": {
+    "ann": 11,
+    "maxDD": 7,
+    "sharpe": 1.13,
+    "days": 328
+   }
+  },
+  "S2": {
+   "IS": {
+    "ann": 17.6,
+    "maxDD": 5.6,
+    "sharpe": 1.53,
+    "days": 765
+   },
+   "OOS": {
+    "ann": 9.8,
+    "maxDD": 3.7,
+    "sharpe": 1.4,
+    "days": 328
+   }
+  },
+  "mom": {
+   "IS": {
+    "ann": 91.6,
+    "maxDD": 20.1,
+    "sharpe": 1.89,
+    "days": 765
+   },
+   "OOS": {
+    "ann": 3,
+    "maxDD": 13.1,
+    "sharpe": 0.29,
+    "days": 328
+   }
+  }
+ },
+ {
+  "symbol": "ethusdt",
+  "n": 1095,
+  "S1": {
+   "IS": {
+    "ann": 29,
+    "maxDD": 5.8,
+    "sharpe": 2.3,
+    "days": 765
+   },
+   "OOS": {
+    "ann": 8.6,
+    "maxDD": 3.6,
+    "sharpe": 0.92,
+    "days": 328
+   }
+  },
+  "S2": {
+   "IS": {
+    "ann": 27.8,
+    "maxDD": 5.2,
+    "sharpe": 2.25,
+    "days": 765
+   },
+   "OOS": {
+    "ann": 7.7,
+    "maxDD": 1.7,
+    "sharpe": 1.14,
+    "days": 328
+   }
+  },
+  "mom": {
+   "IS": {
+    "ann": 83.9,
+    "maxDD": 37.3,
+    "sharpe": 1.47,
+    "days": 765
+   },
+   "OOS": {
+    "ann": 7,
+    "maxDD": 25.4,
+    "sharpe": 0.37,
+    "days": 328
+   }
+  }
+ },
+ {
+  "symbol": "solusdt",
+  "n": 1095,
+  "S1": {
+   "IS": {
+    "ann": 35.2,
+    "maxDD": 5.4,
+    "sharpe": 2.49,
+    "days": 765
+   },
+   "OOS": {
+    "ann": 9,
+    "maxDD": 3.2,
+    "sharpe": 1.38,
+    "days": 328
+   }
+  },
+  "S2": {
+   "IS": {
+    "ann": 24.6,
+    "maxDD": 7.2,
+    "sharpe": 1.82,
+    "days": 765
+   },
+   "OOS": {
+    "ann": 1.7,
+    "maxDD": 5.5,
+    "sharpe": 0.34,
+    "days": 328
+   }
+  },
+  "mom": {
+   "IS": {
+    "ann": 147.1,
+    "maxDD": 38.5,
+    "sharpe": 1.69,
+    "days": 765
+   },
+   "OOS": {
+    "ann": -1.1,
+    "maxDD": 26.9,
+    "sharpe": 0.14,
+    "days": 328
+   }
+  }
+ },
+ {
+  "symbol": "xrpusdt",
+  "n": 1095,
+  "S1": {
+   "IS": {
+    "ann": 34.7,
+    "maxDD": 5.9,
+    "sharpe": 2.09,
+    "days": 765
+   },
+   "OOS": {
+    "ann": 16,
+    "maxDD": 4.8,
+    "sharpe": 1.5,
+    "days": 328
+   }
+  },
+  "S2": {
+   "IS": {
+    "ann": 17.7,
+    "maxDD": 6.6,
+    "sharpe": 1.36,
+    "days": 765
+   },
+   "OOS": {
+    "ann": 8.3,
+    "maxDD": 0,
+    "sharpe": 1.64,
+    "days": 328
+   }
+  },
+  "mom": {
+   "IS": {
+    "ann": 238.9,
+    "maxDD": 34.8,
+    "sharpe": 2.09,
+    "days": 765
+   },
+   "OOS": {
+    "ann": 23.9,
+    "maxDD": 7.8,
+    "sharpe": 1.22,
+    "days": 328
+   }
+  }
+ }
+]

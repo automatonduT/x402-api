@@ -1,0 +1,33 @@
+{
+ "hooks": {
+  "test123": {
+   "created": "2026-08-23T18:08:47.178Z",
+   "events": [
+    {
+     "ts": "2026-08-23T18:08:47.178Z",
+     "headers": {
+      "content-type": "application/json"
+     },
+     "body": {
+      "hello": "world"
+     }
+    }
+   ]
+  }
+ },
+ "schedules": {},
+ "monitors": {
+  "m_2e1a28f2": {
+   "id": "m_2e1a28f2",
+   "url": "https://example.com",
+   "created": "2026-08-23T18:08:47.197Z",
+   "checks": 0,
+   "up": 0,
+   "lastStatus": null,
+   "lastCheck": null,
+   "history": []
+  }
+ },
+ "rss": {},
+ "guestbook": []
+}

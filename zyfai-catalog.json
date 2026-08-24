@@ -1,0 +1,123 @@
+{
+ "probedAt": "2026-08-23T18:27:37.668Z",
+ "server": {
+  "name": "zyfai-defi-mcp",
+  "version": "1.0.0"
+ },
+ "count": 15,
+ "tools": [
+  {
+   "name": "get-available-protocols",
+   "description": "Get available DeFi protocols and pools for a specific chain on Zyfai",
+   "args": [
+    "chainId"
+   ]
+  },
+  {
+   "name": "get-conservative-opportunities",
+   "description": "Get safe (low risk) DeFi opportunities suitable for conservative investors",
+   "args": [
+    "chainId"
+   ]
+  },
+  {
+   "name": "get-aggressive-opportunities",
+   "description": "Get degen (high-risk, high-reward) yield strategies for aggressive investors",
+   "args": [
+    "chainId"
+   ]
+  },
+  {
+   "name": "get-tvl",
+   "description": "Get total value locked (TVL) across all Zyfai accounts",
+   "args": []
+  },
+  {
+   "name": "get-volume",
+   "description": "Get total volume across all Zyfai accounts",
+   "args": []
+  },
+  {
+   "name": "get-active-wallets",
+   "description": "Get active wallets for a specific chain on Zyfai",
+   "args": [
+    "chainId"
+   ]
+  },
+  {
+   "name": "get-smart-wallet-by-eoa",
+   "description": "Get smart wallets associated with an EOA address",
+   "args": [
+    "eoaAddress"
+   ]
+  },
+  {
+   "name": "get-rebalance-frequency",
+   "description": "Get rebalance frequency/tier for a wallet (determines how often wallet can be rebalanced)",
+   "args": [
+    "walletAddress"
+   ]
+  },
+  {
+   "name": "get-apy-per-strategy",
+   "description": "Get APY per strategy for a specific chain",
+   "args": [
+    "crossChain",
+    "days",
+    "strategy"
+   ]
+  },
+  {
+   "name": "get-history",
+   "description": "Get transaction history for a wallet",
+   "args": [
+    "walletAddress",
+    "chainId",
+    "limit",
+    "offset",
+    "fromDate",
+    "toDate"
+   ]
+  },
+  {
+   "name": "get-first-topup",
+   "description": "Get the first topup (deposit) information for a wallet",
+   "args": [
+    "walletAddress",
+    "chainId"
+   ]
+  },
+  {
+   "name": "get-positions",
+   "description": "Get all active DeFi positions and portfolio for a user's wallet address",
+   "args": [
+    "userAddress",
+    "chainId"
+   ]
+  },
+  {
+   "name": "get-daily-apy-history",
+   "description": "Get daily APY history for a wallet including total, current, and lifetime earnings",
+   "args": [
+    "walletAddress",
+    "days"
+   ]
+  },
+  {
+   "name": "get-onchain-earnings",
+   "description": "Get onchain earnings for a wallet including total, current, and lifetime earnings",
+   "args": [
+    "walletAddress"
+   ]
+  },
+  {
+   "name": "get-daily-earnings",
+   "description": "Get daily earnings for a wallet within a date range",
+   "args": [
+    "walletAddress",
+    "startDate",
+    "endDate"
+   ]
+  }
+ ]
+}

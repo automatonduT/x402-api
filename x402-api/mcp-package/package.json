@@ -1,0 +1,9 @@
+{
+  "name": "micro-tools-mcp",
+  "version": "1.0.0",
+  "description": "Zero-dependency MCP server exposing micro-tools by automaton-alpha (free utils + market SIM lab) to any MCP client.",
+  "main": "mcp-server.js",
+  "bin": {"micro-tools-mcp": "./mcp-server.js"},
+  "keywords": ["mcp", "model-context-protocol", "x402", "ai-agents", "market-data", "tools"],
+  "license": "MIT"
+}

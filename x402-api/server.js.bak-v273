@@ -1,0 +1,270 @@
+const express=require("express");
+const app=express();
+const fs=require("fs");
+const path=require("path");
+const crypto=require("crypto");
+
+app.use(express.json({limit:"1mb"}));
+app.use(require("./tools/funnel-metrics.js"));
+app.get("/tools/funnel",(q,r)=>r.json(require("./tools/funnel-metrics.js").snapshot()));
+app.use(require("./tools/x402-paywall.js"));
+app.use(require("./tools/x402-deep-audit.js"));
+app.use(require("./tools/x402-digest.js"));
+app.use(require("./tools/x402-batch-inspect.js").freeR);
+app.use(require("./tools/x402-batch-inspect.js").fullR);
+app.use(require("./tools/x402-b2b-order.js").freeR);
+const PAID_PATHS=["/tools/batch","/tools/market/premium/scan","/tools/market/premium/deep-backtest"];
+let STATS=(()=>{try{return JSON.parse(fs.readFileSync(path.join(__dirname,".stats-baseline.json"),"utf8"))}catch(e){return{free:0,paid:0}}})();
+function saveStats(){try{fs.writeFileSync(path.join(__dirname,".stats-baseline.json"),JSON.stringify(STATS))}catch(e){}}
+app.use((q,s,n)=>{try{const p=q.path.split("?")[0];if(PAID_PATHS.indexOf(p)>=0){STATS.paid++;saveStats()}else if(p.indexOf("/tools/")===0){STATS.free++;saveStats()}}catch(e){}n();});
+app.get("/stats",(q,r)=>{r.json({ok:true,free:STATS.free,paid:STATS.paid,total:(STATS.free||0)+(STATS.paid||0),uptimeS:Math.round(process.uptime())})});
+app.get("/tools/x402/inspect",async(q,r)=>{
+  const u=q.query.url;
+  if(!u||!/^https?:\/\//.test(u))return r.status(400).json({error:"?url=https://... requis"});
+  try{
+    const ctl=new AbortController();const t=setTimeout(()=>ctl.abort(),10000);
+    const res=await fetch(u,{signal:ctl.signal,headers:{"user-agent":"micro-tools-x402-inspect/1.0"}});
+    clearTimeout(t);
+    let body=null;try{body=await res.json()}catch(e){}
+    const acc=(body&&Array.isArray(body.accepts))?body.accepts[0]:null;
+    const valid=!!(acc&&acc.payTo&&acc.asset&&acc.maxAmountRequired&&acc.scheme);
+    const verdict=res.status===402?(valid?"PAYABLE":"402_SANS_ACCEPTS"):(res.status<300?"FREE_OR_OPEN":"HTTP_"+res.status);
+    r.json({inspected:u,httpStatus:res.status,isJson:body!=null,acceptsFound:!!acc,acceptsValid:valid,verdict,
+      fields:acc?{scheme:acc.scheme||null,network:acc.network||null,payTo:acc.payTo||null,asset:acc.asset||null,maxAmountRequired:acc.maxAmountRequired||null}:null,
+      hint:valid?"un client x402 standard peut payer cet endpoint":(res.status===402?"402 sans bloc accepts exploitable":"pas un endpoint paye"),
+      by:"micro-tools automaton-alpha ERC-8004 #67574",disclaimer:"inspection passive, aucune donnee stockee"});
+  }catch(e){r.status(502).json({error:"fetch impossible: "+e.message})}
+});
+
+try{try{app.use(require("./tradelab-deepbt"));console.log("[tradelab-deepbt] mounted")}catch(e){console.error("[tradelab-deepbt] FAIL",e.message)}
+try{app.use(require("./market-octo"));console.log("[market-octo] mounted")}catch(e){console.error("[market-octo] FAIL",e.message)}
+try{app.use(require("./market-macro"));console.log("[market-macro] mounted")}catch(e){console.error("[market-macro] FAIL",e.message)}
+try{app.use(require("./market-feed"));console.log("[market-feed] mounted")}catch(e){console.error("[market-feed] FAIL",e.message)}
+app.use(require("./legacy-tools"));console.log("[legacy-tools] mounted")}catch(e){console.error("[legacy-tools] FAIL",e.message)}
+try{app.use(require("./hooks-tools"));console.log("[hooks-tools] mounted")}catch(e){console.error("[hooks-tools] FAIL",e.message)}
+try{app.use(require("./carry-system"));console.log("[carry-system] mounted")}catch(e){console.error("[carry-system] FAIL",e.message)}
+try{app.use(require("./signal-gate"));console.log("[signal-gate] mounted")}catch(e){console.error("[signal-gate] FAIL",e.message)}
+try{app.use(require("./funding-desk"));console.log("[funding-desk] mounted")}catch(e){console.error("[funding-desk] FAIL",e.message)}
+try{app.use(require("./tradelab-backtest"));console.log("[tradelab-backtest] mounted")}catch(e){console.error("[tradelab-backtest] FAIL",e.message)}
+
+// ---- CORE ROUTES ----
+app.get("/health",(q,r)=>r.json({ok:true,ts:new Date().toISOString(),version:"1.75c"}));
+app.get("/",(q,r)=>r.redirect("/dashboard"));
+
+// ---- AGENT CARD (ERC-8004) ----
+app.get("/agent-card",(q,r)=>{try{r.type("application/json").send(fs.readFileSync(path.join(__dirname,"public","agent-card.json"),"utf8"))}catch(e){r.status(500).json({error:"card missing"})}});
+app.get("/.well-known/agent-card.json",(q,r)=>{try{r.type("application/json").send(fs.readFileSync(path.join(__dirname,"public","agent-card.json"),"utf8"))}catch(e){r.status(500).json({error:"card missing"})}});
+
+// ---- FREE MARKET LAB TOOLS ----
+
+// GET /tools/market/rsi - instant single-pair momentum snapshot (free) [v1.71d]
+app.get("/tools/market/rsi",async(q,r)=>{try{
+ const sym=String(q.query.symbol||"BTCUSDT").toUpperCase().replace(/[^A-Z0-9]/g,"").slice(0,20);
+ const iv=["1d","4h","1h","15m"].includes(String(q.query.interval))?String(q.query.interval):"1d";
+ const per=Math.min(Math.max(parseInt(q.query.period)||14,5),50);
+ const rows=await(await fetch("https://api.binance.com/api/v3/klines?symbol="+encodeURIComponent(sym)+"&interval="+iv+"&limit="+(per+60),{signal:AbortSignal.timeout(8000)})).json();
+ if(!Array.isArray(rows)||rows.length<per+5)return r.status(400).json({error:"klines indisponibles pour "+sym});
+ const closes=rows.map(x=>parseFloat(x[4]));let g=0,l=0;
+ for(let i=closes.length-per;i<closes.length;i++){const d=closes[i]-closes[i-1];if(d>0)g+=d;else l-=d;}
+ g/=per;l/=per;const rsi=l===0?100:100-100/(1+g/l);
+ const side=rsi>=70?"overbought":(rsi<=30?"oversold":"neutral");
+ const c30=closes.slice(-30),mn=Math.min(...c30),mx=Math.max(...c30);
+ const pts=c30.map((c,i)=>((i*220/29)).toFixed(1)+","+(38-((c-mn)/((mx-mn)||1))*34).toFixed(1)).join(" ");
+ try{bump("freeCalls")}catch(e){}
+ r.json({symbol:sym,interval:iv,period:per,last:closes[closes.length-1],rsi:Math.round(rsi*10)/10,side,
+  sparkSvg:'<svg xmlns="http://www.w3.org/2000/svg" width="220" height="42"><polyline points="'+pts+'" fill="none" stroke="#4ade80" stroke-width="1.5"/></svg>',
+  dataPoints:closes.length,updated:new Date().toISOString(),disclaimer:"SIMULATION ONLY - NOT financial advice",paidUpgrade:"/tools/market/premium/scan"});
+}catch(e){r.status(400).json({error:String(e.message||e)})}});
+
+// POST /tools/market/alerts - create price alert with webhook callback (free) [v1.75]
+app.post("/tools/market/alerts",async(q,r)=>{try{
+  const {symbol,op,price,url,secret}=q.body||{}; 
+  if(!symbol||!op||price===undefined||!url) return r.status(400).json({error:"champs requis: symbol,op,price,url"});
+  if(![">","<"].includes(op)) return r.status(400).json({error:"op doit etre > ou <"});
+  const id="alt_"+crypto.randomBytes(8).toString("hex");
+  const rec={id,symbol:String(symbol).toUpperCase(),op,price:Number(price),url,secret:secret||"",created:Date.now(),triggered:false,checks:0};
+  if(!global.alertsStore) global.alertsStore=new Map();
+  global.alertsStore.set(id,rec);
+  try{bump("freeCalls")}catch(e){}
+  r.json({ok:true,alert:rec,note:"checked every 60s; webhook POST with X-Signature=sha256=HMAC(secret,body)"});
+}catch(e){r.status(400).json({error:String(e.message||e)})}});
+
+// GET /give-your-agent-webhooks - blog post rendered from md [v1.82]
+app.get("/give-your-agent-webhooks",(q,r)=>{try{
+  const fs=require("fs");
+  const md=fs.readFileSync(__dirname+"/give-your-agent-webhooks.md","utf8");
+  let html=md.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")
+    .replace(/^### (.*)$/gm,"<h3>$1</h3>").replace(/^## (.*)$/gm,"<h2>$1</h2>").replace(/^# (.*)$/gm,"<h1>$1</h1>")
+    .replace(/```([\s\S]*?)```/g,"<pre><code>$1</code></pre>")
+    .replace(/`([^`]+)`/g,"<code>$1</code>")
+    .replace(/\*\*([^*]+)\*\*/g,"<strong>$1</strong>")
+    .replace(/^\*(.*)\*$/gm,"<em>$1</em>")
+    .replace(/^(?!<[hupoe])([^\n]+)$/gm,"<p>$1</p>");
+  r.type("html").send("<!DOCTYPE html><html><head><meta charset=utf-8><title>Give your agent webhooks - micro-tools</title>"+
+   "<style>body{font-family:system-ui,serif;max-width:760px;margin:2rem auto;padding:0 1rem;line-height:1.6;background:#0d1117;color:#e6edf3}"+
+   "pre{background:#161b22;padding:1rem;border-radius:8px;overflow:auto;font-size:.85rem}"+
+   "code{color:#79c0ff}h1,h2,h3{font-family:system-ui}a{color:#58a6ff}</style></head><body>"+html+
+   "<hr><p style=color:#8b949e>Docs: <a href=/llms.txt>/llms.txt</a> · OpenAPI: <a href=/openapi.json>/openapi.json</a> · Desk: <a href=/desk.html>/desk.html</a></p></body></html>");
+}catch(e){r.status(500).send("post error")}});
+
+// GET /tools/market/alerts - list active alerts
+app.get("/tools/market/alerts",(q,r)=>{try{
+  const arr=global.alertsStore?Array.from(global.alertsStore.values()).filter(a=>!a.triggered):[];
+  r.json({alerts:arr,count:arr.length});
+}catch(e){r.status(400).json({error:String(e.message||e)})}});
+
+// GET /tools/market/positions - paper portfolio from Market Lab (free) [v1.75]
+app.get("/tools/market/positions",async(q,r)=>{try{
+  const {symbols="BTCUSDT,ETHUSDT,SOLUSDT",days=30}=q.query;
+  const syms=String(symbols).split(",").map(s=>s.trim().toUpperCase()).slice(0,10);
+  const out={}; const now=Date.now(); const ms=Number(days)*86400000;
+  for(const sym of syms){
+    const kl=await(await fetch("https://api.binance.com/api/v3/klines?symbol="+encodeURIComponent(sym)+"&interval=1d&limit="+Number(days),{signal:AbortSignal.timeout(8000)})).json();
+    if(!Array.isArray(kl)||kl.length<2){out[sym]={error:"no data"};continue;}
+    const c=kl.map(x=>parseFloat(x[4])); const entry=c[0]; const last=c[c.length-1];
+    const ret=(last-entry)/entry*100; const dd=Math.max(...c.map((v,i)=>(v-Math.max(...c.slice(0,i+1)))/Math.max(...c.slice(0,i+1))*100));
+    out[sym]={entry,last,returnPct:Math.round(ret*100)/100,maxDrawdownPct:Math.round(dd*100)/100,days:kl.length};
+  }
+  try{bump("freeCalls")}catch(e){}
+  r.json({positions:out,asOf:new Date(now).toISOString(),disclaimer:"SIMULATION ONLY - paper positions"});
+}catch(e){r.status(400).json({error:String(e.message||e)})}});
+
+// Background checker for alerts (runs every 60s)
+if(!global.alertsChecker){global.alertsChecker=setInterval(async()=>{
+  if(!global.alertsStore) return;
+  for(const [id,rec] of global.alertsStore){if(rec.triggered) continue;
+    try{
+      const u="https://api.binance.com/api/v3/ticker/price?symbol="+encodeURIComponent(rec.symbol);
+      const data=await(await fetch(u,{signal:AbortSignal.timeout(5000)})).json();
+      const px=parseFloat(data.price); if(isNaN(px)) continue;
+      rec.checks++; const hit=(rec.op===">" && px>=rec.price)||(rec.op==="<" && px<=rec.price);
+      if(hit){
+        rec.triggered=true; rec.triggeredAt=Date.now(); rec.triggerPrice=px;
+        const payload=JSON.stringify({alertId:id,symbol:rec.symbol,price:px,op:rec.op,threshold:rec.price,ts:new Date().toISOString()});
+        const sig=rec.secret?crypto.createHmac("sha256",rec.secret).update(payload).digest("hex"):"";
+        await fetch(rec.url,{method:"POST",headers:{"Content-Type":"application/json",...(sig?{"X-Signature":"sha256="+sig}:{})},body:payload,signal:AbortSignal.timeout(10000)}).catch(()=>{});
+      }
+    }catch(e){}
+  }
+},60000); console.log("[alerts] background checker started");}
+
+// ---- STATIC / DISCOVERY ----
+app.use(express.static("public"));
+app.get("/llms-full.txt",(q,r)=>{try{r.type("text/plain").send(fs.readFileSync(path.join(__dirname,"public","llms-full.txt"),"utf8"))}catch(e){r.status(404).send("not found")}});
+app.get("/openapi.json",(q,r)=>{try{r.json(JSON.parse(fs.readFileSync(path.join(__dirname,"public","openapi.json"),"utf8")))}catch(e){r.status(404).json({error:"not found"})}});
+
+// ---- PAID (x402) - placeholder routes, middleware handles auth ----
+app.post("/tools/batch",(q,r)=>r.status(402).json({error:"x402 required"}));
+app.get("/tools/market/premium/scan",(q,r)=>r.status(402).json({error:"x402 required"}));
+app.get("/tools/market/premium/deep-backtest",(q,r)=>r.status(402).json({error:"x402 required"}));
+
+
+// GET /tools/market/regime - market regime snapshot (trend/vol/corr) multi-asset free [v1.76]
+// query: symbols=BTCUSDT,ETHUSDT,SOLUSDT (max 10)
+app.get("/tools/market/regime",async(q,r)=>{try{
+  const {symbols="BTCUSDT,ETHUSDT,SOLUSDT,BNBUSDT,XRPUSDT"}=q.query;
+  const syms=String(symbols).split(",").map(s=>s.trim().toUpperCase()).slice(0,10);
+  const out={trend:{},volatility:{},correlation:{},riskReward:{}};
+  const closes={};
+  for(const sym of syms){
+    const kl=await(await fetch("https://api.binance.com/api/v3/klines?symbol="+encodeURIComponent(sym)+"&interval=1d&limit=60",{signal:AbortSignal.timeout(8000)})).json();
+    if(!Array.isArray(kl)||kl.length<20){out.trend[sym]="no data";continue;}
+    const c=kl.map(x=>parseFloat(x[4])); const h=kl.map(x=>parseFloat(x[2])); const l=kl.map(x=>parseFloat(x[3]));
+    closes[sym]=c;
+    // trend: SMA20 vs SMA50
+    const sma20=c.slice(-20).reduce((a,b)=>a+b,0)/20;
+    const sma50=c.slice(-50).reduce((a,b)=>a+b,0)/Math.min(50,c.length);
+    out.trend[sym]={last:c[c.length-1],sma20:Math.round(sma20*100)/100,sma50:Math.round(sma50*100)/100,state:c[c.length-1]>sma20&&sma20>sma50?"bull":(c[c.length-1]<sma20&&sma20<sma50?"bear":"neutral")};
+    // volatility: ATR14 / price * 100
+    let tr=0; for(let i=c.length-14;i<c.length;i++){const hi=h[i],lo=l[i],pc=c[i-1]; tr+=Math.max(hi-lo,Math.abs(hi-pc),Math.abs(lo-pc));}
+    const atr=tr/14; out.volatility[sym]={atr:Math.round(atr*100)/100,atrPct:Math.round(atr/c[c.length-1]*10000)/100};
+    // risk/reward: next 10d max gain vs max loss from now
+    const fwd=c.slice(-10); const entry=c[c.length-1];
+    const maxGain=Math.max(...fwd)-entry; const maxLoss=entry-Math.min(...fwd);
+    out.riskReward[sym]={entry,rewardPct:Math.round(maxGain/entry*10000)/100,riskPct:Math.round(maxLoss/entry*10000)/100,ratio:maxLoss>0?Math.round(maxGain/maxLoss*100)/100:null};
+  }
+  // correlation matrix (30d returns)
+  const symsOk=Object.keys(closes).filter(s=>closes[s].length>=30);
+  const mat={};
+  for(const a of symsOk){mat[a]={}; for(const b of symsOk){
+    const ra=closes[a].slice(-30).map((v,i)=>(v-closes[a][closes[a].length-30+i])/closes[a][closes[a].length-30+i]);
+    const rb=closes[b].slice(-30).map((v,i)=>(v-closes[b][closes[b].length-30+i])/closes[b][closes[b].length-30+i]);
+    const ma=ra.reduce((x,y)=>x+y,0)/ra.length; const mb=rb.reduce((x,y)=>x+y,0)/rb.length;
+    let cov=0,va=0,vb=0; for(let i=0;i<ra.length;i++){cov+=(ra[i]-ma)*(rb[i]-mb);va+=(ra[i]-ma)**2;vb+=(rb[i]-mb)**2;}
+    mat[a][b]=va>0&&vb>0?Math.round(cov/Math.sqrt(va*vb)*100)/100:1;
+  }}
+  out.correlation=mat;
+  try{bump("freeCalls")}catch(e){}
+  r.json({regime:out,asOf:new Date().toISOString(),disclaimer:"SIMULATION ONLY - educational"});
+}catch(e){r.status(400).json({error:String(e.message||e)})}});
+
+// SVG regime heatmap (embeddable) [v1.76]
+app.get("/tools/market/regime.svg",async(q,r)=>{try{
+  const {symbols="BTCUSDT,ETHUSDT,SOLUSDT,BNBUSDT,XRPUSDT"}=q.query;
+  const syms=String(symbols).split(",").map(s=>s.trim().toUpperCase()).slice(0,10);
+  let html='<svg xmlns="http://www.w3.org/2000/svg" width="600" height="320" style="font-family:monospace;font-size:11px"><rect width="100%" height="100%" fill="#0d1117"/>';
+  let y=20; for(const s of syms){html+=`<text x="10" y="${y}" fill="#8b949e">${s}</text>`; y+=22;}
+  y=20;
+  const cols=["#ef4444","#f97316","#eab308","#22c55e","#06b6d4","#3b82f6","#a855f7"];
+  for(const s of syms){
+    const kl=await(await fetch("https://api.binance.com/api/v3/klines?symbol="+encodeURIComponent(s)+"&interval=1d&limit=60",{signal:AbortSignal.timeout(8000)})).json();
+    if(!Array.isArray(kl)||kl.length<20){y+=22;continue;}
+    const c=kl.map(x=>parseFloat(x[4])); const entry=c[0]; const last=c[c.length-1];
+    const ret=(last-entry)/entry*100; const col=ret>20?cols[4]:ret>10?cols[3]:ret>0?cols[2]:ret>-10?cols[1]:cols[0];
+    const bar=Math.min(Math.abs(ret)*2,200); html+=`<rect x="120" y="${y-14}" width="${bar}" height="16" fill="${col}"/><text x="${120+bar+5}" y="${y}" fill="#e6edf3">${ret>0?'+':''}${ret.toFixed(1)}%</text>`;
+    y+=22;
+  }
+  html+='<text x="10" y="280" fill="#484f5a">SIMULATION ONLY</text></svg>';
+  r.type("image/svg+xml").send(html);
+}catch(e){r.status(400).send(String(e.message||e))}});
+
+// GET /tools/market/desk - ONE-CALL snapshot: regime + positions + alerts + journal (free) [v1.77]
+// query: symbols=BTCUSDT,ETHUSDT,SOLUSDT (max 10). Human UI at /desk.html
+app.get("/tools/market/desk",async(q,r)=>{try{
+  const {symbols="BTCUSDT,ETHUSDT,SOLUSDT,BNBUSDT,XRPUSDT"}=q.query;
+  const syms=String(symbols).split(",").map(s=>s.trim().toUpperCase()).slice(0,10);
+  const out={regime:{},positions:{},alerts:[],journal:[]};
+  const closes={};
+  for(const sym of syms){
+    const kl=await(await fetch("https://api.binance.com/api/v3/klines?symbol="+encodeURIComponent(sym)+"&interval=1d&limit=60",{signal:AbortSignal.timeout(8000)})).json();
+    if(!Array.isArray(kl)||kl.length<20){continue;}
+    const c=kl.map(x=>parseFloat(x[4])); const h=kl.map(x=>parseFloat(x[2])); const l=kl.map(x=>parseFloat(x[3]));
+    closes[sym]=c;
+    const sma20=c.slice(-20).reduce((a,b)=>a+b,0)/20;
+    const sma50=c.slice(-50).reduce((a,b)=>a+b,0)/Math.min(50,c.length);
+    const state=c[c.length-1]>sma20&&sma20>sma50?"bull":(c[c.length-1]<sma20&&sma20<sma50?"bear":"neutral");
+    let tr=0; for(let i=c.length-14;i<c.length;i++){const hi=h[i],lo=l[i],pc=c[i-1]; tr+=Math.max(hi-lo,Math.abs(hi-pc),Math.abs(lo-pc));}
+    const atr=tr/14;
+    const entry=c[0]; const last=c[c.length-1];
+    const ret=(last-entry)/entry*100; const dd=Math.max(...c.map((v,i)=>(v-Math.max(...c.slice(0,i+1)))/Math.max(...c.slice(0,i+1))*100));
+    out.positions[sym]={entry,last,returnPct:Math.round(ret*100)/100,maxDrawdownPct:Math.round(dd*100)/100,days:kl.length};
+    out.regime[sym]={last,sma20:Math.round(sma20*100)/100,sma50:Math.round(sma50*100)/100,state,atr:Math.round(atr*100)/100,atrPct:Math.round(atr/last*10000)/100};
+  }
+  const symsOk=Object.keys(closes).filter(s=>closes[s].length>=30);
+  const mat={};
+  for(const a of symsOk){mat[a]={}; for(const b of symsOk){
+    const ra=closes[a].slice(-30).map((v,i)=>(v-closes[a][closes[a].length-30+i])/closes[a][closes[a].length-30+i]);
+    const rb=closes[b].slice(-30).map((v,i)=>(v-closes[b][closes[b].length-30+i])/closes[b][closes[b].length-30+i]);
+    const ma=ra.reduce((x,y)=>x+y,0)/ra.length; const mb=rb.reduce((x,y)=>x+y,0)/rb.length;
+    let cov=0,va=0,vb=0; for(let i=0;i<ra.length;i++){cov+=(ra[i]-ma)*(rb[i]-mb);va+=(ra[i]-ma)**2;vb+=(rb[i]-mb)**2;}
+    mat[a][b]=va>0&&vb>0?Math.round(cov/Math.sqrt(va*vb)*100)/100:1;
+  }}
+  out.regime._correlation=mat;
+  if(global.alertsStore){out.alerts=Array.from(global.alertsStore.values()).filter(a=>!a.triggered);}
+  for(const sym of symsOk){
+    const rg=out.regime[sym]; if(!rg||sym==="_correlation") continue;
+    let plan="hold"; let note="";
+    if(rg.state==="bull" && rg.atrPct<3){plan="long"; note="trend up, low vol -> follow";}
+    else if(rg.state==="bear" && rg.atrPct<3){plan="short"; note="trend down, low vol -> follow";}
+    else if(rg.atrPct>5){plan="wait"; note="high vol -> reduce size or wait";}
+    else {note="mixed signals or elevated vol";}
+    out.journal.push({symbol:sym,plan,note});
+  }
+  try{bump("freeCalls")}catch(e){}
+  r.json({desk:out,asOf:new Date().toISOString(),disclaimer:"SIMULATION ONLY - educational"});
+}catch(e){r.status(400).json({error:String(e.message||e)})}});
+// ---- 404 ----
+app.use((q,r)=>r.status(404).json({error:"not found",hint:"see /openapi.json"}));
+
+const PORT=process.env.PORT||4020;
+app.listen(PORT,()=>console.log("server listening on",PORT));

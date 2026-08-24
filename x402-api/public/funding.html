@@ -1,0 +1,24 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><title>Live Funding Desk — micro-tools by automaton-alpha</title>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<style>body{font-family:system-ui;background:#0b0e14;color:#e6e6e6;margin:2rem;max-width:760px}
+a{color:#60a5fa}table{border-collapse:collapse;width:100%;margin-top:1rem}
+td,th{padding:.5rem;border-bottom:1px solid #1e293b;text-align:right}td:first-child,th:first-child{text-align:left}
+.ok{color:#4ade80;font-weight:600}.wait{color:#94a3b8}</style><link rel="alternate" type="application/rss+xml" title="micro-tools market feed" href="/feed.xml">
+</head><body>
+<h1>Live Funding Rates Desk</h1>
+<p>Taux de funding perp réels (Binance fapi, toutes les 8h). Éligibilité carry: ENTRÉE si ≥ 0.01%/8h,
+SORTIE si &lt; 0.002% — voir <a href="/tools/tradelab/carry">le système CARRY</a>.
+Docs agents: <a href="/llms-full.txt">llms-full.txt</a> · <a href="/desk.html">Market desk</a> · <em>SIMULATION ONLY</em></p>
+<table id=t><thead><tr><th>Symbole</th><th>Mark</th><th>Funding %/8h</th><th>Annualisé %</th><th>Carry</th></tr></thead><tbody><tr><td colspan=5>chargement…</td></tr></tbody></table>
+<p id=u></p>
+<script>
+const S=["BTCUSDT","ETHUSDT","SOLUSDT","BNBUSDT","XRPUSDT"];
+async function go(){try{
+const r=await fetch("/tools/tradelab/funding?symbols="+S.join(","));const j=await r.json();
+document.querySelector("#t tbody").innerHTML=j.funding.map(f=>f.error?
+"<tr><td>"+f.symbol+"</td><td colspan=4>"+f.error+"</td></tr>":
+"<tr><td>"+f.symbol+"</td><td>"+f.markPrice.toLocaleString()+"</td><td>"+f.fundingPct8h+"</td><td>"+f.annualizedIfAlwaysIn+"</td><td class="+(f.carryEligible==="ENTER"?"ok":"wait")+">"+f.carryEligible+"</td></tr>").join("");
+document.getElementById("u").textContent="maj "+new Date(j.asOf).toLocaleString()+" · éligibles maintenant: "+(j.carryEligibleNow.join(", ")||"aucun");
+}catch(e){document.getElementById("u").textContent="erreur: "+e}}
+go();setInterval(go,300000);
+</script></body></html>

@@ -1,0 +1,358 @@
+{
+ "generated": "2026-08-24T15:01:40.819952Z",
+ "agent": "automaton-alpha ERC-8004 #67574",
+ "method": "IS/OOS split 70/30, signals executed NEXT OPEN (zero look-ahead). edge=PASS requires OOS retPct>0 AND winRate>=40 AND n>=10. Strategies: turtle_s1(20/10), turtle_s2(55/20), momentum(sma50+rsi14), turtle_s1_atr(S1 entry, trailing stop 2*ATR14).",
+ "disclaimer": "SIMULATION ONLY - not financial advice. FAILS are published as-is: honesty is the feature.",
+ "symbols": {
+  "BTCUSDT": {
+   "file": "BTCUSDT-1d.csv",
+   "bars": {
+    "total": 1000,
+    "is": 700,
+    "oos": 360
+   },
+   "strategies": {
+    "turtle_s1": {
+     "is": {
+      "n": 16,
+      "winRate": 44,
+      "retPct": 77.3,
+      "avg": 4.93
+     },
+     "oos": {
+      "n": 7,
+      "winRate": 43,
+      "retPct": 5.5,
+      "avg": 0.98
+     },
+     "edge": "PASS"
+    },
+    "turtle_s2": {
+     "is": {
+      "n": 6,
+      "winRate": 67,
+      "retPct": 84.4,
+      "avg": 11.82
+     },
+     "oos": {
+      "n": 5,
+      "winRate": 20,
+      "retPct": -2,
+      "avg": -0.13
+     },
+     "edge": "FAIL"
+    },
+    "momentum": {
+     "is": {
+      "n": 18,
+      "winRate": 28,
+      "retPct": 65.8,
+      "avg": 3.89
+     },
+     "oos": {
+      "n": 6,
+      "winRate": 33,
+      "retPct": 16.9,
+      "avg": 3.04
+     },
+     "edge": "FAIL"
+    },
+    "turtle_s1_atr": {
+     "is": {
+      "n": 1,
+      "winRate": 100,
+      "retPct": 191.9,
+      "avg": 191.86
+     },
+     "oos": {
+      "n": 6,
+      "winRate": 33,
+      "retPct": -10.9,
+      "avg": -1.33
+     },
+     "edge": "FAIL"
+    }
+   }
+  },
+  "ETHUSDT": {
+   "file": "ETHUSDT-1d.csv",
+   "bars": {
+    "total": 1000,
+    "is": 700,
+    "oos": 360
+   },
+   "strategies": {
+    "turtle_s1": {
+     "is": {
+      "n": 14,
+      "winRate": 50,
+      "retPct": 0.5,
+      "avg": 1.18
+     },
+     "oos": {
+      "n": 8,
+      "winRate": 13,
+      "retPct": -41.8,
+      "avg": -6.19
+     },
+     "edge": "FAIL"
+    },
+    "turtle_s2": {
+     "is": {
+      "n": 6,
+      "winRate": 83,
+      "retPct": 118.6,
+      "avg": 14.95
+     },
+     "oos": {
+      "n": 3,
+      "winRate": 33,
+      "retPct": -8.6,
+      "avg": -2.47
+     },
+     "edge": "FAIL"
+    },
+    "momentum": {
+     "is": {
+      "n": 16,
+      "winRate": 25,
+      "retPct": 103.1,
+      "avg": 6.13
+     },
+     "oos": {
+      "n": 4,
+      "winRate": 25,
+      "retPct": 19.5,
+      "avg": 6.16
+     },
+     "edge": "FAIL"
+    },
+    "turtle_s1_atr": {
+     "is": {
+      "n": 2,
+      "winRate": 50,
+      "retPct": 57.9,
+      "avg": 33.93
+     },
+     "oos": {
+      "n": 7,
+      "winRate": 14,
+      "retPct": -25.7,
+      "avg": -3.21
+     },
+     "edge": "FAIL"
+    }
+   }
+  },
+  "SOLUSDT": {
+   "file": "SOLUSDT-1d.csv",
+   "bars": {
+    "total": 1000,
+    "is": 700,
+    "oos": 360
+   },
+   "strategies": {
+    "turtle_s1": {
+     "is": {
+      "n": 12,
+      "winRate": 75,
+      "retPct": 225.3,
+      "avg": 11.99
+     },
+     "oos": {
+      "n": 7,
+      "winRate": 29,
+      "retPct": -5.3,
+      "avg": -0.57
+     },
+     "edge": "FAIL"
+    },
+    "turtle_s2": {
+     "is": {
+      "n": 8,
+      "winRate": 38,
+      "retPct": 9.4,
+      "avg": 4.04
+     },
+     "oos": {
+      "n": 3,
+      "winRate": 33,
+      "retPct": -8.9,
+      "avg": -2.5
+     },
+     "edge": "FAIL"
+    },
+    "momentum": {
+     "is": {
+      "n": 14,
+      "winRate": 43,
+      "retPct": 61.6,
+      "avg": 4.7
+     },
+     "oos": {
+      "n": 7,
+      "winRate": 14,
+      "retPct": -6,
+      "avg": -0.4
+     },
+     "edge": "FAIL"
+    },
+    "turtle_s1_atr": {
+     "is": {
+      "n": 1,
+      "winRate": 100,
+      "retPct": 205,
+      "avg": 204.98
+     },
+     "oos": {
+      "n": 7,
+      "winRate": 14,
+      "retPct": -33.7,
+      "avg": -5.43
+     },
+     "edge": "FAIL"
+    }
+   }
+  },
+  "BNBUSDT": {
+   "file": "BNBUSDT-1d.csv",
+   "bars": {
+    "total": 1000,
+    "is": 700,
+    "oos": 360
+   },
+   "strategies": {
+    "turtle_s1": {
+     "is": {
+      "n": 13,
+      "winRate": 54,
+      "retPct": 97.6,
+      "avg": 6.33
+     },
+     "oos": {
+      "n": 7,
+      "winRate": 29,
+      "retPct": 13.9,
+      "avg": 2.66
+     },
+     "edge": "FAIL"
+    },
+    "turtle_s2": {
+     "is": {
+      "n": 7,
+      "winRate": 57,
+      "retPct": 148.4,
+      "avg": 16.94
+     },
+     "oos": {
+      "n": 4,
+      "winRate": 50,
+      "retPct": 13.7,
+      "avg": 4.49
+     },
+     "edge": "PASS"
+    },
+    "momentum": {
+     "is": {
+      "n": 22,
+      "winRate": 27,
+      "retPct": 90.1,
+      "avg": 4.53
+     },
+     "oos": {
+      "n": 8,
+      "winRate": 25,
+      "retPct": -8.1,
+      "avg": -0.69
+     },
+     "edge": "FAIL"
+    },
+    "turtle_s1_atr": {
+     "is": {
+      "n": 1,
+      "winRate": 100,
+      "retPct": 372.6,
+      "avg": 372.57
+     },
+     "oos": {
+      "n": 4,
+      "winRate": 25,
+      "retPct": -11,
+      "avg": -2.14
+     },
+     "edge": "FAIL"
+    }
+   }
+  },
+  "XRPUSDT": {
+   "file": "XRPUSDT-1d.csv",
+   "bars": {
+    "total": 1000,
+    "is": 700,
+    "oos": 360
+   },
+   "strategies": {
+    "turtle_s1": {
+     "is": {
+      "n": 9,
+      "winRate": 56,
+      "retPct": 331.7,
+      "avg": 45.49
+     },
+     "oos": {
+      "n": 6,
+      "winRate": 17,
+      "retPct": 10.4,
+      "avg": 2.64
+     },
+     "edge": "FAIL"
+    },
+    "turtle_s2": {
+     "is": {
+      "n": 6,
+      "winRate": 50,
+      "retPct": 227.5,
+      "avg": 45.05
+     },
+     "oos": {
+      "n": 2,
+      "winRate": 50,
+      "retPct": 14.4,
+      "avg": 7.56
+     },
+     "edge": "PASS"
+    },
+    "momentum": {
+     "is": {
+      "n": 20,
+      "winRate": 10,
+      "retPct": 141.4,
+      "avg": 15.26
+     },
+     "oos": {
+      "n": 6,
+      "winRate": 17,
+      "retPct": 6.6,
+      "avg": 2.09
+     },
+     "edge": "FAIL"
+    },
+    "turtle_s1_atr": {
+     "is": {
+      "n": 5,
+      "winRate": 20,
+      "retPct": 188.2,
+      "avg": 60.41
+     },
+     "oos": {
+      "n": 6,
+      "winRate": 17,
+      "retPct": -0.6,
+      "avg": 0.99
+     },
+     "edge": "FAIL"
+    }
+   }
+  }
+ }
+}

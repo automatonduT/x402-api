@@ -1,0 +1,13 @@
+# Smithery manifest - microtools MCP server
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    properties:
+      microtoolsBase:
+        type: string
+        title: Microtools API base URL
+        description: Base URL of the microtools API
+        default: "BASEURL"
+  commandFunction: |-
+    (config) => ({ "command": "node", "args": ["mcp-server.js"], "env": { "MICROTOOLS_BASE": config.microtoolsBase } })

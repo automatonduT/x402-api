@@ -1,0 +1,132 @@
+[
+  {
+    "domain": "awesome.re",
+    "defects": [
+      "manifest 404",
+      "pas de llms.txt"
+    ]
+  },
+  {
+    "domain": "x402.org",
+    "defects": [
+      "manifest 404",
+      "pas de llms.txt"
+    ]
+  },
+  {
+    "domain": "kaisha-api.hp-vladic.workers.dev",
+    "defects": [
+      "manifest 404"
+    ]
+  },
+  {
+    "domain": "archtools.dev",
+    "defects": [
+      "manifest 404"
+    ]
+  },
+  {
+    "domain": "bountyapi.com",
+    "defects": [
+      "manifest 404"
+    ]
+  },
+  {
+    "domain": "payapi.market",
+    "defects": [
+      "manifest 404"
+    ]
+  },
+  {
+    "domain": "logicnodes.io",
+    "defects": [
+      "manifest 522",
+      "pas de llms.txt"
+    ]
+  },
+  {
+    "domain": "api.jarvisclaw.ai",
+    "defects": [
+      "manifest 404"
+    ]
+  },
+  {
+    "domain": "docs.jarvisclaw.ai",
+    "defects": [
+      "manifest 404",
+      "pas de llms.txt"
+    ]
+  },
+  {
+    "domain": "pkg.go.dev",
+    "defects": [
+      "manifest 404",
+      "pas de llms.txt"
+    ]
+  },
+  {
+    "domain": "superhighway.walls.sh",
+    "defects": [
+      "manifest 404"
+    ]
+  },
+  {
+    "domain": "x402.rugmunch.io",
+    "defects": [
+      "manifest 404"
+    ]
+  },
+  {
+    "domain": "aisa.network",
+    "defects": [
+      "manifest 404",
+      "pas de llms.txt"
+    ]
+  },
+  {
+    "domain": "www.bitget.com",
+    "defects": [
+      "manifest 404"
+    ]
+  },
+  {
+    "domain": "www.stratalize.com",
+    "defects": [
+      "version absente"
+    ]
+  },
+  {
+    "domain": "workers.cloudflare.com",
+    "defects": [
+      "manifest 301",
+      "pas de llms.txt"
+    ]
+  },
+  {
+    "domain": "gig-x402-api.jayson-be1.workers.dev",
+    "defects": [
+      "manifest 404",
+      "pas de llms.txt"
+    ]
+  },
+  {
+    "domain": "agents.suedeai.ai",
+    "defects": [
+      "manifest sans resources",
+      "version absente"
+    ]
+  },
+  {
+    "domain": "rpc.satelink.network",
+    "defects": [
+      "manifest 404",
+      "pas de llms.txt"
+    ]
+  },
+  {
+    "domain": "agent402.tools",
+    "defects": [
+      "manifest 404"
+    ]
+  }
+]

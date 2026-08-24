@@ -1,0 +1,24 @@
+{
+ "positions": {
+  "BTCUSDT": {
+   "entry": 77330,
+   "entryTs": "2026-08-23T18:21:10.114Z",
+   "equity": 1,
+   "collected": 0.0002,
+   "periods": 2,
+   "lastRate": 0.0001,
+   "lastPx": 77694.36
+  },
+  "ETHUSDT": {
+   "entry": 2446.04,
+   "entryTs": "2026-08-23T18:21:10.976Z",
+   "equity": 1,
+   "collected": 0.0002,
+   "periods": 2,
+   "lastRate": 0.0001,
+   "lastPx": 2461.35
+  }
+ },
+ "closed": [],
+ "created": "2026-08-23T18:21:05.995Z"
+}

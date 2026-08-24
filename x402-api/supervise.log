@@ -1,0 +1,5 @@
+2026-08-23T23:39:17Z port=3000 local=404 ext=404 amt=none verdict=PROOF_FAIL
+2026-08-23T23:40:11Z port=3000 local=404 ext=402 amt="maxAmountRequired":"50000" verdict=PROOF_OK
+2026-08-23T23:45:04Z port=3000 local=404 ext=402 amt="maxAmountRequired":"50000" verdict=PROOF_OK
+2026-08-23T23:45:48Z port=4020 local=200 verdict=PROOF_OK
+2026-08-23T23:48:36Z port=4020 local=200 verdict=PROOF_OK

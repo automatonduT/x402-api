@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>micro-tools playground (auto-generated from OpenAPI)</title>
+<style>
+body{font:14px/1.5 monospace;background:#0d1117;color:#c9d1d9;max-width:960px;margin:0 auto;padding:16px}
+h1{color:#58a6ff;font-size:18px} h3{color:#7ee787;margin:14px 0 4px;font-size:13px}
+details{border:1px solid #21262d;border-radius:6px;margin:6px 0;padding:6px 10px;background:#161b22}
+summary{cursor:pointer;color:#58a6ff} input{background:#0d1117;color:#c9d1d9;border:1px solid #30363d;border-radius:4px;padding:3px 6px;margin:2px;width:180px}
+button{background:#238636;color:#fff;border:0;border-radius:4px;padding:4px 10px;cursor:pointer;margin-top:4px}
+pre{background:#010409;padding:8px;border-radius:6px;overflow:auto;max-height:300px;font-size:12px}
+a{color:#58a6ff} .tag{color:#8b949e;font-size:12px}
+</style>
+<link rel="alternate" type="application/rss+xml" title="micro-tools market feed" href="/feed.xml">
+</head>
+<body>
+<h1>micro-tools playground</h1>
+<p class="tag">Forms auto-generated from <a href="/openapi.json">/openapi.json</a> at runtime - never stale. GET endpoints only. Paid endpoints (x402) need a wallet client - see <a href="/skill.md">skill.md</a>.</p>
+<div id="root">loading spec...</div>
+<script>
+(async()=>{
+ try{
+  const spec=await (await fetch('/openapi.json')).json();
+  const root=document.getElementById('root');
+  root.innerHTML='';
+  const paths=Object.entries(spec.paths||{}).filter(([p,def])=>def.get&&!/hook|webhook-secret|guestbook|schedule|digest|alerts|monitor|rss-watch/.test(p));
+  for(const [path,def] of paths){
+   const op=def.get;
+   const params=(op.parameters||[]).filter(p=>p.in==='query');
+   const d=document.createElement('details');
+   const sum=document.createElement('summary');
+   sum.textContent='GET '+path+(op.summary?' - '+op.summary:'');
+   d.appendChild(sum);
+   const form=document.createElement('div');
+   params.forEach(p=>{
+    const lab=document.createElement('label');lab.className='tag';lab.textContent=p.name+' ';
+    const inp=document.createElement('input');
+    inp.dataset.param=p.name;
+    inp.placeholder=(p.schema&&p.schema.default!=null)?String(p.schema.default):'';
+    lab.appendChild(inp);form.appendChild(lab);form.appendChild(document.createElement('br'));
+   });
+   const btn=document.createElement('button');btn.textContent='run';form.appendChild(btn);
+   const out=document.createElement('pre');out.textContent='(not run)';form.appendChild(out);
+   btn.onclick=async()=>{
+    const url=new URL(path,location.origin);
+    form.querySelectorAll('input[data-param]').forEach(i=>{if(i.value)url.searchParams.set(i.dataset.param,i.value)});
+    out.textContent='... '+url.pathname+url.search;
+    try{const r=await fetch(url);const t=await r.text();out.textContent='HTTP '+r.status+'\n'+t.slice(0,4000);}
+    catch(e){out.textContent='ERR '+e.message;}
+   };
+   d.appendChild(form);root.appendChild(d);
+  }
+ }catch(e){document.getElementById('root').textContent='spec load failed: '+e.message;}
+})();
+</script>
+<p class="tag">Part of <a href="/">micro-tools</a> by automaton-alpha - free with attribution. Embeddable assets: <a href="/EMBED-KIT.md">EMBED-KIT.md</a></p>
+</body>
+</html>

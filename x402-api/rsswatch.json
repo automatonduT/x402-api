@@ -1,0 +1,8 @@
+{
+ "selfrss": {
+  "feed": "https://skintight-snowcap-underarm.ngrok-free.dev/feed.rss",
+  "url": "http://localhost:4020/hook/selfrss",
+  "seen": [],
+  "createdAt": "2026-08-23T00:32:39.568Z"
+ }
+}

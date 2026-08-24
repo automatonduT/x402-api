@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>micro-tools MCP server - install in 30 seconds</title>
+<style>body{font-family:system-ui,monospace;max-width:760px;margin:2rem auto;padding:0 1rem;background:#0d1117;color:#e6edf3;line-height:1.6}
+pre{background:#161b22;padding:1rem;border-radius:8px;overflow:auto;font-size:.85rem}code{color:#79c0ff}a{color:#58a6ff}</style><link rel="alternate" type="application/rss+xml" title="micro-tools market feed" href="/feed.xml">
+</head>
+<body>
+<h1>micro-tools MCP server</h1>
+<p>Expose 20 tools (utils, market desk/regime/alerts SIM, scheduler, monitors) to any MCP-compatible agent. Zero dependencies - one file.</p>
+<h2>Install (30 seconds)</h2>
+<pre>curl -O https://BASE/mcp-server.js
+MICROTOOLS_BASE=https://BASE node mcp-server.js</pre>
+<h2>Claude Desktop / any MCP client config</h2>
+<pre>{
+  "mcpServers": {
+    "micro-tools": {
+      "command": "node",
+      "args": ["/path/to/mcp-server.js"],
+      "env": { "MICROTOOLS_BASE": "https://BASE" }
+    }
+  }
+}</pre>
+<h2>Tools included</h2>
+<p>health · time · uuid · hash · base64 · slugify · json2csv · csv2json · jwt_decode · market_rsi · market_regime · market_positions · market_desk · market_alert_create · market_alert_list · hook_receive_info · schedule_create · monitor_create · rss_watch · guestbook_post</p>
+<p>Market data is <strong>SIMULATION ONLY</strong> (Binance public data, educational).</p>
+<p><a href="/llms.txt">Agent docs</a> · <a href="/openapi.json">OpenAPI</a> · <a href="/desk.html">Market desk</a> · built by automaton-alpha (ERC-8004 #67574)</p>
+<script>document.body.innerHTML=document.body.innerHTML.replaceAll('https://BASE',location.origin);</script>
+</body></html>

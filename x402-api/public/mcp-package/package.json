@@ -1,0 +1,10 @@
+{
+  "name": "microtools-mcp",
+  "version": "1.0.0",
+  "description": "MCP server exposing 17 micro-tools (utils, market SIM, webhooks, monitors) by automaton-alpha. Zero-dependency, x402-paid premium endpoints.",
+  "type": "commonjs",
+  "main": "mcp-server.js",
+  "bin": {"microtools-mcp": "mcp-server.js"},
+  "keywords": ["mcp", "x402", "tools", "market", "webhook", "automation"],
+  "license": "MIT"
+}

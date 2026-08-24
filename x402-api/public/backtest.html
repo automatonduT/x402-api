@@ -1,0 +1,38 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><title>Validated Backtests — TradeLab by automaton-alpha</title>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<style>body{font-family:system-ui;background:#0b0e14;color:#e6e6e6;margin:2rem;max-width:840px}
+a{color:#60a5fa}h1{font-size:1.5rem}
+table{border-collapse:collapse;width:100%;margin-top:1rem;font-size:.88rem}
+td,th{padding:.45rem;border-bottom:1px solid #1e293b;text-align:right}td:first-child,th:first-child{text-align:left}
+.ok{color:#4ade80}.bad{color:#f87171}.mut{color:#94a3b8}
+.box{background:#111827;border:1px solid #1e293b;border-radius:8px;padding:.8rem 1rem;margin:1rem 0}</style><link rel="alternate" type="application/rss+xml" title="micro-tools market feed" href="/feed.xml">
+</head><body>
+<h1>TradeLab — Validated Backtests</h1>
+<div class=box>Turtle S1/S2 &amp; momentum sur ~3 ans de daily Binance · <strong>parametres canoniques sans fitting</strong> ·
+in-sample 70% / <strong>out-of-sample 30%</strong> · sans levier.<br>
+<em>SIMULATION ONLY - resultats historiques paper, pas un conseil financier.</em></div>
+<p id=verdict class=mut>chargement…</p>
+<table id=t><thead><tr><th>Symbole</th><th>Strategie</th><th>IS ann %</th><th>IS Sharpe</th><th>OOS ann %</th><th>OOS maxDD %</th><th>OOS Sharpe</th></tr></thead>
+<tbody><tr><td colspan=7 class=mut>chargement…</td></tr></tbody></table>
+<p class=mut id=u></p>
+<p>API brute : <a href="/tools/tradelab/backtest">GET /tools/tradelab/backtest</a> ·
+Docs agents : <a href="/llms-full.txt">llms-full.txt</a> ·
+<a href="/desk.html">Market desk</a> · <a href="/funding.html">Funding desk</a> · <a href="/">accueil</a></p>
+<script>
+const NAMES={S1:"S1 Turtle 20/10",S2:"S2 Turtle 55/20",mom:"Momentum 90j"};
+async function go(){try{
+const j=await(await fetch("/tools/tradelab/backtest")).json();
+let rows="";
+for(const s of j.results)for(const k of ["S1","S2","mom"]){
+ const a=s[k].IS,o=s[k].OOS;if(!o||o.ann==null)continue;
+ rows+="<tr><td>"+s.symbol+"</td><td>"+NAMES[k]+"</td>"+
+ "<td>"+a.ann+"</td><td>"+a.sharpe+"</td>"+
+ "<td class=\""+(o.ann>=0?"ok":"bad")+"\">"+o.ann+"</td>"+
+ "<td>"+(o.maxDD!=null?o.maxDD:"-")+"</td>"+
+ "<td class=\""+(o.sharpe>=1?"ok":(o.sharpe>=0.5?"":"bad"))+"\">"+o.sharpe+"</td></tr>"}
+document.querySelector("#t tbody").innerHTML=rows;
+document.getElementById("verdict").textContent=j.verdict+" — "+j.method;
+document.getElementById("u").textContent="maj "+new Date(j.asOf).toLocaleString()+" · source: data/backtest-results.json";
+}catch(e){document.getElementById("u").textContent="erreur: "+e}}
+go();
+</script></body></html>

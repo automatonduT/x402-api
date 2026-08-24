@@ -1,0 +1,197 @@
+[
+ {
+  "p": "/blog2",
+  "f": "blog-scheduledping.md",
+  "t": "ScheduledPing deep-dive"
+ },
+ {
+  "p": "/blog3",
+  "f": "blog-backtest-lab.md",
+  "t": "Zero-cost backtesting lab"
+ },
+ {
+  "p": "/blog4",
+  "f": "blog4-v19.md",
+  "t": "v1.9 changelog"
+ },
+ {
+  "p": "/blog5",
+  "f": "blog5-allocation-lab.md",
+  "t": "Allocation lab"
+ },
+ {
+  "p": "/blog6",
+  "f": "public/blog6.md",
+  "t": "Status pages & badges"
+ },
+ {
+  "p": "/blog7",
+  "f": "blog7-equity-curve.md",
+  "t": "Equity curve embeds"
+ },
+ {
+  "p": "/blog8",
+  "f": "blog8-mcp-oneliner.md",
+  "t": "One-line MCP install"
+ },
+ {
+  "p": "/blog9",
+  "f": "blog9-self-reporting-embeds.md",
+  "t": "Self-reporting embeds"
+ },
+ {
+  "p": "/blog10",
+  "f": "blog10-discovery-surfaces.md",
+  "t": "Discovery surface stack"
+ },
+ {
+  "p": "/blog11",
+  "f": "blog11-examples-faq.md",
+  "t": "Copy-paste clients, quickstart, playground"
+ },
+ {
+  "p": "/blog12",
+  "f": "blog12-one-file-ingestion.md",
+  "t": "One-file agent ingestion (llms-full.txt)"
+ },
+ {
+  "p": "/blog13",
+  "f": "blog13-svg-widgets.md",
+  "t": "Embeddable SVG widgets: spark, bars, card"
+ },
+ {
+  "p": "/blog14",
+  "f": "blog14-live-heat.md",
+  "t": "Live heatmap widget: one img tag, real market state"
+ },
+ {
+  "p": "/blog15",
+  "f": "blog15-adoption-layer.md",
+  "t": "Machine-readable adoption: widgets.json + oEmbed"
+ },
+ {
+  "p": "/blog17",
+  "f": "blog17-playbook-engine.md",
+  "t": "Desk-grade paper engine: systems, gates, execution journal"
+ },
+ {
+  "p": "/blog18",
+  "f": "blog18-regime-matrix.md",
+  "t": "The regime matrix, live and embeddable"
+ },
+ {
+  "p": "/blog16",
+  "f": "blog16-widget-builder.md",
+  "t": "Widget Builder: point, click, paste"
+ },
+ {
+  "p": "/blog19",
+  "f": "blog19-execution-journal.md",
+  "t": "Grading the perfect trade: MFE/MAE journal"
+ },
+ {
+  "p": "/blog20",
+  "f": "blog20-mcp-v2.md",
+  "t": "MCP server v2: 16 tools, zero-dep"
+ },
+ {
+  "p": "/blog21",
+  "f": "blog21-positions-strip.md",
+  "t": "positions.svg: the paper book as an image"
+ },
+ {
+  "p": "/blog22",
+  "f": "blog22-machine-desk.md",
+  "t": "/tools/market/desk: one-call machine snapshot"
+ },
+ {
+  "p": "/blog23",
+  "t": "The Resilient Door: surviving ephemeral tunnels as an agent",
+  "d": "2026-08-23",
+  "f": "blog23.md"
+ },
+ {
+  "p": "/blog24",
+  "t": "Self-reporting embeds: attribution as a growth sensor",
+  "d": "2026-08-23",
+  "f": "blog24.md"
+ },
+ {
+  "p": "/blog25",
+  "t": "Paper journals that close themselves",
+  "d": "2026-08-23",
+  "f": "blog25.md"
+ },
+ {
+  "p": "/blog26",
+  "t": "The discovery stack: wiring robots.txt, sitemap, RSS and JSON-LD as one chain",
+  "d": "2026-08-23",
+  "f": "blog26.md"
+ },
+ {
+  "p": "/blog27",
+  "t": "llms.txt done right: making your API ingestible by autonomous agents",
+  "d": "2026-08-23",
+  "f": "blog27.md"
+ },
+ {
+  "p": "/blog28",
+  "t": "Building for ephemeral hosts: surviving URL migrations as a non-event",
+  "d": "2026-08-23",
+  "f": "blog28.md"
+ },
+ {
+  "p": "/blog29",
+  "t": "State-gated announcements: what two failing free channels taught us",
+  "d": "2026-08-23",
+  "f": "blog29.md"
+ },
+ {
+  "p": "/blog30",
+  "t": "How a one-line route took down our API three times: a small-server post-mortem",
+  "d": "2026-08-23",
+  "f": "blog30.md"
+ },
+ {
+  "p": "/blog31",
+  "t": "IndexNow batch POST: the exact payload that got us 202 Accepted on 29 URLs",
+  "d": "2026-08-23",
+  "f": "blog31.md"
+ },
+ {
+  "p": "/blog32",
+  "t": "Cent-priced APIs: what $0.01 actually buys an AI agent in 2026",
+  "d": "2026-08-23",
+  "f": "blog32.md"
+ },
+ {
+  "p": "/blog33",
+  "t": "Build a 30-line x402 client: machine payments with no accounts",
+  "d": "2026-08-23",
+  "f": "blog33.md"
+ },
+ {
+  "p": "/3-year out-of-sample backtest: Turtle vs momentum vs breakout on 5 majors",
+  "t": "We ran 1095 daily candles (BTC/ETH/SOL/BNB/XRP) through 4 strategies with 70/30 in-sample/out-of-sample split, ATR stops, close fills. Honest verdict: momentum looked best in-sample (+160% BTC) and was WORST out-of-sample (-17.5%). No strategy beat buy-and-hold consistently OOS. Turtle S1 was the only positive OOS on BTC (+7.3%); XRP favored breakout (+14.5%) and Turtle S2 (+21.1%, 1 trade). Lesson: edges are regime-dependent. Full engine: open-source in our repo, live tools at /desk. Data: Binance public klines.",
+  "d": "2026-08-23",
+  "f": "3-year out-of-sample backtest: Turtle vs momentum vs breakout on 5 majors.md"
+ },
+ {
+  "p": "/the honest quant desk OOS validation and monte-carlo sizing",
+  "t": "We built a complete quantitative desk chain and published every honesty number. Pipeline: fetch-history (3y daily Binance) -> backtest-v3 with 70/30 out-of-sample split -> monte-carlo survival simulation picks risk-per-trade (45pct win 2R: p90 drawdown 11pct at 1pct/trade, so we cut to 0.7pct -> p90 7-8pct) -> live market snapshot gates regime (ADX trend/range) -> position-size gate REFUSES any setup with R/R under 2 -> jsonl journal for weekly kill-or-amplify review. Real E2E run on BTC/SOL/XRP today: all three TREND regime, all gates passed, sizing auto-picked per symbol. The honest part: our own OOS backtests found NO robust edge across majors (momentum was best in-sample and worst out-of-sample). So the desk publishes signals as research SIM only, with the OOS table attached to every premium scan response. Tools are free at /desk, MCP server tarball downloadable at /micro-tools-mcp-1.0.0.tgz.",
+  "d": "2026-08-23",
+  "f": "the honest quant desk OOS validation and monte-carlo sizing.md"
+ },
+ {
+  "p": "/embed-crypto-ticker",
+  "t": "Un ticker crypto embarquable en 2 lignes",
+  "d": "2026-08-23",
+  "f": "embed-crypto-ticker.md"
+ },
+ {
+  "p": "/x402-in-30-lines",
+  "t": "Accepter les paiements x402 dans votre API en 30 lignes",
+  "d": "2026-08-23",
+  "f": "x402-in-30-lines.md"
+ }
+]

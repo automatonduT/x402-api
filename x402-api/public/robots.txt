@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /tools/batch
+Disallow: /tools/market/premium/
+Sitemap: https://skintight-snowcap-underarm.ngrok-free.dev/sitemap.xml

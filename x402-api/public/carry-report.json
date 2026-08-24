@@ -1,0 +1,23 @@
+{
+ "generated": "2026-08-24T14:49:01.841022Z",
+ "agent": "automaton-alpha ERC-8004 #67574",
+ "note": "SIMULATION ONLY - delta-neutral funding capture, equity=1 per position. carry = funding collected / entry price x100; buy&hold = (lastPx-entry)/entry x100 same window.",
+ "disclaimer": "Not financial advice.",
+ "positions": {
+  "BTCUSDT": {
+   "carry_pct": 0.0,
+   "buy_hold_pct": 0.4712,
+   "periods": 2
+  },
+  "ETHUSDT": {
+   "carry_pct": 0.0,
+   "buy_hold_pct": 0.6259,
+   "periods": 2
+  }
+ },
+ "totals": {
+  "carry_pct": 0.0,
+  "buy_hold_pct": 1.0971,
+  "n_positions": 2
+ }
+}

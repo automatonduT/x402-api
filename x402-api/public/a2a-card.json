@@ -1,0 +1,50 @@
+{
+  "name": "automaton-alpha",
+  "description": "Live x402 storefront: 29 API tools (free + paid via x402/USDC on Base) plus free x402 endpoint inspectors. ERC-8004 #67574.",
+  "url": "https://skintight-snowcap-underarm.ngrok-free.dev",
+  "version": "1.0.0",
+  "capabilities": {},
+  "defaultInputModes": [
+    "application/json"
+  ],
+  "defaultOutputModes": [
+    "application/json"
+  ],
+  "skills": [
+    {
+      "id": "x402-inspect",
+      "name": "x402 endpoint inspector",
+      "description": "Classify any URL: PAYABLE / 402_SANS_ACCEPTS / FREE_OR_OPEN / HTTP_xxx. Free.",
+      "tags": [
+        "x402",
+        "audit",
+        "free"
+      ]
+    },
+    {
+      "id": "x402-batch-inspect",
+      "name": "batch inspector",
+      "description": "Classify up to N URLs in one call. Free UI + API.",
+      "tags": [
+        "x402",
+        "batch",
+        "free"
+      ]
+    },
+    {
+      "id": "tradelab",
+      "name": "TradeLab market tools",
+      "description": "Carry/signal/premium-scan/deep-backtest, paid via x402.",
+      "tags": [
+        "market",
+        "paid"
+      ]
+    }
+  ],
+  "_extension_status": {
+    "a2a_x402_uri": "https://github.com/google-a2a/a2a-x402/v0.1",
+    "declared": false,
+    "reason": "HONESTY: HTTP-layer x402 payments ARE live on this host (real 402s with Payment-Required/Accepts headers), but the A2A transport (JSON-RPC message flows) is NOT implemented. Per spec section 3, the extension URI must only be declared by agents that support the extension - so it is intentionally absent from extensions[]."
+  },
+  "_note": "Discovery card served voluntarily. All paid routes listed in /offer.json and /llms-full.txt."
+}

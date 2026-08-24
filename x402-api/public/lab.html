@@ -1,0 +1,38 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Allocation Lab — micro-tools</title>
+<meta property="og:title" content="Allocation Lab"><meta property="og:description" content="Correlation -> risk-parity weights -> what-if backtest. Free, live Binance data, SIMULATION ONLY.">
+<style>body{background:#0d1117;color:#e6edf3;font-family:ui-monospace,monospace;max-width:760px;margin:30px auto;padding:0 18px}
+input,select{background:#161b22;color:#e6edf3;border:1px solid #30363d;border-radius:6px;padding:6px}
+button{background:#238636;color:#fff;border:none;border-radius:6px;padding:8px 16px;cursor:pointer;font-family:inherit}
+table{border-collapse:collapse;margin:12px 0}td,th{padding:6px 10px;border:1px solid #21262d;text-align:center}
+.bar{height:18px;background:#1f6feb;border-radius:4px;display:inline-block;vertical-align:middle}
+pre{background:#161b22;padding:10px;border-radius:6px;white-space:pre-wrap}a{color:#58a6ff}h3{margin-bottom:2px}.mut{color:#8b949e;font-size:12px}
+.warn{color:#d29922}</style><link rel="alternate" type="application/rss+xml" title="micro-tools market feed" href="/feed.xml">
+</head><body>
+<h2>🧮 Allocation Lab <small class=mut>free · SIMULATION ONLY</small></h2>
+<p class=mut>Real Binance daily data. Three steps, one click: measure correlation → compute inverse-vol weights → backtest vs equal-weight. Not financial advice.</p>
+<p><input id=syms size=34 value="BTCUSDT,ETHUSDT,SOLUSDT"> <select id=days><option>30</option><option selected>90</option><option>180</option></select> <button onclick=run()>Run</button></p>
+<h3>1 · Correlation (daily returns)</h3><div id=c>—</div>
+<h3>2 · Risk-parity weights (inverse volatility)</h3><div id=w>—</div>
+<h3>3 · What-if backtest (these weights)</h3><div id=s>—</div>
+<p class=mut>API: <a href=/tools/market/correlation>/tools/market/correlation</a> · <a href=/tools/market/riskparity>/tools/market/riskparity</a> · <a href=/tools/market/sim-portfolio>POST /tools/market/sim-portfolio</a> · <a href=/blog5>tutorial</a> · <a href=/>home</a></p>
+<script>
+const esc=x=>String(x).replace(/</g,'&lt;');
+async function jget(u){const r=await fetch(u);if(!r.ok)throw new Error(await r.text());return r.json()}
+async function run(){
+ const syms=document.getElementById('syms').value.split(',').map(s=>s.trim().toUpperCase()).filter(Boolean);
+ const days=document.getElementById('days').value;
+ try{
+  document.getElementById('c').textContent='loading…';document.getElementById('w').textContent='';document.getElementById('s').textContent='';
+  const c=await jget('/tools/market/correlation?symbols='+syms.join(',')+'&days='+days);
+  let h='<table><tr><th></th>'+c.symbols.map(s=>'<th>'+esc(s.replace('USDT',''))+'</th>').join('')+'</tr>';
+  c.matrix.forEach((row,i)=>{h+='<tr><th>'+esc(c.symbols[i].replace('USDT',''))+'</th>'+row.map(v=>'<td style=color:'+(v>=0.75?'#f85149':v>=0.4?'#d29922':'#3fb950')+'>'+v.toFixed(2)+'</td>').join('')+'</tr>';});
+  document.getElementById('c').innerHTML=h+'<div class=mut>warn ≥0.75 · ok ≤0.40 · most diversifying: <b>'+esc(c.mostDiversifying.symbol)+'</b></div>'+(c.symbols.length===2?'<div class=warn>⚠ only 2 assets: this is one bet, not a basket</div>':'');
+  const w=await jget('/tools/market/riskparity?symbols='+syms.join(',')+'&days='+Math.max(days,60));
+  const mx=Math.max(...Object.values(w.weights));
+  document.getElementById('w').innerHTML=Object.entries(w.weights).map(([k,v])=>'<div style=margin:4px 0>'+esc(k)+' <span class=bar style=width:'+(40+260*v/mx)+'px></span> '+v+'</div>').join('');
+  const s=await jget('/tools/market/sim-portfolio',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({weights:w.weights,days:+days,interval:'1d'})});
+  document.getElementById('s').innerHTML='<pre>your weights   : return '+s.result.totalReturnPct+'% · CAGR '+s.result.cagrPct+'% · vol '+s.result.volAnnulPct+'% · maxDD '+s.result.maxDrawdownPct+'%\nequal-weight   : return '+s.baselineEqualWeight.totalReturnPct+'%\nhistory       : '+s.bars+' daily bars</pre><div class=mut>upgrade: fees+slippage deep-backtest ($0.05 x402)</div>';
+ }catch(e){document.getElementById('s').innerHTML='<span class=warn>error: '+esc(e.message||e)+'</span>'}
+}
+</script></body></html>

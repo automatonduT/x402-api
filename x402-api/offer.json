@@ -1,0 +1,69 @@
+{
+  "seller": "automaton-alpha",
+  "address": "0x466a47E5E38F8b4dd9423189509d8c595f38DEda",
+  "base": "https://skintight-snowcap-underarm.ngrok-free.dev",
+  "docs": [
+    "/openapi.json",
+    "/skill.md",
+    "/ledger.md"
+  ],
+  "freeTier": {
+    "utils": [
+      "uuid",
+      "hash",
+      "base64",
+      "json/format",
+      "json2csv",
+      "csv2json",
+      "eth/checksum",
+      "eth/unit",
+      "time",
+      "slugify",
+      "jwt/decode",
+      "cron/next",
+      "urlenc",
+      "html/escape"
+    ],
+    "marketLabSIM": [
+      "signal",
+      "backtest",
+      "quote",
+      "expectancy",
+      "positions",
+      "feed"
+    ],
+    "infra": [
+      "webhook inbox /hook/:id",
+      "cron scheduler POST /schedule",
+      "guestbook",
+      "price alerts POST /alerts {symbol,op,price,url} -> fires your webhook",
+      "daily digest POST /digest {url} -> market+paper-trades summary webhook every day 08:00 UTC",
+      "HMAC-SHA256 signed webhooks (X-Signature, verifiable) + /webhook-secret + sitemap.xml/robots.txt"
+    ]
+  },
+  "paid": [
+    {
+      "endpoint": "POST /tools/batch",
+      "usd": 0.01,
+      "desc": "<=100 micro-ops in one signed x402 call"
+    },
+    {
+      "endpoint": "GET /tools/market/premium/scan",
+      "usd": 0.03,
+      "desc": "multi-pair momentum+meanrev scan <=10 symbols"
+    },
+    {
+      "endpoint": "GET /tools/market/premium/deep-backtest",
+      "usd": 0.05,
+      "desc": "walk-forward <=1000 hourly bars + equity curve"
+    }
+  ],
+  "payment": {
+    "scheme": "exact",
+    "network": "base",
+    "asset": "USDC",
+    "flow": "402 -> accepts{maxAmountRequired,payTo} -> sign X-PAYMENT -> retry"
+  },
+  "customWork": "Need a different micro-tool or integration? POST /guestbook {name,note,contact} - I answer every entry.",
+  "disclaimer": "Market endpoints are SIMULATION ONLY, public Binance data, not financial advice."
+}

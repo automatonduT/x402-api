@@ -1,0 +1,329 @@
+{
+ "generated": "2026-08-24T14:51:03.065Z",
+ "items": [
+  {
+   "ref": "BuidlGuidl/ethskills-evals#1",
+   "title": "Evaluate ETH skills",
+   "url": "https://github.com/BuidlGuidl/ethskills-evals/issues/1",
+   "updated": "2026-08-24T14:43:58Z",
+   "comments": 16,
+   "labels": [],
+   "snippet": "## Context: We've been trying to tinker with [skills-eval-framework](https://github.com/BuidlGuidl/skill-eval-framework) and evaluating basic ethskills skills an example over the last week: - gas skil"
+  },
+  {
+   "ref": "Vellar-Wallet/vellar-sdk#200",
+   "title": "docs: unbreak the hackathon onboarding path",
+   "url": "https://github.com/Vellar-Wallet/vellar-sdk/pull/200",
+   "updated": "2026-08-24T14:43:20Z",
+   "comments": 1,
+   "labels": [],
+   "snippet": "Companion to #199 (SDK 0.6.1). Fixes every docs finding from the DX audit so a participant can go from `npm install` to a settled payment without leaving the paved road. **Quickstart (B1)** - New inst"
+  },
+  {
+   "ref": "accensa/accensa-app#221",
+   "title": "/api/auth/verify never checks the challenge it issued, so any merchant-signed transaction logs in",
+   "url": "https://github.com/accensa/accensa-app/issues/221",
+   "updated": "2026-08-24T14:40:59Z",
+   "comments": 3,
+   "labels": [
+    "bug",
+    "complexity: high",
+    "area: web",
+    "Stellar Wave",
+    "area: security"
+   ],
+   "snippet": "> **Repo context.** `accensa-app` is the off-chain half of Accensa — the merchant back-office for x402 sellers on Stellar. Three workspace packages matter: `apps/web` (Next.js dashboard and the indexe"
+  },
+  {
+   "ref": "xpaysh/awesome-x402#1308",
+   "title": "Add Kristo Intelligence v6 — DeFi Trading Signals API for AI Agents",
+   "url": "https://github.com/xpaysh/awesome-x402/pull/1308",
+   "updated": "2026-08-24T14:37:36Z",
+   "comments": 0,
+   "labels": [],
+   "snippet": "## Add Kristo Intelligence v6 **What:** Pay-per-call DeFi trading-signals and crypto market-intelligence API for AI agents on Base (chain 8453). x402 endpoints at \\.05 USDC/call with an automatic volu"
+  },
+  {
+   "ref": "accensa/x402-facilitator-stellar#181",
+   "title": "GET /usage omits the catalog counter it also meters",
+   "url": "https://github.com/accensa/x402-facilitator-stellar/issues/181",
+   "updated": "2026-08-24T14:36:24Z",
+   "comments": 3,
+   "labels": [
+    "good first issue",
+    "area: bazaar",
+    "complexity: trivial",
+    "Stellar Wave"
+   ],
+   "snippet": "> **Repo context.** `x402-facilitator-stellar` is a conformance-focused x402 facilitator for > Stellar: `/verify` and `/settle` wrap `@x402/stellar`'s `ExactStellarScheme`, and a Bazaar > catalog is p"
+  },
+  {
+   "ref": "ailinone/collective-intelligence#64",
+   "title": "chore(deps): bump the minor-and-patch group in /api with 16 updates",
+   "url": "https://github.com/ailinone/collective-intelligence/pull/64",
+   "updated": "2026-08-24T14:36:13Z",
+   "comments": 3,
+   "labels": [
+    "javascript",
+    "dependencies"
+   ],
+   "snippet": "Bumps the minor-and-patch group in /api with 16 updates: | Package | From | To | | --- | --- | --- | | [@anthropic-ai/sdk](https://github.com/anthropics/anthropic-sdk-typescript) | `0.116.0` | `0.117."
+  },
+  {
+   "ref": "solana-foundation/pay-kit#293",
+   "title": "fix(x402): require decimals for SPL payments in the Go client",
+   "url": "https://github.com/solana-foundation/pay-kit/pull/293",
+   "updated": "2026-08-24T14:35:56Z",
+   "comments": 1,
+   "labels": [],
+   "snippet": "## What The Go x402 exact client defaults `extra.decimals` to 6 when a challenge omits the field, then feeds that default straight into `transferChecked`. ## Why `parseEntry` fills `Extra.Decimals = 6"
+  },
+  {
+   "ref": "theCeramist/rsi-eaf#1",
+   "title": "RSI-EAF Support & Revenue Surfaces (cycle 2121)",
+   "url": "https://github.com/theCeramist/rsi-eaf/issues/1",
+   "updated": "2026-08-24T14:35:18Z",
+   "comments": 2500,
+   "labels": [
+    "revenue",
+    "xrpl"
+   ],
+   "snippet": "## RSI-EAF Revenue Surfaces — Cycle 2121 Updated: 2026-08-24T14:35:13.978062+00:00 ### Pay (easiest path) - **Treasury:** `rs78v3CbqDf5pDc6n7pyqg6LYaUnweLEH5` - **Destination Tag `1`** → $1.00 verifie"
+  },
+  {
+   "ref": "accensa/x402-facilitator-stellar#193",
+   "title": "package.json is marked private but declares bin entries, a homepage and publish metadata",
+   "url": "https://github.com/accensa/x402-facilitator-stellar/issues/193",
+   "updated": "2026-08-24T14:34:34Z",
+   "comments": 4,
+   "labels": [
+    "good first issue",
+    "area: docs",
+    "complexity: trivial",
+    "Stellar Wave"
+   ],
+   "snippet": "> **Repo context.** `x402-facilitator-stellar` is a conformance-focused x402 facilitator for > Stellar: `/verify` and `/settle` wrap `@x402/stellar`'s `ExactStellarScheme`, and a Bazaar > catalog is p"
+  },
+  {
+   "ref": "Masashi-Ono0611/cypher-brain#187",
+   "title": "[Hosted] Consider giving the agent its own means of payment via an agentic-payment standard (x402, etc.)",
+   "url": "https://github.com/Masashi-Ono0611/cypher-brain/issues/187",
+   "updated": "2026-08-24T14:33:20Z",
+   "comments": 0,
+   "labels": [
+    "enhancement",
+    "P3"
+   ],
+   "snippet": "## Background (idea stage — implementation not yet decided) Using a paid backend (arweave/turbo) currently requires a human to pre-fund an Arweave JWK wallet ahead of time (`wallet create` → confirm v"
+  },
+  {
+   "ref": "renanescola40-afk/eurocomply_saas#1032",
+   "title": "[Enterprise GO]: Control Tower V5 — freeze → execute → accept → score → GO",
+   "url": "https://github.com/renanescola40-afk/eurocomply_saas/issues/1032",
+   "updated": "2026-08-24T14:31:58Z",
+   "comments": 134,
+   "labels": [
+    "senior-agent",
+    "agent:triage",
+    "priority:p1"
+   ],
+   "snippet": "<!-- enterprise-go-control-tower:v5 --> # RISCK COMPLY — MASTER CLOSURE OVERRIDE V5 ## Current authority — revalidated 2026-08-23 18:46 Europe/Lisbon - protected `main`: `2871ff7906905db318245930ed3fa"
+  },
+  {
+   "ref": "oasisbaklawa2006/oasis-supabase-core#116",
+   "title": "test(whatsapp): Gate 11 commercial-invention hardening on CORE-A/B",
+   "url": "https://github.com/oasisbaklawa2006/oasis-supabase-core/pull/116",
+   "updated": "2026-08-24T11:31:25Z",
+   "comments": 3,
+   "labels": [],
+   "snippet": "<!-- CURSOR_AGENT_PR_BODY_BEGIN --> ## Gate 11 — commercial-invention hardening (CORE-A/B on `main`) Adds a dedicated pgTAP suite on top of CORE-A `#111` and CORE-B `#112`. No schema change and no pro"
+  },
+  {
+   "ref": "taitan118120-dot/liver-acquisition#24",
+   "title": "プロフィール／固定ポストに確定ファクト違反（プロフィール番犬）",
+   "url": "https://github.com/taitan118120-dot/liver-acquisition/issues/24",
+   "updated": "2026-08-24T02:09:55Z",
+   "comments": 11,
+   "labels": [],
+   "snippet": "## プロフィール番犬 検知 プロフィール文・固定ポストは**一度書くと二度と読み返さない場所**です。 記事本文の一括ファクト更新はここを対象にしていないため、放置すると旧表記が残り続けます。 ## 禁止パターン検出 - **IG @taitan_pro / bio** — 所属数の旧表記（累計/総勢） - 該当: `累計150名` - **IG @taitan_pro / bio** — 所属"
+  },
+  {
+   "ref": "nirium-protocol/nirium-sdk#58",
+   "title": "feat(examples): add Deploy to Vercel one-click x402-protected API template",
+   "url": "https://github.com/nirium-protocol/nirium-sdk/pull/58",
+   "updated": "2026-08-24T01:55:59Z",
+   "comments": 1,
+   "labels": [],
+   "snippet": "Closes #50 ### Summary Adds a minimal, self-contained Next.js project under `examples/deploy-x402-vercel/` with a non-financial ASCII-art generator route protected by `x402Serve()`/x402 protocol, plus"
+  },
+  {
+   "ref": "LaPyme/lapyme-ts#6",
+   "title": "chore: 🐝 Update SDK - Generate 0.4.0",
+   "url": "https://github.com/LaPyme/lapyme-ts/pull/6",
+   "updated": "2026-08-24T01:29:29Z",
+   "comments": 0,
+   "labels": [
+    "minor"
+   ],
+   "snippet": "# SDK update ## Versioning Version Bump Type: [minor] - 🤖 (automated) > [!TIP] > If updates to your OpenAPI document introduce breaking changes, be sure to update the `info.version` field to [trigger"
+  },
+  {
+   "ref": "Agentic-SDLC-test/ecommerce-react-native-example#3",
+   "title": "Test epic 2",
+   "url": "https://github.com/Agentic-SDLC-test/ecommerce-react-native-example/issues/3",
+   "updated": "2026-08-23T22:18:19Z",
+   "comments": 111,
+   "labels": [
+    "epic"
+   ],
+   "snippet": "Extend checkout so users can choose at least one digital payment path (e.g. card placeholder, “pay with wallet” mock, or redirect-style flow) in addition to COD. Orders store payment method and status"
+  },
+  {
+   "ref": "tersignhq/evidence-record-conformance#1",
+   "title": "Non-party is not non-path: proposal for a two-sided vantage class (n8/p9)",
+   "url": "https://github.com/tersignhq/evidence-record-conformance/issues/1",
+   "updated": "2026-08-23T17:14:49Z",
+   "comments": 8,
+   "labels": [],
+   "snippet": "Ran the suite before writing any of this: exit 0, 15 vectors, both verdicts, all 7 reasons and 7 kinds exercised. Two details are worth naming because they are easy to get wrong. Pinning the reject-re"
+  },
+  {
+   "ref": "ArthurzWong/AgentPay-SEA#3",
+   "title": "Extract duplicated payment types, service metadata and formatting into shared utilities",
+   "url": "https://github.com/ArthurzWong/AgentPay-SEA/pull/3",
+   "updated": "2026-08-23T08:35:54Z",
+   "comments": 2,
+   "labels": [],
+   "snippet": "## Summary Pure refactor: the server and the dashboard each carried their own copy of the payment domain model, so a price or label change needed edits in two places. The duplicated pieces now live in"
+  },
+  {
+   "ref": "ArthurzWong/AgentPay-SEA#5",
+   "title": "Add agentpay CLI and Hermes Agent skill",
+   "url": "https://github.com/ArthurzWong/AgentPay-SEA/pull/5",
+   "updated": "2026-08-23T06:04:05Z",
+   "comments": 2,
+   "labels": [],
+   "snippet": "## Summary Gives an external terminal agent (Hermes Agent) a way to buy the x402-protected capabilities by shelling out to a command, instead of the flow only existing inside `POST /api/agent/run`. Tw"
+  },
+  {
+   "ref": "xpaysh/awesome-x402#1172",
+   "title": "Add ByKaranteli",
+   "url": "https://github.com/xpaysh/awesome-x402/pull/1172",
+   "updated": "2026-08-21T18:35:28Z",
+   "comments": 0,
+   "labels": [],
+   "snippet": "## Add ByKaranteli **Correction (2026-08-09):** an earlier revision of this PR said \"three endpoints, $0.002-$0.005, through the PayAI facilitator\". That is stale and I have pushed a commit correcting"
+  },
+  {
+   "ref": "lost-rob0t/starintel-gpt-auto-dig#2095",
+   "title": "Auto-Dig: Worldcoin / World — Inside the Eyeball Empire",
+   "url": "https://github.com/lost-rob0t/starintel-gpt-auto-dig/issues/2095",
+   "updated": "2026-08-24T14:30:16Z",
+   "comments": 66,
+   "labels": [
+    "investigation-target"
+   ],
+   "snippet": "## Subject World / Worldcoin, Tools for Humanity, World Foundation, World Assets Ltd, World ID, Orb, WLD, World Chain, operators, investors, governments, regulators, and commercial partners. ## Goal E"
+  },
+  {
+   "ref": "xevrion-v2/agent-playground#2",
+   "title": "Fix typo in README",
+   "url": "https://github.com/xevrion-v2/agent-playground/issues/2",
+   "updated": "2026-08-24T14:26:44Z",
+   "comments": 98,
+   "labels": [
+    "good first issue",
+    "bounty",
+    "AI agent friendly",
+    "💎 Bounty",
+    "$50"
+   ],
+   "snippet": "Review the README for minor spelling, grammar, or formatting issues and submit a small cleanup PR. ## Acceptance Criteria - Keep the pull request focused. - Include a short summary of the change. - Li"
+  },
+  {
+   "ref": "Stellar-IndigoPay/Stellar-IndigoPay#1153",
+   "title": "fix(frontend): Harden donation money path — preview, offline durability, XSS defense, error recovery (Closes #1096)",
+   "url": "https://github.com/Stellar-IndigoPay/Stellar-IndigoPay/pull/1153",
+   "updated": "2026-08-24T14:18:35Z",
+   "comments": 2,
+   "labels": [],
+   "snippet": "## Summary Closes **#1096 — (Critical) Frontend Money-Path Hardening Epic**. This PR hardens the entire frontend money path — every pixel between *\"I want to donate\"* and *\"donation confirmed on-chain"
+  },
+  {
+   "ref": "d-hinders/Haven-AI#1440",
+   "title": "Epic: retire the Safe rail entirely (safe-retirement)",
+   "url": "https://github.com/d-hinders/Haven-AI/issues/1440",
+   "updated": "2026-08-24T14:13:32Z",
+   "comments": 5,
+   "labels": [
+    "enhancement",
+    "epic",
+    "money-path"
+   ],
+   "snippet": "**Owner decision 2026-08-14 (Antonio): we no longer build on Safe — the entire rail is to be retired, not just frozen.** This is the SKETCH of what that requires; nothing gets built until the census q"
+  },
+  {
+   "ref": "zeekman/Cross-Border-Payment-App-for-Africa#825",
+   "title": "TransactionHistory.jsx: Duplicate loadMore + reference to undeclared currentPage break parsing",
+   "url": "https://github.com/zeekman/Cross-Border-Payment-App-for-Africa/issues/825",
+   "updated": "2026-08-24T14:12:31Z",
+   "comments": 5,
+   "labels": [
+    "bug",
+    "Stellar Wave",
+    "frontend",
+    "critical"
+   ],
+   "snippet": "## Project **AfriPay — Cross-Border Payment App for Africa** A production-ready cross-border remittance platform built on the Stellar Network, enabling fast, secure, and low-cost payments across Afric"
+  },
+  {
+   "ref": "6ZoSo9/void-node#1301",
+   "title": "VOID coordination control plane V330 — MOVING-WEEK SAFE MODE through 2026-09-03; only #1352/#1357 source-active",
+   "url": "https://github.com/6ZoSo9/void-node/issues/1301",
+   "updated": "2026-08-24T14:11:34Z",
+   "comments": 163,
+   "labels": [],
+   "snippet": "> [!IMPORTANT] > **V330 is the current low-churn coordination index.** Live GitHub refs/states and checked-in `AGENTS.md` remain current authority; volatile refs must be reread immediately before sour"
+  },
+  {
+   "ref": "rgdtnhat/arc#1",
+   "title": "Tessera — trustless pay-per-use commerce for AI agents on Arc",
+   "url": "https://github.com/rgdtnhat/arc/pull/1",
+   "updated": "2026-08-24T13:55:59Z",
+   "comments": 0,
+   "labels": [],
+   "snippet": "## What this is **Tessera** turns an ordinary `402 Payment Required` into a **trustless, autonomous purchase** settled on [Arc](https://docs.arc.io) in USDC. An AI agent can pay a service it has *neve"
+  },
+  {
+   "ref": "NSPG13/agent-bounties#333",
+   "title": "[META] Earn 1 USDC margin with a CLI bounty",
+   "url": "https://github.com/NSPG13/agent-bounties/issues/333",
+   "updated": "2026-08-24T13:41:27Z",
+   "comments": 86,
+   "labels": [
+    "bounty",
+    "payments",
+    "distribution",
+    "funded-live",
+    "claimed-live"
+   ],
+   "snippet": "## Goal Create and fully fund a concrete **1 USDC CLI child bounty** that a different registered participant completes and receives canonical settlement for. Completing the parent pays **2 USDC**, pro"
+  },
+  {
+   "ref": "auscaster/frantic-board#330",
+   "title": "Frantic bounty #120: Add a valuable startup offer to Sourcey",
+   "url": "https://github.com/auscaster/frantic-board/issues/330",
+   "updated": "2026-08-24T13:38:24Z",
+   "comments": 905,
+   "labels": [
+    "bounty",
+    "funded",
+    "available",
+    "delivered",
+    "accepted"
+   ],
+   "snippet": "Frantic bounty #120 Add a valuable startup offer to Sourcey Worker price: $1 Slots: 150 (94 available) Status: Available Claim: https://gofrantic.com/bounties/120 Funding receipt: https://gofrantic.co"
+  }
+ ],
+ "errors": []
+}

@@ -1,0 +1,7 @@
+{
+ "_note": "Dates officielles publiees a l'avance par la Fed (calendrier FOMC 2026). Curration manuelle verifiee - mise a jour annuelle.",
+ "asOf": "2026-08-23",
+ "fomc": ["2026-09-15", "2026-10-27", "2026-12-08", "2027-01-26"],
+ "cpi": [],
+ "cpiNote": "Calendrier CPI non liste ici: le BLS bloque les robots (403). Voir https://www.bls.gov/schedule/news_release/cpi.htm"
+}

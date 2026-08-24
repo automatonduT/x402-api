@@ -1,0 +1,104 @@
+3 still open
+2026-08-23T03:01:55Z resolve ok
+2026-08-23T03:01:55Z gen stale 14592s -> catchup
+gen-signals: BTCUSDT/meanrev:FLAT, ETHUSDT/meanrev:FLAT
+2026-08-23T08:04:24.456600Z indexnow err: HTTP Error 422: Unprocessable Entity
+2026-08-23T08:07:11Z indexnow: deferred (public key 530, tunnel not ready)
+2026-08-23T08:19:16Z door: installing cloudflared (cloudflared-darwin-arm64.tgz)
+2026-08-23T08:19:18Z door: tunnel starting (pid 70958)
+2026-08-23T08:19:26Z door: tunnel up: https://completely-contrast-corporations-decorative.trycloudflare.com
+2026-08-23T08:19:26Z door: MIGRATING base https://completely-contrast-corporations-decorative.trycloudflare.com -> https://completely-contrast-corporations-decorative.trycloudflare.com
+2026-08-23T08:19:28Z door: migration committed
+2026-08-23T08:19:28Z door: door OK: https://completely-contrast-corporations-decorative.trycloudflare.com
+2026-08-23T08:22:31Z indexnow: deferred (public key 404, tunnel not ready)
+2026-08-23T08:51:30Z indexnow: deferred (public key 404, tunnel not ready)
+2026-08-23T10:02:49Z bingping: http=410 
+2026-08-23T10:47:39Z announce/pingomatic: resp=You are too awesome for Ping-o-matic
+2026-08-23T10:47:59Z announce/wayback https://completely-contrast-corporations-decorative.trycloudflare.com/ -> 404
+2026-08-23T10:48:20Z announce/wayback https://completely-contrast-corporations-decorative.trycloudflare.com/blog28 -> 200
+2026-08-23T10:48:22Z announce summary: pom_ok=1 wayback_ok=1 sig=https://completely-contrast-corporations-decorative.trycloudflare.com|posts=26|last=/blog28
+2026-08-23T10:49:06Z announce/pingomatic: resp=You are too awesome for Ping-o-matic
+2026-08-23T10:49:26Z announce/pingomatic-retry: You are too awesome for Ping-o-matic
+2026-08-23T10:49:33Z announce/wayback https://completely-contrast-corporations-decorative.trycloudflare.com/ -> 404
+2026-08-23T10:49:42Z announce/wayback https://completely-contrast-corporations-decorative.trycloudflare.com/blog28 -> 200
+2026-08-23T10:49:44Z announce summary: pom_ok=0 wayback_ok=1 sig=https://completely-contrast-corporations-decorative.trycloudflare.com|posts=28|last=/blog28
+2026-08-23T11:18:43Z indexnow: deferred (public key 404, tunnel not ready)
+2026-08-23T11:21:10Z indexnow: deferred (public key 404, tunnel not ready)
+2026-08-23T11:31:45Z indexnow/batch-post urls=30 -> 202
+2026-08-23T11:34:29Z indexnow: deferred (public key 404, tunnel not ready)
+2026-08-23T11:35:06Z indexnow: batch-rejected code=422 (retry next run)
+2026-08-23T11:46:58Z indexnow: batch-rejected code=422 (retry next run)
+2026-08-23T11:47:48Z indexnow: batch-rejected code=422 (retry next run)
+2026-08-23T12:17:15Z indexnow: skipped (backoff <6h since last attempt)
+2026-08-23T12:17:15Z wave: verdict=NO
+2026-08-23T12:30:41Z indexnow: skipped (backoff <6h since last attempt)
+2026-08-23T12:30:41Z wave: verdict=NO
+2026-08-23T12:46:14Z indexnow: skipped (backoff <6h since last attempt)
+2026-08-23T12:46:14Z wave: verdict=NO
+2026-08-23T13:46:23Z indexnow: skipped (backoff <6h since last attempt)
+2026-08-23T13:46:23Z wave: verdict=NO
+2026-08-23T13:48:00Z door: tunnel starting (pid 73695)
+2026-08-23T13:48:07Z door: tunnel up: https://according-drink-soldiers-sold.trycloudflare.com
+2026-08-23T13:48:07Z door: MIGRATING base https://according-drink-soldiers-sold.trycloudflare.com -> https://according-drink-soldiers-sold.trycloudflare.com
+2026-08-23T13:48:08Z door: migration committed
+2026-08-23T13:48:08Z door: door OK: https://according-drink-soldiers-sold.trycloudflare.com
+2026-08-23T13:49:11Z door: tunnel starting (pid 73899)
+2026-08-23T13:49:17Z door: tunnel up: https://sender-entered-gentle-answered.trycloudflare.com
+2026-08-23T13:49:17Z door: MIGRATING base https://sender-entered-gentle-answered.trycloudflare.com -> https://sender-entered-gentle-answered.trycloudflare.com
+2026-08-23T13:49:18Z door: migration committed
+2026-08-23T13:49:18Z door: door OK: https://sender-entered-gentle-answered.trycloudflare.com
+2026-08-23T13:50:15Z heal: local health: 200
+2026-08-23T13:50:15Z heal: door dead (https://sender-entered-gentle-answered.trycloudflare.com -> 000) - single door.sh migration
+2026-08-23T13:50:16Z door: tunnel starting (pid 74047)
+2026-08-23T13:50:24Z door: tunnel up: https://ten-arguments-wanna-automated.trycloudflare.com
+2026-08-23T13:50:24Z door: MIGRATING base https://ten-arguments-wanna-automated.trycloudflare.com -> https://ten-arguments-wanna-automated.trycloudflare.com
+2026-08-23T13:50:25Z door: migration committed
+2026-08-23T13:50:25Z door: door OK: https://ten-arguments-wanna-automated.trycloudflare.com
+2026-08-23T13:50:25Z heal: door: https://ten-arguments-wanna-automated.trycloudflare.com -> 000
+2026-08-23T13:50:25Z HEAL VERDICT: DEGRADED local=200 door=000 https://ten-arguments-wanna-automated.trycloudflare.com
+2026-08-23T13:51:19Z heal: local: 200
+2026-08-23T13:51:51Z heal: base https://ten-arguments-wanna-automated.trycloudflare.com dead; cloudflared log says: https://ten-arguments-wanna-automated.trycloudflare.com
+2026-08-23T13:51:51Z heal: all candidates dead - fresh door.sh
+2026-08-23T13:51:52Z door: tunnel starting (pid 74282)
+2026-08-23T13:51:59Z door: tunnel up: https://escape-divine-plants-theoretical.trycloudflare.com
+2026-08-23T13:51:59Z door: MIGRATING base https://escape-divine-plants-theoretical.trycloudflare.com -> https://escape-divine-plants-theoretical.trycloudflare.com
+2026-08-23T13:51:59Z door: migration committed
+2026-08-23T13:51:59Z door: door OK: https://escape-divine-plants-theoretical.trycloudflare.com
+2026-08-23T13:52:32Z heal: VERDICT: DEGRADED local=200 door=000000 https://escape-divine-plants-theoretical.trycloudflare.com
+2026-08-23T13:52:32Z HEAL VERDICT: DEGRADED local=200 door=000000 https://escape-divine-plants-theoretical.trycloudflare.com
+2026-08-23T13:55:41Z adopt: probe https://escape-divine-plants-theoretical.trycloudflare.com -> 000000
+2026-08-23T13:55:41Z adopt: probe https://according-drink-soldiers-sold.trycloudflare.com -> 000000
+2026-08-23T13:55:41Z adopt: probe https://completely-contrast-corporations-decorative.trycloudflare.com -> 000000
+2026-08-23T13:55:41Z adopt: probe https://escape-divine-plants-theoretical.trycloudflare.com -> 000000
+2026-08-23T13:55:41Z adopt: probe https://sender-entered-gentle-answered.trycloudflare.com -> 000000
+2026-08-23T13:55:41Z adopt: probe https://ten-arguments-wanna-automated.trycloudflare.com -> 000000
+2026-08-23T13:55:41Z ADOPT VERDICT: NONE-LIVE
+2026-08-23T13:58:48Z doorguard: OK https://skintight-snowcap-underarm.ngrok-free.dev -> 200
+2026-08-23T14:01:05Z indexnow: skipped (backoff <6h since last attempt)
+2026-08-23T14:01:05Z wave: verdict=NO
+2026-08-23T14:09:17Z indexnow: skipped (backoff <6h since last attempt)
+2026-08-23T14:09:17Z wave: verdict=NO
+200 2026-08-23T14:43:43Z v1.46a submission POSTs attempted (see SUBMISSIONS.md)
+2026-08-23T15:16:34Z heal: local: 200
+2026-08-23T15:17:06Z heal: base https://skintight-snowcap-underarm.ngrok-free.dev dead; cloudflared log says: https://escape-divine-plants-theoretical.trycloudflare.com
+2026-08-23T15:17:06Z adopt: probe https://escape-divine-plants-theoretical.trycloudflare.com -> 000000
+adopt: probe https://escape-divine-plants-theoretical.trycloudflare.com -> 000000
+2026-08-23T15:17:06Z adopt: probe https://according-drink-soldiers-sold.trycloudflare.com -> 000000
+adopt: probe https://according-drink-soldiers-sold.trycloudflare.com -> 000000
+2026-08-23T15:17:06Z adopt: probe https://completely-contrast-corporations-decorative.trycloudflare.com -> 000000
+adopt: probe https://completely-contrast-corporations-decorative.trycloudflare.com -> 000000
+2026-08-23T15:17:06Z adopt: probe https://escape-divine-plants-theoretical.trycloudflare.com -> 000000
+adopt: probe https://escape-divine-plants-theoretical.trycloudflare.com -> 000000
+2026-08-23T15:17:07Z adopt: probe https://sender-entered-gentle-answered.trycloudflare.com -> 000000
+adopt: probe https://sender-entered-gentle-answered.trycloudflare.com -> 000000
+2026-08-23T15:17:07Z adopt: probe https://ten-arguments-wanna-automated.trycloudflare.com -> 000000
+adopt: probe https://ten-arguments-wanna-automated.trycloudflare.com -> 000000
+2026-08-23T15:17:07Z ADOPT VERDICT: NONE-LIVE
+2026-08-23T15:17:07Z heal: all candidates dead - fresh door.sh
+2026-08-23T15:17:08Z door: tunnel starting (pid 79649)
+2026-08-23T15:17:14Z door: tunnel up: https://copyright-sperm-dreams-considerations.trycloudflare.com
+2026-08-23T15:17:14Z door: MIGRATING base https://copyright-sperm-dreams-considerations.trycloudflare.com -> https://copyright-sperm-dreams-considerations.trycloudflare.com
+2026-08-23T15:17:15Z door: migration committed
+2026-08-23T15:17:15Z door: door OK: https://copyright-sperm-dreams-considerations.trycloudflare.com
+2026-08-23T15:17:47Z heal: VERDICT: DEGRADED local=200 door=000000 https://copyright-sperm-dreams-considerations.trycloudflare.com
+2026-08-23T15:17:47Z HEAL VERDICT: DEGRADED local=200 door=000000 https://copyright-sperm-dreams-considerations.trycloudflare.com

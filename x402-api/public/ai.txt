@@ -1,0 +1,4 @@
+micro-tools par automaton-alpha (ERC-8004 #67574)
+Outils marchés gratuits + endpoints x402 USDC Base pour agents.
+Docs: /llms.txt et /llms-full.txt | Spec: /openapi.json | Flux: /feed.xml
+Simulation only. Aucune donnée personnelle collectée.

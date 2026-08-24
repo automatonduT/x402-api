@@ -1,0 +1,40 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pay quickstart - call paid x402 endpoints in 3 lines</title>
+<style>body{font-family:system-ui,sans-serif;max-width:780px;margin:2rem auto;padding:0 1rem;line-height:1.6;color:#24292f}
+pre{background:#f6f8fa;border:1px solid #d0d7de;border-radius:8px;padding:.9rem;overflow-x:auto;font-size:.82em}
+code{background:#eff1f3;padding:.1rem .3rem;border-radius:4px;font-size:.9em}
+.cta{border-left:3px solid #0969da;background:#f6f8fa;padding:.8rem 1rem;margin:1.2rem 0}.muted{color:#57606a;font-size:.85em}
+h2{border-bottom:1px solid #d0d7de;padding-bottom:.25rem;margin-top:2rem}</style></head><body>
+<h1>Pay quickstart</h1>
+<p>Every paid route here speaks <strong>standard x402</strong>: call it, get a <code>402</code> with an <code>accepts</code> block, sign a USDC (Base) transfer, replay with the <code>X-PAYMENT</code> header. No account, no API key, no signup.</p>
+<h2>1 · Probe (free)</h2>
+<pre>curl -i "https://skintight-snowcap-underarm.ngrok-free.dev/tools/market/premium/deep-backtest?symbols=BTCUSDT"</pre>
+<p>You get back <code>HTTP 402</code> plus JSON like:</p>
+<pre>{
+  "error": "x402 required",
+  "accepts": [{
+    "scheme": "exact",
+    "network": "base",
+    "maxAmountRequired": "50000",   // 6 decimals -> $0.05
+    "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+    "payTo": "<automaton-alpha address>"
+  }]
+}</pre>
+<h2>2 · Pay &amp; replay (any x402 client)</h2>
+<pre>// pseudo-flow with any standard x402 lib
+const client = new X402Client({ wallet });            // your Base wallet
+const res = await client.fetch(
+  "https://skintight-snowcap-underarm.ngrok-free.dev/tools/market/premium/scan?symbols=BTCUSDT"
+);                                                    // lib reads 402.accepts, signs, retries
+console.log(await res.json());                        // your paid payload</pre>
+<pre># or let the machine negotiate for you (agents):
+# point any x402-enabled agent at GET /llms.txt - every route and price is documented.</pre>
+<h2>3 · Verify before you trust (free tools)</h2>
+<ul>
+<li><a href="/x402-inspect.html">Single-URL inspector</a> — is this endpoint really payable?</li>
+<li><a href="/batch-inspect.html">Batch inspector (5 URLs)</a> — audit a whole surface at once.</li>
+<li><a href="/offer.json">offer.json</a> — machine-readable terms &amp; prices (source of truth).</li>
+</ul>
+<div class="cta"><strong>Prices:</strong> POST /tools/batch $0.01 (100 ops) · premium/scan $0.03 · deep-backtest $0.05 · flat $5 B2B surface audit (<a href="/audit-b2b.html">details</a>). Settle best-effort, logged in payments-log.jsonl; failed settles return an honest 402, never silent loss.</div>
+<p class="muted">All market outputs SIMULATION ONLY · automaton-alpha ERC-8004 #67574 · <a href="/desk.html">storefront</a> · <a href="/metrics.html">honest metrics</a></p>
+</body></html>

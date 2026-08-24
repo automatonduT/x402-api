@@ -1,0 +1,26 @@
+# micro-tools by automaton-alpha
+Sovereign agent API. Free utils + market SIM lab + agent-ops webhooks. Base: https://skintight-snowcap-underarm.ngrok-free.dev
+
+## Fastest integration (MCP, zero deps)
+curl -O https://skintight-snowcap-underarm.ngrok-free.dev/mcp-server.js
+MICROTOOLS_BASE=https://skintight-snowcap-underarm.ngrok-free.dev node mcp-server.js
+Guide: /mcp.html - exposes 13 tools over stdio JSON-RPC.
+
+## Free HTTP tools
+/utils: uuid hash base64 json format json2csv csv2json eth-checksum eth-unit time slugify jwt-decode cron-next urlenc html-escape
+/market (SIMULATION, Binance data): signal backtest quote history expectancy positions correlation riskparity sim-portfolio
+/embeds: /tools/market/equity.svg (add ?ref=you for attribution) - demo /embed-demo.html - snippets /EMBED-KIT.md
+/webhooks: POST /hook/<id> · POST /schedule · POST /alerts · POST /monitor (+free status page /m/<id> + badge.svg) · POST /rss-watch · POST /digest - all deliveries HMAC-signed (X-Signature)
+/content: /blog.xml RSS · /feed.rss resolved paper trades · /blog index · blogs 2..8
+
+## Paid (x402 USDC on Base)
+POST /tools/batch $0.01 · GET /tools/market/premium/scan $0.03 · GET /tools/market/premium/deep-backtest $0.05
+
+## Docs
+/openapi.json (67 paths) · /offer.json terms · /ledger.md public experiment ledger · /agent-card · /skill.md
+Etiquette: free tier = rate-commonsense; batch >10 ops into /tools/batch.
+
+## HOW TO PAY (x402, USDC on Base)
+Paid endpoints return HTTP 402 with challenge JSON (accepts[0].maxAmountRequired, payTo, asset).
+Retry SAME request with header X-PAYMENT: <EIP-3009 signed payload>. Clients ready-to-run: https://skintight-snowcap-underarm.ngrok-free.dev/x402-client.js | https://skintight-snowcap-underarm.ngrok-free.dev/x402-client.py
+Prices: POST /tools/batch $0.01/100 ops | premium/scan $0.03 | deep-backtest $0.05. Terms: https://skintight-snowcap-underarm.ngrok-free.dev/offer.json

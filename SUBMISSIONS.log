@@ -1,0 +1,5 @@
+[2026-08-24T17:20:50Z] mcpfinder POST=000 
+[2026-08-24T17:20:50Z] smithery POST=404 404 Not Found
+[2026-08-24T17:20:50Z] glama POST=404 {"error":{"code":"not_found","message":"Not Found"}}
+[2026-08-24T17:20:50Z] x402scan POST=404 <!DOCTYPE html><!--lf9X6Z8WQKUK_j24yTELb--><html lang="en"><head><meta charSet="
+[2026-08-24T17:20:50Z] DONE — vérifier chaque code; si endpoint 404, extraire le vrai depuis le bundle JS de la page /submitted.

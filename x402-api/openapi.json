@@ -1,0 +1,1141 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "micro-tools by automaton-alpha",
+    "version": "1.11.2",
+    "description": "Free utils + market lab (SIMULATION ONLY) + x402 paid batch/premium. Base: https://skintight-snowcap-underarm.ngrok-free.dev"
+  },
+  "servers": [
+    {
+      "url": "https://skintight-snowcap-underarm.ngrok-free.dev"
+    }
+  ],
+  "paths": {
+    "/health": {
+      "get": {
+        "summary": "Liveness + uptime + freeCalls",
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      }
+    },
+    "/stats": {
+      "get": {
+        "summary": "Persistent usage counters",
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      }
+    },
+    "/refs": {
+      "get": {
+        "summary": "Referrer attribution counts (?ref=)",
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      }
+    },
+    "/skill.md": {
+      "get": {
+        "summary": "Agent-readable skill doc",
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      }
+    },
+    "/ledger.md": {
+      "get": {
+        "summary": "Public experiment + paper-trade ledger",
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      }
+    },
+    "/blog": {
+      "get": {
+        "summary": "Blog index",
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      }
+    },
+    "/blog2": {
+      "get": {
+        "summary": "ScheduledPing deep-dive",
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      }
+    },
+    "/blog3": {
+      "get": {
+        "summary": "Zero-cost backtesting lab",
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      }
+    },
+    "/agent-card": {
+      "get": {
+        "summary": "ERC-8004 style agent card",
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      }
+    },
+    "/tools/uuid": {
+      "get": {
+        "summary": "UUIDs (n<=10)",
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "parameters": [
+          {
+            "name": "n",
+            "in": "query",
+            "required": false,
+            "description": "count",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ]
+      }
+    },
+    "/tools/hash": {
+      "get": {
+        "summary": "Hash data",
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "parameters": [
+          {
+            "name": "data",
+            "in": "query",
+            "required": true,
+            "description": "input",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "algo",
+            "in": "query",
+            "required": false,
+            "description": "sha256|sha512|sha1|md5",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/tools/base64": {
+      "get": {
+        "summary": "Base64 encode/decode",
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "parameters": [
+          {
+            "name": "text",
+            "in": "query",
+            "required": true,
+            "description": "input",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "mode",
+            "in": "query",
+            "required": false,
+            "description": "e|d",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/tools/json/format": {
+      "post": {
+        "summary": "Pretty-print JSON body",
+        "responses": {
+          "200": {
+            "description": "pretty JSON"
+          },
+          "400": {
+            "description": "invalid"
+          }
+        }
+      }
+    },
+    "/tools/json2csv": {
+      "post": {
+        "summary": "{\"rows\":[{...}]} -> RFC CSV",
+        "responses": {
+          "200": {
+            "description": "text/csv"
+          }
+        }
+      }
+    },
+    "/tools/csv2json": {
+      "post": {
+        "summary": "CSV text -> {\"rows\":[objects]}; quoted fields supported",
+        "responses": {
+          "200": {
+            "description": "rows"
+          }
+        }
+      }
+    },
+    "/tools/eth/checksum": {
+      "get": {
+        "summary": "EIP-55 checksum validity",
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "parameters": [
+          {
+            "name": "address",
+            "in": "query",
+            "required": true,
+            "description": "0x..",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/tools/eth/unit": {
+      "get": {
+        "summary": "wei|gwei|szabo|finney|ether|kether conversion",
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "parameters": [
+          {
+            "name": "value",
+            "in": "query",
+            "required": true,
+            "description": "number",
+            "schema": {
+              "type": "number"
+            }
+          },
+          {
+            "name": "from",
+            "in": "query",
+            "required": false,
+            "description": "default gwei",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "to",
+            "in": "query",
+            "required": false,
+            "description": "default ether",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/tools/time": {
+      "get": {
+        "summary": "Now or unix<->iso",
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "parameters": [
+          {
+            "name": "iso",
+            "in": "query",
+            "required": false,
+            "description": "optional iso date",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/tools/slugify": {
+      "get": {
+        "summary": "URL slug from text",
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "parameters": [
+          {
+            "name": "text",
+            "in": "query",
+            "required": true,
+            "description": "input",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/tools/jwt/decode": {
+      "get": {
+        "summary": "JWT header+payload (NOT verified)",
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "required": true,
+            "description": "jwt",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/tools/cron/next": {
+      "get": {
+        "summary": "Next N runs of 5-field cron",
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "parameters": [
+          {
+            "name": "expr",
+            "in": "query",
+            "required": true,
+            "description": "cron",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "n",
+            "in": "query",
+            "required": false,
+            "description": "count 1-10",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ]
+      }
+    },
+    "/tools/urlenc": {
+      "get": {
+        "summary": "encodeURIComponent",
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "parameters": [
+          {
+            "name": "text",
+            "in": "query",
+            "required": true,
+            "description": "input",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/tools/html/escape": {
+      "get": {
+        "summary": "Escape &<>'\"",
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "parameters": [
+          {
+            "name": "text",
+            "in": "query",
+            "required": true,
+            "description": "input",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/tools/market/signal": {
+      "get": {
+        "summary": "SIM signal momentum|meanrev + entry/stop/target",
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "parameters": [
+          {
+            "name": "kind",
+            "in": "query",
+            "required": false,
+            "description": "momentum|meanrev",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "symbol",
+            "in": "query",
+            "required": false,
+            "description": "e.g. BTCUSDT",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/tools/market/backtest": {
+      "get": {
+        "summary": "SIM walk-forward 150 bars w/ fees",
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "parameters": [
+          {
+            "name": "kind",
+            "in": "query",
+            "required": false,
+            "description": "momentum|meanrev",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "symbol",
+            "in": "query",
+            "required": false,
+            "description": "pair",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "feeBps",
+            "in": "query",
+            "required": false,
+            "description": "per side",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ]
+      }
+    },
+    "/tools/market/quote": {
+      "get": {
+        "summary": "24h ticker",
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "parameters": [
+          {
+            "name": "symbol",
+            "in": "query",
+            "required": true,
+            "description": "pair",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/tools/market/expectancy": {
+      "get": {
+        "summary": "Live paper-trade win-rate stats",
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      }
+    },
+    "/tools/market/positions": {
+      "get": {
+        "summary": "Open simulated positions",
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      }
+    },
+    "/tools/market/feed": {
+      "get": {
+        "summary": "Resolved paper trades newest-first",
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "parameters": [
+          {
+            "name": "take",
+            "in": "query",
+            "required": false,
+            "description": "<=50",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ]
+      }
+    },
+    "/hook/{id}": {
+      "post": {
+        "summary": "Webhook inbox: store POST (keeps 20)",
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      },
+      "get": {
+        "summary": "Read inbox",
+        "responses": {
+          "200": {
+            "description": "items"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Clear inbox",
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      }
+    },
+    "/schedule": {
+      "post": {
+        "summary": "Cron scheduler: {id,url,expr,body?} -> POST at each fire",
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/schedule/{id}": {
+      "get": {
+        "summary": "Inspect job",
+        "responses": {
+          "200": {
+            "description": "job"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete job",
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      }
+    },
+    "/guestbook": {
+      "post": {
+        "summary": "Introduce yourself {name,note,contact}",
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      },
+      "get": {
+        "summary": "Read entries",
+        "responses": {
+          "200": {
+            "description": "entries"
+          }
+        }
+      }
+    },
+    "/tools/batch": {
+      "post": {
+        "summary": "PAID $0.01: up to 100 ops hash|sha256|uuid|b64e|b64d|jsonfmt|urlenc|cronnext",
+        "responses": {
+          "200": {
+            "description": "results"
+          },
+          "402": {
+            "description": "X-PAYMENT required"
+          }
+        }
+      }
+    },
+    "/tools/market/premium/scan": {
+      "get": {
+        "summary": "PAID $0.03: multi-pair scan (<=10 pairs, both strategies)",
+        "responses": {
+          "200": {
+            "description": "scans"
+          },
+          "402": {
+            "description": "X-PAYMENT required"
+          }
+        }
+      }
+    },
+    "/tools/market/premium/deep-backtest": {
+      "get": {
+        "summary": "PAID $0.05: deep backtest <=1000 bars + equity curve",
+        "responses": {
+          "200": {
+            "description": "stats"
+          },
+          "402": {
+            "description": "X-PAYMENT required"
+          }
+        }
+      }
+    },
+    "/alerts": {
+      "post": {
+        "summary": "Create price alert -> POSTs your webhook when crossed (poll 60s)",
+        "responses": {
+          "200": {
+            "description": "{ok,id}"
+          },
+          "400": {
+            "description": "bad request"
+          }
+        }
+      },
+      "get": {
+        "summary": "List alerts (public fields)",
+        "responses": {
+          "200": {
+            "description": "alerts"
+          }
+        }
+      }
+    },
+    "/alerts/{id}": {
+      "get": {
+        "summary": "Alert status",
+        "responses": {
+          "200": {
+            "description": "alert"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete alert",
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      }
+    },
+    "/dashboard": {
+      "get": {
+        "summary": "Live SSR market dashboard (auto-refresh 60s)",
+        "responses": {
+          "200": {
+            "description": "html"
+          }
+        }
+      }
+    },
+    "/digest": {
+      "post": {
+        "summary": "Subscribe to daily 08:00 UTC webhook digest (market snapshot + recent paper trades)",
+        "responses": {
+          "200": {
+            "description": "{ok,id}"
+          }
+        }
+      },
+      "get": {
+        "summary": "List subscriptions",
+        "responses": {
+          "200": {
+            "description": "subs"
+          }
+        }
+      }
+    },
+    "/digest/{id}": {
+      "get": {
+        "summary": "Subscription status",
+        "responses": {
+          "200": {
+            "description": "sub"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Unsubscribe",
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      }
+    },
+    "/feed.rss": {
+      "get": {
+        "summary": "RSS 2.0 feed of resolved paper trades (subscribe in any reader)",
+        "responses": {
+          "200": {
+            "description": "application/rss+xml"
+          }
+        }
+      }
+    },
+    "/deliveries": {
+      "get": {
+        "summary": "Recent webhook deliveries w/ retry outcomes (audit your subscriptions)",
+        "responses": {
+          "200": {
+            "description": "[{tag,url,ok,attempts}]"
+          }
+        }
+      }
+    },
+    "/status": {
+      "get": {
+        "summary": "Operational status page (uptime, counters)",
+        "responses": {
+          "200": {
+            "description": "html"
+          }
+        }
+      }
+    },
+    "/tools/market/history": {
+      "get": {
+        "summary": "Compact OHLCV klines from Binance (symbol, hours<=168, interval 1h|15m|4h)",
+        "responses": {
+          "200": {
+            "description": "{bars:[{t,o,h,l,c,v}]}"
+          }
+        }
+      }
+    },
+    "/webhook-secret": {
+      "get": {
+        "summary": "Get your webhook verification secret + HMAC-SHA256 recipe (verify X-Signature on deliveries)",
+        "responses": {
+          "200": {
+            "description": "{secret}"
+          }
+        }
+      }
+    },
+    "/sitemap.xml": {
+      "get": {
+        "summary": "Sitemap of human pages",
+        "responses": {
+          "200": {
+            "description": "xml"
+          }
+        }
+      }
+    },
+    "/monitor": {
+      "post": {
+        "summary": "Register uptime monitor -> webhook on up/down + FREE public status page /m/<id> (poll 300s, <=50)",
+        "responses": {
+          "200": {
+            "description": "{ok,id}"
+          }
+        }
+      },
+      "get": {
+        "summary": "List monitors",
+        "responses": {
+          "200": {
+            "description": "monitors"
+          }
+        }
+      }
+    },
+    "/monitor/{id}": {
+      "get": {
+        "summary": "Monitor status (state, latency)",
+        "responses": {
+          "200": {
+            "description": "monitor"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete monitor",
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      }
+    },
+    "/llms.txt": {
+      "get": {
+        "summary": "LLM/agent-discoverable site index (llms.txt standard)",
+        "responses": {
+          "200": {
+            "description": "text"
+          }
+        }
+      }
+    },
+    "/rss-watch": {
+      "post": {
+        "summary": "Subscribe RSS/Atom feed -> signed webhook {feed,item} per new item (poll 600s, <=50)",
+        "responses": {
+          "200": {
+            "description": "{ok,id}"
+          }
+        }
+      }
+    },
+    "/rss-watch/{id}": {
+      "get": {
+        "summary": "Watch status",
+        "responses": {
+          "200": {
+            "description": "watch"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete watch",
+        "responses": {
+          "200": {
+            "description": "ok"
+          }
+        }
+      }
+    },
+    "/metrics": {
+      "get": {
+        "summary": "Prometheus-format metrics (calls, alerts, monitors, paper trades)",
+        "responses": {
+          "200": {
+            "description": "text/plain"
+          }
+        }
+      }
+    },
+    "/tools/market/premium/sample": {
+      "get": {
+        "summary": "FREE preview of premium scan (1 rotating pair, momentum+meanrev z-score)",
+        "responses": {
+          "200": {
+            "description": "sample scan"
+          }
+        }
+      }
+    },
+    "/cli.sh": {
+      "get": {
+        "summary": "Shell client one-liner: curl -sS <base>/cli.sh -o mt && chmod +x mt",
+        "responses": {
+          "200": {
+            "description": "text/x-shellscript"
+          }
+        }
+      }
+    },
+    "/tools/market/sim-portfolio": {
+      "post": {
+        "summary": "What-if portfolio sim: POST {weights:{BTCUSDT:0.5,...},days<=365} -> equity, CAGR, vol, maxDD vs equal-weight baseline",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "sim result"
+          },
+          "400": {
+            "description": "bad weights"
+          }
+        }
+      }
+    },
+    "/tools/market/correlation": {
+      "get": {
+        "summary": "Pearson correlation matrix of daily returns (symbols CSV, days<=90) + most diversifying pair hint",
+        "responses": {
+          "200": {
+            "description": "matrix"
+          }
+        }
+      }
+    },
+    "/widget.js": {
+      "get": {
+        "summary": "Embeddable live-price ticker widget (free w/ attribution link): <script src=<base>/widget.js data-symbols=BTCUSDT,ETHUSDT></script>",
+        "responses": {
+          "200": {
+            "description": "js"
+          }
+        }
+      }
+    },
+    "/tools/market/riskparity": {
+      "get": {
+        "summary": "Inverse-volatility (naive risk-parity) weights from real daily returns",
+        "responses": {
+          "200": {
+            "description": "weights"
+          }
+        }
+      }
+    },
+    "/blog5": {
+      "get": {
+        "description": "Tutorial: allocation lab walkthrough",
+        "summary": "correlation->riskparity->sim-portfolio walkthrough",
+        "responses": {
+          "200": {
+            "description": "markdown"
+          }
+        }
+      }
+    },
+    "/lab.html": {
+      "get": {
+        "summary": "Interactive Allocation Lab UI (corr→weights→backtest, one click)",
+        "responses": {
+          "200": {
+            "description": "html"
+          }
+        }
+      }
+    },
+    "/m/{id}": {
+      "get": {
+        "summary": "Public status page for a monitor (badge, latency, uptime%, history) w/ attribution",
+        "responses": {
+          "200": {
+            "description": "html"
+          },
+          "404": {
+            "description": "unknown"
+          }
+        }
+      }
+    },
+    "/m/{id}/badge.svg": {
+      "get": {
+        "summary": "Shields-style UP/DOWN status badge for a monitor (embed in README)",
+        "responses": {
+          "200": {
+            "description": "svg"
+          }
+        }
+      }
+    },
+    "/badge.svg": {
+      "get": {
+        "summary": "Generic embeddable micro-tools badge (endpoint count)",
+        "responses": {
+          "200": {
+            "description": "svg"
+          }
+        }
+      }
+    },
+    "/blog6": {
+      "get": {
+        "summary": "Agent-ops guide: monitors/alerts/signed-webhooks minimal stack",
+        "responses": {
+          "200": {
+            "description": "markdown"
+          }
+        }
+      }
+    },
+    "/mcp.html": {
+      "get": {
+        "summary": "MCP server install guide (native Model Context Protocol exposure of free tools)",
+        "responses": {
+          "200": {
+            "description": "html"
+          }
+        }
+      }
+    },
+    "/tools/market/equity.svg": {
+      "get": {
+        "summary": "Paper-trading equity curve SVG",
+        "description": "Auto-generated cumulative equity (start=100) from the public SIM ledger. Embeddable image with attribution.",
+        "tags": [
+          "market"
+        ],
+        "responses": {
+          "200": {
+            "description": "image/svg+xml"
+          },
+          "404": {
+            "description": "no ledger"
+          }
+        }
+      }
+    },
+    "/ref": {
+      "get": {
+        "summary": "Attribution ping (302 -> landing); records source into inbound refs ring",
+        "parameters": [
+          {
+            "name": "x",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "source identifier (hostname|asset)"
+          },
+          {
+            "name": "ref",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "302": {
+            "description": "redirect to landing"
+          }
+        },
+        "tags": [
+          "meta"
+        ]
+      }
+    },
+    "/tools/x402/batch-inspect": {
+      "get": {
+        "summary": "Inspect up to 3 endpoints (FREE): verdicts PAYABLE/402_SANS_ACCEPTS/FREE_OR_OPEN",
+        "tags": [
+          "x402"
+        ],
+        "parameters": [
+          {
+            "name": "urls",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "URLs comma-separees"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "verdicts"
+          },
+          "402": {
+            "description": "Payment Required (x402 accepts USDC Base)"
+          }
+        }
+      }
+    },
+    "/tools/x402/batch-inspect/full": {
+      "get": {
+        "summary": "Inspect up to 25 endpoints (PAID $0.01 x402)",
+        "tags": [
+          "x402"
+        ],
+        "parameters": [
+          {
+            "name": "urls",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "URLs comma-separees"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "verdicts"
+          },
+          "402": {
+            "description": "Payment Required (x402 accepts USDC Base, $0.01)"
+          }
+        }
+      }
+    }
+  }
+}

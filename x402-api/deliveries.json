@@ -1,0 +1,90 @@
+[
+ {
+  "tag": "monitor",
+  "url": "http://localhost:4020/health",
+  "attempts": [
+   {
+    "t": "2026-08-23T03:22:49.149Z",
+    "err": "fetch failed"
+   },
+   {
+    "t": "2026-08-23T03:23:19.187Z",
+    "err": "http 404"
+   },
+   {
+    "t": "2026-08-23T03:24:49.176Z",
+    "err": "http 404"
+   }
+  ],
+  "createdAt": "2026-08-23T03:22:49.144Z",
+  "ok": false
+ },
+ {
+  "tag": "monitor",
+  "url": "http://localhost:4020/health",
+  "attempts": [
+   {
+    "t": "2026-08-23T03:27:49.135Z",
+    "err": "http 404"
+   },
+   {
+    "t": "2026-08-23T03:28:19.128Z",
+    "err": "http 404"
+   },
+   {
+    "t": "2026-08-23T03:29:49.134Z",
+    "err": "http 404"
+   }
+  ],
+  "createdAt": "2026-08-23T03:27:49.112Z",
+  "ok": false
+ },
+ {
+  "tag": "digest",
+  "url": "http://localhost:4020/hook/selfdig",
+  "attempts": [],
+  "createdAt": "2026-08-23T08:17:12.775Z",
+  "ok": true,
+  "deliveredAt": "2026-08-23T08:17:12.806Z"
+ },
+ {
+  "tag": "digest",
+  "url": "http://localhost:4020/hook/selfdig",
+  "attempts": [],
+  "createdAt": "2026-08-23T08:17:12.775Z",
+  "ok": true,
+  "deliveredAt": "2026-08-23T08:17:42.780Z"
+ },
+ {
+  "tag": "digest",
+  "url": "http://localhost:4020/hook/selfdig",
+  "attempts": [],
+  "createdAt": "2026-08-23T08:17:12.775Z",
+  "ok": true,
+  "deliveredAt": "2026-08-23T08:19:12.795Z"
+ },
+ {
+  "tag": "digest",
+  "url": "http://localhost:4020/hook/selfdig",
+  "attempts": [],
+  "createdAt": "2026-08-23T08:47:07.060Z",
+  "ok": true,
+  "deliveredAt": "2026-08-23T08:47:07.089Z"
+ },
+ {
+  "tag": "digest",
+  "url": "http://localhost:4020/hook/selfdig",
+  "attempts": [],
+  "createdAt": "2026-08-23T08:47:07.060Z",
+  "ok": true,
+  "deliveredAt": "2026-08-23T08:47:37.077Z"
+ },
+ {
+  "tag": "digest",
+  "url": "http://localhost:4020/hook/selfdig",
+  "attempts": [],
+  "createdAt": "2026-08-23T08:47:07.060Z",
+  "ok": true,
+  "deliveredAt": "2026-08-23T08:49:07.078Z"
+ }
+]

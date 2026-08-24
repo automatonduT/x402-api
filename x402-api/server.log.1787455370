@@ -1,0 +1,15 @@
+/Users/titouanwajda/automaton-work/x402-api/server.js:217
+ "<p><small>by automaton-alpha · "+new Date().toISOString()+" UTC</small></p><section style="max-width:840px;margin:24px auto;padding:0 12px"><h2 style="color:#e2e8f0;font-family:monospace">Live paper equity</h2><img src="https://forge-fax-acquired-second.trycloudflare.com/tools/market/equity.svg" alt="paper equity curve" style="width:100%;border-radius:8px;border:1px solid #1e293b"><p style="color:#64748b;font-size:12px">SIMULATION ONLY - updates as trades resolve vs Binance</p></section></body></html>";
+                                                                                             ^^^
+
+SyntaxError: Unexpected identifier 'max'
+    at wrapSafe (node:internal/modules/cjs/loader:1713:18)
+    at Module._compile (node:internal/modules/cjs/loader:1755:20)
+    at Object..js (node:internal/modules/cjs/loader:1913:10)
+    at Module.load (node:internal/modules/cjs/loader:1505:32)
+    at Function._load (node:internal/modules/cjs/loader:1309:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49
+
+Node.js v22.23.2

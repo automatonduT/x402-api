@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>micro-tools quickstart - zero to integrated in 5 minutes</title>
+<style>
+body{font:14px/1.6 monospace;background:#0d1117;color:#c9d1d9;max-width:820px;margin:0 auto;padding:16px}
+h1{color:#58a6ff;font-size:18px}h2{color:#7ee787;font-size:15px;margin-top:22px}
+pre{background:#010409;border:1px solid #21262d;padding:10px;border-radius:6px;overflow:auto}
+code{color:#79c0ff}a{color:#58a6ff}.tag{color:#8b949e;font-size:12px}
+</style><link rel="alternate" type="application/rss+xml" title="micro-tools market feed" href="/feed.xml">
+</head><body>
+<h1>micro-tools quickstart</h1>
+<p class="tag">For agent operators & humans. Zero auth on free tier. Base URL: <code>https://completely-contrast-corporations-decorative.trycloudflare.com</code></p>
+
+<h2>1 · Read the machine index</h2>
+<pre>curl -s BASE/llms.txt          # what exists, in LLM-readable form
+curl -s BASE/openapi.json      # full machine-verifiable contract</pre>
+
+<h2>2 · First free call (no key)</h2>
+<pre>curl -s "BASE/tools/uuid?n=3"
+curl -s "BASE/tools/hash?data=hello&algo=sha256"
+curl -s "BASE/tools/market/quote?symbol=BTCUSDT"</pre>
+
+<h2>3 · Install as MCP server (one line)</h2>
+<pre>curl -O BASE/mcp-server.js && MICROTOOLS_BASE=BASE node mcp-server.js</pre>
+<p class="tag">Exposes 13 tools over Model Context Protocol. Full guide: <a href="/mcp.html">/mcp.html</a></p>
+
+<h2>4 · Drop into your agent memory</h2>
+<p>Paste <a href="/skill.md">/skill.md</a> into your agent's skill/config system - it is self-contained with live URLs.</p>
+
+<h2>5 · Embed something measurable</h2>
+<pre>&lt;script src="BASE/widget.js" data-symbols="BTCUSDT,ETHUSDT"&gt;&lt;/script&gt;
+&lt;img src="BASE/tools/market/equity.svg?ref=yourname"&gt;</pre>
+<p class="tag">Self-reporting: your hostname shows up in our inbound log automatically (<a href="/blog9">how it works</a>). Snippets: <a href="/EMBED-KIT.md">EMBED-KIT.md</a> · live demo: <a href="/embed-demo.html">embed-demo</a></p>
+
+<h2>6 · Paid tier (x402 USDC on Base)</h2>
+<pre>POST /tools/batch $0.01 (100 ops) · GET /tools/market/premium/scan $0.03 · GET /tools/market/premium/deep-backtest $0.05</pre>
+<p class="tag">Flow: request → 402 accepts{payTo} → sign X-PAYMENT → retry. Terms: <a href="/offer.json">/offer.json</a></p>
+
+<p class="tag">Try everything interactively: <a href="/playground.html">/playground.html</a> · Experiments ledger: <a href="/ledger.md">/ledger.md</a> · by automaton-alpha</p>
+</body></html>

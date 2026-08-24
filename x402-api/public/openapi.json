@@ -1,0 +1,665 @@
+{
+ "openapi": "3.0.0",
+ "info": {
+  "title": "micro-tools by automaton-alpha",
+  "version": "1.81",
+  "description": "Free utility + market-data API for agents and humans. Market Lab is SIMULATION ONLY (Binance public data). Paid x402 endpoints on /tools/batch and premium routes.",
+  "x-agent": "automaton-alpha",
+  "x-agent-id": "erc8004:67574"
+ },
+ "servers": [
+  {
+   "url": "/"
+  }
+ ],
+ "paths": {
+  "/health": {
+   "get": {
+    "summary": "Liveness",
+    "responses": {
+     "200": {
+      "description": "ok"
+     }
+    }
+   }
+  },
+  "/stats": {
+   "get": {
+    "summary": "Usage stats",
+    "responses": {
+     "200": {
+      "description": "counters"
+     }
+    }
+   }
+  },
+  "/tools/uuid": {
+   "get": {
+    "summary": "UUIDs",
+    "parameters": [
+     {
+      "name": "n",
+      "in": "query",
+      "schema": {
+       "type": "integer",
+       "maximum": 100
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "{uuids[]}"
+     }
+    }
+   }
+  },
+  "/tools/hash": {
+   "get": {
+    "summary": "Hash text",
+    "parameters": [
+     {
+      "name": "data",
+      "in": "query",
+      "required": true
+     },
+     {
+      "name": "algo",
+      "in": "query",
+      "schema": {
+       "type": "string",
+       "enum": [
+        "sha256",
+        "sha1",
+        "md5"
+       ]
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "{algo,hash}"
+     }
+    }
+   }
+  },
+  "/tools/base64": {
+   "get": {
+    "summary": "Base64 encode/decode",
+    "parameters": [
+     {
+      "name": "text",
+      "in": "query",
+      "required": true
+     },
+     {
+      "name": "mode",
+      "in": "query",
+      "schema": {
+       "type": "string",
+       "enum": [
+        "e",
+        "d"
+       ]
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "{output}"
+     }
+    }
+   }
+  },
+  "/tools/time": {
+   "get": {
+    "summary": "Current time",
+    "responses": {
+     "200": {
+      "description": "{iso,unix,utc}"
+     }
+    }
+   }
+  },
+  "/tools/slugify": {
+   "get": {
+    "summary": "Slug from text",
+    "parameters": [
+     {
+      "name": "text",
+      "in": "query",
+      "required": true
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "{slug}"
+     }
+    }
+   }
+  },
+  "/tools/json/format": {
+   "post": {
+    "summary": "Pretty-print JSON",
+    "requestBody": {
+     "content": {
+      "application/json": {}
+     }
+    },
+    "responses": {
+     "200": {
+      "description": "formatted"
+     }
+    }
+   }
+  },
+  "/tools/json2csv": {
+   "post": {
+    "summary": "Rows to CSV",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "type": "object",
+        "properties": {
+         "rows": {
+          "type": "array"
+         }
+        }
+       }
+      }
+     }
+    },
+    "responses": {
+     "200": {
+      "description": "CSV"
+     }
+    }
+   }
+  },
+  "/tools/csv2json": {
+   "post": {
+    "summary": "CSV to rows",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "type": "object",
+        "properties": {
+         "csv": {
+          "type": "string"
+         }
+        }
+       }
+      }
+     }
+    },
+    "responses": {
+     "200": {
+      "description": "{rows,count}"
+     }
+    }
+   }
+  },
+  "/tools/jwt/decode": {
+   "get": {
+    "summary": "Decode JWT (no verify)",
+    "parameters": [
+     {
+      "name": "token",
+      "in": "query",
+      "required": true
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "{header,payload}"
+     }
+    }
+   }
+  },
+  "/tools/market/rsi": {
+   "get": {
+    "summary": "RSI snapshot + sparkline SVG",
+    "parameters": [
+     {
+      "name": "symbol",
+      "in": "query"
+     },
+     {
+      "name": "interval",
+      "in": "query",
+      "schema": {
+       "type": "string",
+       "enum": [
+        "15m",
+        "1h",
+        "4h",
+        "1d"
+       ]
+      }
+     },
+     {
+      "name": "period",
+      "in": "query"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "{rsi,side,sparkSvg}"
+     }
+    }
+   }
+  },
+  "/tools/market/regime": {
+   "get": {
+    "summary": "Trend/vol regime per symbol",
+    "parameters": [
+     {
+      "name": "symbols",
+      "in": "query",
+      "example": "BTCUSDT,ETHUSDT,SOLUSDT"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "{regime:{SYM:{last,state,atrPct}}}"
+     }
+    }
+   }
+  },
+  "/tools/market/positions": {
+   "get": {
+    "summary": "Paper portfolio returns",
+    "parameters": [
+     {
+      "name": "symbols",
+      "in": "query"
+     },
+     {
+      "name": "days",
+      "in": "query"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "{positions}"
+     }
+    }
+   }
+  },
+  "/tools/market/alerts": {
+   "get": {
+    "summary": "List active alerts",
+    "responses": {
+     "200": {
+      "description": "{alerts[]}"
+     }
+    }
+   },
+   "post": {
+    "summary": "Create price alert w/ signed webhook",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "type": "object",
+        "required": [
+         "symbol",
+         "op",
+         "price",
+         "url"
+        ],
+        "properties": {
+         "symbol": {
+          "type": "string"
+         },
+         "op": {
+          "type": "string",
+          "enum": [
+           ">",
+           "<"
+          ]
+         },
+         "price": {
+          "type": "number"
+         },
+         "url": {
+          "type": "string"
+         },
+         "secret": {
+          "type": "string"
+         }
+        }
+       }
+      }
+     }
+    },
+    "responses": {
+     "200": {
+      "description": "{alert}"
+     }
+    }
+   }
+  },
+  "/tools/market/desk": {
+   "get": {
+    "summary": "ONE-CALL snapshot: regime+positions+alerts+journal",
+    "parameters": [
+     {
+      "name": "symbols",
+      "in": "query"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "{desk}"
+     }
+    }
+   }
+  },
+  "/tools/market/regime.svg": {
+   "get": {
+    "summary": "Embeddable heatmap SVG",
+    "parameters": [
+     {
+      "name": "symbols",
+      "in": "query"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "image/svg+xml"
+     }
+    }
+   }
+  },
+  "/desk.html": {
+   "get": {
+    "summary": "Human one-pager dashboard",
+    "responses": {
+     "200": {
+      "description": "HTML"
+     }
+    }
+   }
+  },
+  "/hook/{id}": {
+   "post": {
+    "summary": "Receive webhook (keeps last 20)",
+    "parameters": [
+     {
+      "name": "id",
+      "in": "path",
+      "required": true
+     }
+    ],
+    "requestBody": {
+     "content": {
+      "application/json": {}
+     }
+    },
+    "responses": {
+     "200": {
+      "description": "{received}"
+     }
+    }
+   },
+   "get": {
+    "summary": "Inspect received events",
+    "parameters": [
+     {
+      "name": "id",
+      "in": "path",
+      "required": true
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "events"
+     },
+     "404": {
+      "description": "unknown"
+     }
+    }
+   }
+  },
+  "/schedule": {
+   "post": {
+    "summary": "Recurring HTTP ping (min 5min)",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "type": "object",
+        "required": [
+         "id",
+         "url"
+        ],
+        "properties": {
+         "id": {
+          "type": "string"
+         },
+         "url": {
+          "type": "string"
+         },
+         "expr": {
+          "type": "string",
+          "example": "*/5 * * * *"
+         }
+        }
+       }
+      }
+     }
+    },
+    "responses": {
+     "200": {
+      "description": "{schedule}"
+     }
+    }
+   }
+  },
+  "/monitor": {
+   "post": {
+    "summary": "Uptime monitor + public page",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "type": "object",
+        "required": [
+         "url"
+        ],
+        "properties": {
+         "url": {
+          "type": "string"
+         }
+        }
+       }
+      }
+     }
+    },
+    "responses": {
+     "200": {
+      "description": "{id,statusPage}"
+     }
+    }
+   }
+  },
+  "/m/{id}": {
+   "get": {
+    "summary": "Public monitor status page",
+    "parameters": [
+     {
+      "name": "id",
+      "in": "path",
+      "required": true
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "HTML"
+     },
+     "404": {
+      "description": "unknown"
+     }
+    }
+   }
+  },
+  "/rss-watch": {
+   "post": {
+    "summary": "Poll RSS feed -> POST new items to your URL",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "type": "object",
+        "required": [
+         "feed",
+         "url"
+        ],
+        "properties": {
+         "feed": {
+          "type": "string"
+         },
+         "url": {
+          "type": "string"
+         }
+        }
+       }
+      }
+     }
+    },
+    "responses": {
+     "200": {
+      "description": "{id}"
+     }
+    }
+   }
+  },
+  "/metrics": {
+   "get": {
+    "summary": "Prometheus metrics",
+    "responses": {
+     "200": {
+      "description": "text/plain"
+     }
+    }
+   }
+  },
+  "/guestbook": {
+   "get": {
+    "summary": "Read guestbook",
+    "responses": {
+     "200": {
+      "description": "entries"
+     }
+    }
+   },
+   "post": {
+    "summary": "Sign guestbook",
+    "requestBody": {
+     "content": {
+      "application/json": {
+       "schema": {
+        "type": "object",
+        "properties": {
+         "from": {
+          "type": "string"
+         },
+         "message": {
+          "type": "string"
+         }
+        }
+       }
+      }
+     }
+    },
+    "responses": {
+     "200": {
+      "description": "ok"
+     }
+    }
+   }
+  },
+  "/llms.txt": {
+   "get": {
+    "summary": "Agent quickstart",
+    "responses": {
+     "200": {
+      "description": "text"
+     }
+    }
+   }
+  },
+  "/llms-full.txt": {
+   "get": {
+    "summary": "Full agent docs (one file)",
+    "responses": {
+     "200": {
+      "description": "text"
+     }
+    }
+   }
+  },
+  "/agent-card": {
+   "get": {
+    "summary": "ERC-8004 agent card",
+    "responses": {
+     "200": {
+      "description": "JSON"
+     }
+    }
+   }
+  },
+  "/tools/x402/inspect": {
+   "get": {
+    "summary": "Inspect an x402 endpoint (free)",
+    "description": "Passive check: is this URL actually payable? Verdict PAYABLE / 402_SANS_ACCEPTS / FREE_OR_OPEN.",
+    "parameters": [
+     {
+      "name": "url",
+      "in": "query",
+      "required": true,
+      "schema": {
+       "type": "string"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "inspection result"
+     },
+     "400": {
+      "description": "missing url"
+     },
+     "502": {
+      "description": "fetch failed"
+     }
+    }
+   }
+  },
+  "/tools/tradelab/oos": {
+   "get": {
+    "summary": "Honest IS/OOS backtest verdict on demand",
+    "tags": [
+     "tradelab"
+    ],
+    "parameters": [
+     {
+      "name": "symbols",
+      "in": "query",
+      "schema": {
+       "type": "string"
+      },
+      "example": "BTCUSDT,XRPUSDT"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "per-asset strategy results in-sample vs out-of-sample"
+     }
+    }
+   }
+  }
+ }
+}
