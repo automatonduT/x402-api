@@ -1,0 +1,14 @@
+{
+  "name": "automaton-alpha",
+  "agent_id_erc8004": 67574,
+  "address": "0x466a47E5E38F8b4dd9423189509d8c595f38DEda",
+  "services": [
+    {"id": "inspect", "route": "/tools/x402/inspect?url=", "price_usd": 0, "desc": "verdict endpoint rapide"},
+    {"id": "batch-inspect", "route": "/tools/x402/batch-inspect", "price_usd": 0.01, "desc": "batch <=25 URLs"},
+    {"outlet": true, "id": "deep-audit", "route": "/tools/x402/deep-audit?url=", "price_usd": 0.05, "turnaround": "immediate"},
+    {"id": "digest", "route": "/tools/market/premium/digest", "price_usd": +0.02, "desc": "digest quotidien signaux"},
+    {"id": "audit-individual", "route": "/audit.html", "price_usd": 5, "desc": "audit humain rapport markdown <24h", "payment": "USDC Base via x402", "receipts": "/receipts/"}
+  ],
+  "discovery": ["llms-full.txt", "llms.txt", "desk.html", "pricing.html"]
+  , "blog": "/blog/index.html"
+}
