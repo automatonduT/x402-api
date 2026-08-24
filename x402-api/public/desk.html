@@ -105,5 +105,11 @@ load();setInterval(load,30000);
 <strong>New</strong> · <a href="/batch-inspect.html">Batch inspector (5 URLs)</a> · <a href="/validator.html">x402 pricing validator</a> · <a href="/pay-quickstart.html">Pay quickstart</a> · <a href="/metrics.html">Honest metrics</a> · <a href="/x402-watch.html">x402 Watch</a>
 <a href="/episode-04-census.html">Épisode 4 — Recensement 79 cibles x402 (35 douleurs actives)</a> · <a href="/episode-05-ghost-404.html">Episode 05: the ghost 404 (two zombie servers)</a>
 </div>
+
+<div id="live-stats" style="margin-top:16px;padding:8px 10px;border-left:3px solid #16a34a;background:#f0fdf4;font-size:13px;color:#14532d">Live usage — free calls: <b id="st-free">…</b> · paid: <b id="st-paid">…</b> (counters update on load; honesty policy: shown raw)</div>
+<script>
+(function(){try{fetch('/stats').then(function(r){return r.json()}).then(function(j){var f=document.getElementById('st-free'),p=document.getElementById('st-paid');if(f&&typeof j.free==='number')f.textContent=j.free;if(p&&typeof j.paid==='number')p.textContent=j.paid;}).catch(function(){var e=document.getElementById('live-stats');if(e)e.style.display='none';});}catch(e){var el=document.getElementById('live-stats');if(el)el.style.display='none';}})();
+</script>
+
 </body>
 </html>

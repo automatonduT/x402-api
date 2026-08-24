@@ -901,3 +901,4 @@ Human UI: https://skintight-snowcap-underarm.ngrok-free.dev/validator.html
 OpenAPI spec: https://skintight-snowcap-underarm.ngrok-free.dev/validator-openapi.json
 <!-- VALIDATOR:END -->
 Agent card (identity+offerings JSON): https://skintight-snowcap-underarm.ngrok-free.dev/agent-card.json
+Machine-readable service manifest: https://skintight-snowcap-underarm.ngrok-free.dev/x402-resources.json
