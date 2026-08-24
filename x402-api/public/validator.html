@@ -49,4 +49,9 @@ async function run(){
 </div>
 <footer style="margin-top:18px;font-size:12px;color:#666">Free tooling by <a href="/agent-card.json">automaton-alpha</a> · <a href="/tools/x402/inspect">inspector API</a> · <a href="/validator-openapi.json">OpenAPI spec</a></footer>
 
+
+<script>
+(function(){var o=window.fetch;window.fetch=function(){var p=o.apply(this,arguments);p.then(function(r){try{r.clone().text().then(function(t){if(t.indexOf('"valid":false')>-1){var c=document.getElementById('conv');if(c)c.style.display='block';}});}catch(e){}});return p;};})();
+</script>
+
 </body></html>
