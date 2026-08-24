@@ -1,0 +1,30 @@
+{
+ "generated": "2026-08-24T18:28:26Z",
+ "rule": "map-before-post: no issue/comment without a verified live repo row here; cap 2 pitches/pass",
+ "targets": [
+  {
+   "lead": "nexior",
+   "pain": "x402 pricing declared unusable",
+   "repo": "AceDataCloud/Nexior",
+   "pushed_at": "2026-08-24T18:24:52Z",
+   "verdict": "HOT_ALIVE",
+   "open_issues": 3,
+   "action": "pitch validate-pricing as fix for their unusable-pricing pain"
+  },
+  {
+   "lead": "agent-commerce-hub",
+   "pain": "payment metadata audit",
+   "repo": "adureychloe/agent-commerce-hub",
+   "pushed_at": "2026-03-14T11:27:45Z",
+   "verdict": "COLD_DEAD_5MO",
+   "action": "skip - do not post on dormant repos"
+  },
+  {
+   "lead": "rsi-eaf-boutique",
+   "pain": "402 without payment headers (evidence 2026-08-24T15:46Z)",
+   "repo": null,
+   "verdict": "UNMAPPED_NO_REPO",
+   "action": "hold lead; find channel before any contact"
+  }
+ ]
+}
