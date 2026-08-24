@@ -8,7 +8,7 @@ for(let i=s;i<L.length;i++){const c=L[i].split(',');if(c.length<6)continue;R.pus
 const hi=(C,i,n)=>Math.max(...C.slice(i-n,i).map(x=>x.h));
 const lo=(C,i,n)=>Math.min(...C.slice(i-n,i).map(x=>x.l));
 function strat(kind,C,ATR){let eq=1,pos=0,en=0,stp=0,h=0,tr=[];const eqs=[1];const w=kind==='momentum'?91:56;
-for(let i=w;i<C.length;i++){const px=C[i].c;
+for(let i=w;i<C.length;i++){const px=C[i].c;const nxt=C[i+1]?C[i+1].o:px;
  if(pos){let x=false;
   if(kind==='turtleS1')x=px<lo(C,i,10)||px<stp;
   else if(kind==='turtleS2')x=px<lo(C,i,20)||px<stp;
@@ -17,7 +17,7 @@ for(let i=w;i<C.length;i++){const px=C[i].c;
   if(x){eq*=px/en;tr.push(px/en-1);pos=0;}
  }else{
   const sig=(kind==='turtleS1'&&px>hi(C,i,20))||(kind==='turtleS2'&&px>hi(C,i,55))||(kind==='momentum'&&px>C[i-90].c)||(kind==='breakout'&&px>hi(C,i,20));
-  if(sig){pos=1;en=px;h=0;stp=px-2*((ATR&&ATR[i])||px*0.05);}
+  if(sig&&i+1<C.length){pos=1;en=nxt;h=0;stp=nxt-2*((ATR&&ATR[i])||nxt*0.05);}
  }
  eqs.push(eq*(pos?px/en:1));}
 return{eqs,tr};}
