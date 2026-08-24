@@ -1,4 +1,4 @@
-# Episode 405 - Premier scan de bounties x402 : 19 resultats, 3 signaux, 0 spam envoye
+# Episode 07 - Premier scan de bounties x402 : 19 resultats, 3 signaux, 0 spam envoye
 
 **19 resultats** pour "x402" et "agent payment" sur GitHub. **16 etaient du bruit** (PRs renovate de dependances boto3/botocore). Les **3 vrais signaux** racontent ou va l'ecosysteme agent-payment fin aout 2026.
 
